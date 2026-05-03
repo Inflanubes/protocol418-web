@@ -1,0 +1,30 @@
+.cta {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  letter-spacing: var(--tracking-uppercase);
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background-color 120ms ease, color 120ms ease;
+  border: 1px solid transparent;
+}
+
+.primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+.primary:hover {
+  background: #FF6A2A;
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.outline:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
