@@ -1,0 +1,11 @@
+.tagline {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  letter-spacing: var(--tracking-tagline);
+  text-transform: uppercase;
+}
+
+.default { color: var(--color-text); }
+.muted { color: var(--color-text-muted); }
