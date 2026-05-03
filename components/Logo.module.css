@@ -1,0 +1,22 @@
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.sm { font-size: var(--fs-body); }
+.md { font-size: var(--fs-h2); }
+.lg {
+  font-size: var(--fs-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.pipe { color: var(--color-accent); }
+.bracket,
+.digit {
+  color: var(--color-text);
+}
