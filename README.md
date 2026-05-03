@@ -1,6 +1,6 @@
 # Protocol 418 — Web
 
-Web pública de Protocol 418. Phase 1: 3 páginas estáticas + puerta al community de WhatsApp.
+Web pública de Protocol 418. Phase 1: 3 páginas estáticas + puerta a la comunidad de WhatsApp.
 
 **Producción:** https://protocol418.com
 
