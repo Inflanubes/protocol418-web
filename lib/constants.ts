@@ -4,6 +4,7 @@ export const WHATSAPP_INVITE_URL = 'https://chat.whatsapp.com/Jpd9VnBsIk5HQ6ucLF
 export const NAV_LINKS = [
   { href: '/', label: 'Manifiesto' },
   { href: '/protocol', label: 'Protocol' },
+  { href: '/brew', label: 'Brew' },
   { href: '/comunidad', label: 'Comunidad' },
 ] as const;
 
