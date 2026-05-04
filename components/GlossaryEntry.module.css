@@ -2,7 +2,7 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-5, 20px);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -12,7 +12,8 @@
 .header {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
 .icon {
@@ -21,15 +22,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
 }
 
 .term {
   font-family: var(--font-mono);
-  font-size: var(--fs-h2);
+  font-size: var(--fs-body-lg);
   font-weight: 700;
   color: var(--color-text);
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .definition {

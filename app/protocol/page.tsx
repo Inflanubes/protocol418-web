@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const PRINCIPLES = [
-  'Esto no es teoría. Esto es protocolo.',
   'Si no funciona, no es protocolo.',
   'No necesitas más IA. Necesitas mejor estructura.',
   'Menos herramientas, más sistema.',
+  'Esto no es teoría. Esto es protocolo.',
 ];
 
 const CONVENTIONS = [
