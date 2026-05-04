@@ -65,7 +65,7 @@ export default function BrewPage() {
           <h2 className={styles.h2}>Tipos de post.</h2>
           <p className={styles.lead}>
             Cuando empecemos a publicar, cada post pertenece a una de estas 4 categorías. Los
-            nombres también se usan dentro del community para etiquetar mensajes.
+            nombres también se usan dentro de la comunidad para etiquetar mensajes.
           </p>
           <ul className={styles.postTypes}>
             {POST_TYPES.map(({ Icon, name, description }) => (
@@ -86,15 +86,15 @@ export default function BrewPage() {
       <Section>
         <div className={styles.empty}>
           <p className={styles.emptyText}>
-            Todavía no hay posts publicados. La cocina está empezando.
+            Estamos <em>cocinando</em> nuevas ideas.
           </p>
         </div>
       </Section>
 
       <Section variant="surface">
         <div className={styles.cta}>
-          <CTAButton variant="primary" ariaLabel="Solicitar acceso al community de WhatsApp">
-            Entrar al community →
+          <CTAButton variant="primary" ariaLabel="Solicitar acceso a la comunidad de WhatsApp">
+            Entrar a la comunidad →
           </CTAButton>
         </div>
       </Section>

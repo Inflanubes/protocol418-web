@@ -102,6 +102,10 @@
   color: var(--color-text-muted);
   letter-spacing: var(--tracking-tight);
 }
+.emptyText em {
+  color: var(--color-accent);
+  font-style: italic;
+}
 
 .cta {
   display: flex;

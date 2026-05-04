@@ -65,7 +65,7 @@ export default function ProtocolPage() {
           <Eyebrow>Lenguaje · {GLOSSARY.length} términos</Eyebrow>
           <h2 className={styles.h2}>El vocabulario del protocolo.</h2>
           <p className={styles.lead}>
-            Jerga propia que se usa con naturalidad en el community. No se sobreexplica en línea —
+            Jerga propia que se usa con naturalidad en la comunidad. No se sobreexplica en línea —
             si el contexto la hace clara, basta.
           </p>
           <div className={styles.grid}>
@@ -78,8 +78,8 @@ export default function ProtocolPage() {
 
       <Section>
         <div className={styles.cta}>
-          <CTAButton variant="outline" ariaLabel="Solicitar acceso al community de WhatsApp">
-            Entrar al community →
+          <CTAButton variant="outline" ariaLabel="Solicitar acceso a la comunidad de WhatsApp">
+            Entrar a la comunidad →
           </CTAButton>
         </div>
       </Section>

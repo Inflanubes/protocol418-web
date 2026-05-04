@@ -9,7 +9,7 @@ type Props = {
 export function Tagline({ variant = 'default', className }: Props) {
   return (
     <span className={`${styles.tagline} ${styles[variant]} ${className ?? ''}`}>
-      CONSTRUIR · AUTOMATIZAR · COMPARTIR
+      INVESTIGAR · CONSTRUIR · COMPARTIR
     </span>
   );
 }

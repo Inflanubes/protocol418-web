@@ -206,8 +206,8 @@ export default function HomePage() {
       <Section>
         <div className={styles.cta}>
           <Eyebrow>Compartir es ayudar. Be open source, my friend.</Eyebrow>
-          <CTAButton variant="primary" ariaLabel="Solicitar acceso al community de WhatsApp">
-            Entrar al community →
+          <CTAButton variant="primary" ariaLabel="Solicitar acceso a la comunidad de WhatsApp">
+            Entrar a la comunidad →
           </CTAButton>
         </div>
       </Section>

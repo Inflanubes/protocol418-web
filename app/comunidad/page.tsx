@@ -27,7 +27,7 @@ export default function ComunidadPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <Eyebrow>El community</Eyebrow>
+          <Eyebrow>La comunidad</Eyebrow>
           <h1 className={styles.title}>
             Tres canales.
             <br />
@@ -60,11 +60,11 @@ export default function ComunidadPage() {
           <Eyebrow>Cómo entrar</Eyebrow>
           <h2 className={styles.h2}>Solicitas. Apruebo. Entras.</h2>
           <p className={styles.lead}>
-            El community es por aprobación. Cuando solicitas el acceso desde el botón, lo reviso
+            La comunidad es por aprobación. Cuando solicitas el acceso desde el botón, lo reviso
             manualmente. Si te conozco, entras.
           </p>
-          <CTAButton variant="primary" ariaLabel="Solicitar acceso al community de WhatsApp">
-            Entrar al community →
+          <CTAButton variant="primary" ariaLabel="Solicitar acceso a la comunidad de WhatsApp">
+            Entrar a la comunidad →
           </CTAButton>
         </div>
       </Section>

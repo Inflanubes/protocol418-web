@@ -37,7 +37,7 @@ export function ChannelCard({ channel, expanded = false }: Props) {
         <div className={styles.footer}>
           {data.rules && (
             <div className={styles.subBlock}>
-              <span className={styles.subLabel}>Reglas</span>
+              <span className={styles.subLabel}>Rules</span>
               <ul className={styles.rules}>
                 {data.rules.map((rule) => (
                   <li key={rule}>{rule}</li>

@@ -43,7 +43,7 @@ export default async function OGImage() {
             textTransform: 'uppercase',
           }}
         >
-          CONSTRUIR · AUTOMATIZAR · COMPARTIR
+          INVESTIGAR · CONSTRUIR · COMPARTIR
         </div>
         <div
           style={{
