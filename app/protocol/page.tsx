@@ -1,5 +1,6 @@
 // app/protocol/page.tsx
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Section } from '@/components/Section';
 import { Eyebrow } from '@/components/Eyebrow';
 import { GlossaryEntry } from '@/components/GlossaryEntry';
@@ -33,7 +34,9 @@ export default function ProtocolPage() {
         <div className={styles.intro}>
           <Eyebrow>El sistema</Eyebrow>
           <h1 className={styles.title}>Aquí está el protocolo.</h1>
-          <p className={styles.lead}>Léelo antes de escribir.</p>
+          <p className={styles.lead}>
+            Lee el apartado <Link href="/comunidad">Comunidad</Link> antes de empezar a escribir y recuerda usar nuestro vocabulario (aquí abajo).
+          </p>
         </div>
       </Section>
 

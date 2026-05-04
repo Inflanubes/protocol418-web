@@ -8,7 +8,7 @@ import { CTAButton } from '@/components/CTAButton';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Brew — Lo que estamos cociendo — Protocol 418',
+  title: 'Brew — Lo que estamos cocinando — Protocol 418',
   description:
     'El feed de Protocol 418. Brew Logs, Hotfix, Protocol y 418 Moments. Lo que se está construyendo, en tiempo real.',
 };
@@ -54,7 +54,7 @@ export default function BrewPage() {
           <Eyebrow>El feed</Eyebrow>
           <h1 className={styles.title}>Brew.</h1>
           <p className={styles.lead}>
-            Aquí os contaremos lo que estamos <em>cociendo</em>.
+            Aquí os contaremos lo que estamos <em>cocinando</em>.
           </p>
         </div>
       </Section>
