@@ -34,16 +34,30 @@ export default function HomePage() {
             Esto es protocolo.
           </h1>
           <p className={styles.heroLead}>
-            Más ruido que nunca. Más gente vendiendo IA que entendiéndola. Más{' '}
-            <em>vibe coding</em> y menos <em>spec coding</em>. Aquí no.
+            Protocol FourEighteen ha nacido de una necesidad. Como sabéis, la tecnología crece
+            exponencialmente y se va adaptando a nuestro entorno —laboral y personal. Pero ahora
+            siento que el mercado está saturado de <em>IA</em>. Se quiere vender hasta en la sopa,
+            y no lo soluciona todo.
           </p>
         </div>
       </Section>
 
-      {/* NO ES / ES */}
+      {/* BIENVENIDA */}
       <Section variant="surface">
+        <div className={styles.welcomeWrap}>
+          <p className={styles.welcomeMain}>Bienvenido a Protocol FourEighteen.</p>
+          <p className={styles.welcomeTagline}>
+            Compartir es ayudar.
+            <br />
+            <span className={styles.welcomeAccent}>Be open source, my friend.</span>
+          </p>
+        </div>
+      </Section>
+
+      {/* QUÉ ES ESTO — NO ES / ES */}
+      <Section>
         <div className={styles.contentBlock}>
-          <Eyebrow>01 · Qué es esto</Eyebrow>
+          <Eyebrow>Qué es esto</Eyebrow>
           <h2 className={styles.h2}>No es lo que crees.</h2>
           <div className={styles.notIsGrid}>
             <div className={styles.notIsCol}>
@@ -65,29 +79,15 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* TEAPOT STORY */}
-      <Section>
-        <div className={styles.contentBlock}>
-          <Eyebrow>02 · El origen</Eyebrow>
-          <h2 className={styles.h2}>Hyper Text Coffee Pot Control Protocol</h2>
-          <p className={styles.body}>
-            En 1998, unos ingenieros publicaron una broma en internet: un protocolo para controlar
-            cafeteras por HTTP. Dentro de esa broma apareció un código:
-          </p>
-          <p className={styles.quote}>418 — I&apos;m a teapot.</p>
-          <p className={styles.body}>
-            Significa literalmente:{' '}
-            <em>&ldquo;me estás pidiendo café… pero soy una tetera.&rdquo;</em> No puedo darte lo que
-            quieres porque no soy lo que crees. Era humor técnico. Pero hoy es más real que nunca.
-          </p>
-        </div>
-      </Section>
-
-      {/* ESO ES UN 418 */}
+      {/* ¿QUÉ ES PROTOCOL 418? — el ruido + vibe vs spec */}
       <Section variant="surface">
         <div className={styles.contentBlock}>
-          <Eyebrow>03 · La realidad</Eyebrow>
-          <h2 className={styles.h2}>Eso es un 418.</h2>
+          <Eyebrow>¿Qué es Protocol 418?</Eyebrow>
+          <h2 className={styles.h2}>Más ruido que nunca.</h2>
+          <p className={styles.body}>
+            He empezado esto porque desde que existe la IA, hay más ruido que nunca.{' '}
+            <strong>Más gente vendiéndola que entendiéndola.</strong>
+          </p>
           <p className={styles.body}>
             Todo el mundo quiere meter IA en todo. Como si fuera la solución universal. IA para
             esto. IA para lo otro. <strong>IA hasta en los cereales.</strong>
@@ -96,21 +96,68 @@ export default function HomePage() {
           <ul className={styles.list}>
             <li>No todo se soluciona con IA.</li>
             <li>Y la IA no soluciona todo.</li>
-            <li>Te venden herramientas que no necesitas.</li>
-            <li>Te prometen soluciones que no encajan con tu problema.</li>
           </ul>
           <p className={styles.body}>
-            Protocol 418 nace para detectar cuándo algo no tiene sentido desde la base. Para separar
-            lo que funciona de lo que solo suena bien. Para construir sistemas reales, no demos
-            bonitas. Para pensar antes de automatizar.
+            Estamos en un punto donde se venden soluciones genéricas a problemas que ni siquiera
+            están bien definidos.
           </p>
+          <p className={styles.statement}>Mucho vibe coding y poco spec coding.</p>
+          <p className={styles.bridge}>Y aquí es donde entra el 418.</p>
+        </div>
+      </Section>
+
+      {/* EL ORIGEN — TEAPOT STORY */}
+      <Section>
+        <div className={styles.contentBlock}>
+          <Eyebrow>El origen</Eyebrow>
+          <p className={styles.eyebrowAside}>&lt; &gt; Hyper Text Coffee Pot Control Protocol</p>
+          <h2 className={styles.h2}>Una broma de 1998 que hoy es real.</h2>
+          <p className={styles.body}>
+            En 1998, unos ingenieros publicaron una broma en internet: un protocolo para controlar
+            cafeteras por HTTP. Dentro de esa broma apareció un código:
+          </p>
+          <p className={styles.quote}>418 — I&apos;m a teapot.</p>
+          <p className={styles.body}>
+            Significa literalmente:{' '}
+            <em>&ldquo;me estás pidiendo café… pero soy una tetera.&rdquo;</em>
+          </p>
+          <p className={styles.body}>No puedo darte lo que quieres porque no soy lo que crees.</p>
+          <p className={styles.bridge}>Era humor técnico. Pero hoy es más real que nunca.</p>
+        </div>
+      </Section>
+
+      {/* ESO ES UN 418 */}
+      <Section variant="surface">
+        <div className={styles.contentBlock}>
+          <Eyebrow>Eso es un 418</Eyebrow>
+          <h2 className={styles.h2}>Ahora mismo.</h2>
+          <ul className={styles.list}>
+            <li>Te venden herramientas que no necesitas.</li>
+            <li>Te prometen soluciones que no encajan con tu problema.</li>
+            <li>Te dicen que todo es IA cuando muchas veces no lo es.</li>
+          </ul>
+          <p className={styles.bigStatement}>Eso es un 418.</p>
+        </div>
+      </Section>
+
+      {/* PARA ESTO NACE */}
+      <Section>
+        <div className={styles.contentBlock}>
+          <Eyebrow>Para esto nace</Eyebrow>
+          <h2 className={styles.h2}>Protocol 418 nace para esto.</h2>
+          <ul className={styles.list}>
+            <li>Para detectar cuándo algo no tiene sentido desde la base.</li>
+            <li>Para separar lo que funciona de lo que solo suena bien.</li>
+            <li>Para construir sistemas reales, no demos bonitas.</li>
+            <li>Para pensar antes de automatizar.</li>
+          </ul>
         </div>
       </Section>
 
       {/* POSTURA */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.contentBlock}>
-          <Eyebrow>04 · La postura</Eyebrow>
+          <Eyebrow>La postura</Eyebrow>
           <p className={styles.statement}>No necesitas más IA. Necesitas mejor estructura.</p>
           <p className={styles.statement}>Menos herramientas, más sistema.</p>
           <p className={styles.statement}>Si no lo has probado, es opinión.</p>
@@ -121,9 +168,9 @@ export default function HomePage() {
       </Section>
 
       {/* EL ADN */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.contentBlock}>
-          <Eyebrow>05 · El ADN</Eyebrow>
+          <Eyebrow>El ADN</Eyebrow>
           <h2 className={styles.h2}>Cómo se construye aquí.</h2>
           <ul className={styles.dnaList}>
             {DNA.map((item) => (
@@ -141,9 +188,9 @@ export default function HomePage() {
       </Section>
 
       {/* QUIÉN HAY DETRÁS */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.contentBlock}>
-          <Eyebrow>06 · Quién hay detrás</Eyebrow>
+          <Eyebrow>Quién hay detrás</Eyebrow>
           <p className={styles.statementSmall}>
             No formador clásico. No influencer de IA. Operador.
           </p>
@@ -156,7 +203,7 @@ export default function HomePage() {
       </Section>
 
       {/* CIERRE */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.closingWrap}>
           <p className={styles.closing}>
             Aquí hay gente que construye cosas reales, con criterio, sin ruido.
@@ -165,7 +212,7 @@ export default function HomePage() {
       </Section>
 
       {/* CTA */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.cta}>
           <Eyebrow>Compartir es ayudar. Be open source, my friend.</Eyebrow>
           <CTAButton variant="primary" ariaLabel="Solicitar acceso al community de WhatsApp">
