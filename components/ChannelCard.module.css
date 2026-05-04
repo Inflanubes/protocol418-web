@@ -55,10 +55,6 @@
   line-height: 1.15;
 }
 
-.symbol {
-  font-size: 0.85em;
-}
-
 .tag {
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);

@@ -22,12 +22,7 @@ export function ChannelCard({ channel, expanded = false }: Props) {
 
         <div className={styles.text}>
           <div className={styles.titleBlock}>
-            <h3 className={styles.name}>
-              <span className={styles.symbol} aria-hidden>
-                {data.symbol}
-              </span>{' '}
-              {data.name}
-            </h3>
+            <h3 className={styles.name}>{data.name}</h3>
             <span className={styles.tag}>{data.tag}</span>
           </div>
 
