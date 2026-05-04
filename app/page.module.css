@@ -228,11 +228,15 @@
   font-weight: 700;
   color: var(--color-text);
 }
-.dnaEmoji {
-  font-size: 28px;
-  line-height: 1;
+.dnaIcon {
+  color: var(--color-accent);
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 2px;
+  width: 28px;
+  height: 28px;
 }
 
 /* CIERRE */

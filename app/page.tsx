@@ -1,5 +1,7 @@
 // app/page.tsx
 import type { Metadata } from 'next';
+import { Brain, Cog, Search, Handshake, Ban } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Section } from '@/components/Section';
 import { Logo } from '@/components/Logo';
 import { Tagline } from '@/components/Tagline';
@@ -12,12 +14,18 @@ export const metadata: Metadata = {
   description: 'Comunidad para construir con IA y automatización sin humo. Brew, Protocol, Core.',
 };
 
-const DNA = [
-  { emoji: '🧠', strong: 'Técnico pero entendible.', body: 'Precisión sin barrera. La complejidad no es un trofeo.' },
-  { emoji: '⚙️', strong: 'Práctico.', body: 'Cero humo. Si no se puede usar, no aporta.' },
-  { emoji: '🔍', strong: 'Curioso.', body: 'Probamos lo nuevo, lo medimos, contamos qué funcionó y qué no.' },
-  { emoji: '🤝', strong: 'Cercano.', body: 'Las dudas se responden. Las preguntas no son tontas.' },
-  { emoji: '🚫', strong: 'Anti-postureo.', body: 'Si suena a influencer, no es protocolo.' },
+type DnaItem = {
+  Icon: LucideIcon;
+  strong: string;
+  body: string;
+};
+
+const DNA: DnaItem[] = [
+  { Icon: Brain, strong: 'Técnico pero entendible.', body: 'Precisión sin barrera. La complejidad no es un trofeo.' },
+  { Icon: Cog, strong: 'Práctico.', body: 'Cero humo. Si no se puede usar, no aporta.' },
+  { Icon: Search, strong: 'Curioso.', body: 'Probamos lo nuevo, lo medimos, contamos qué funcionó y qué no.' },
+  { Icon: Handshake, strong: 'Cercano.', body: 'Las dudas se responden. Las preguntas no son tontas.' },
+  { Icon: Ban, strong: 'Anti-postureo.', body: 'Si suena a influencer, no es protocolo.' },
 ];
 
 export default function HomePage() {
@@ -156,13 +164,13 @@ export default function HomePage() {
           <Eyebrow>El ADN</Eyebrow>
           <h2 className={styles.h2}>Cómo se construye aquí.</h2>
           <ul className={styles.dnaList}>
-            {DNA.map((item) => (
-              <li key={item.strong}>
-                <span className={styles.dnaEmoji} aria-hidden>
-                  {item.emoji}
+            {DNA.map(({ Icon, strong, body }) => (
+              <li key={strong}>
+                <span className={styles.dnaIcon} aria-hidden>
+                  <Icon size={28} strokeWidth={1.75} />
                 </span>
                 <span>
-                  <strong>{item.strong}</strong> {item.body}
+                  <strong>{strong}</strong> {body}
                 </span>
               </li>
             ))}
