@@ -33,29 +33,12 @@ export default function HomePage() {
             <br />
             Esto es protocolo.
           </h1>
-          <p className={styles.heroLead}>
-            Protocol FourEighteen ha nacido de una necesidad. Como sabéis, la tecnología crece
-            exponencialmente y se va adaptando a nuestro entorno —laboral y personal. Pero ahora
-            siento que el mercado está saturado de <em>IA</em>. Se quiere vender hasta en la sopa,
-            y no lo soluciona todo.
-          </p>
-        </div>
-      </Section>
-
-      {/* BIENVENIDA */}
-      <Section variant="surface">
-        <div className={styles.welcomeWrap}>
-          <p className={styles.welcomeMain}>Bienvenido a Protocol FourEighteen.</p>
-          <p className={styles.welcomeTagline}>
-            Compartir es ayudar.
-            <br />
-            <span className={styles.welcomeAccent}>Be open source, my friend.</span>
-          </p>
+          <p className={styles.heroSlogan}>Be open source, my friend.</p>
         </div>
       </Section>
 
       {/* QUÉ ES ESTO — NO ES / ES */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.contentBlock}>
           <Eyebrow>Qué es esto</Eyebrow>
           <h2 className={styles.h2}>No es lo que crees.</h2>
@@ -80,7 +63,7 @@ export default function HomePage() {
       </Section>
 
       {/* ¿QUÉ ES PROTOCOL 418? — el ruido + vibe vs spec */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.contentBlock}>
           <Eyebrow>¿Qué es Protocol 418?</Eyebrow>
           <h2 className={styles.h2}>Más ruido que nunca.</h2>
@@ -107,7 +90,7 @@ export default function HomePage() {
       </Section>
 
       {/* EL ORIGEN — TEAPOT STORY */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.contentBlock}>
           <Eyebrow>El origen</Eyebrow>
           <p className={styles.eyebrowAside}>&lt; &gt; Hyper Text Coffee Pot Control Protocol</p>
@@ -127,7 +110,7 @@ export default function HomePage() {
       </Section>
 
       {/* ESO ES UN 418 */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.contentBlock}>
           <Eyebrow>Eso es un 418</Eyebrow>
           <h2 className={styles.h2}>Ahora mismo.</h2>
@@ -141,7 +124,7 @@ export default function HomePage() {
       </Section>
 
       {/* PARA ESTO NACE */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.contentBlock}>
           <Eyebrow>Para esto nace</Eyebrow>
           <h2 className={styles.h2}>Protocol 418 nace para esto.</h2>
@@ -155,7 +138,7 @@ export default function HomePage() {
       </Section>
 
       {/* POSTURA */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.contentBlock}>
           <Eyebrow>La postura</Eyebrow>
           <p className={styles.statement}>No necesitas más IA. Necesitas mejor estructura.</p>
@@ -168,7 +151,7 @@ export default function HomePage() {
       </Section>
 
       {/* EL ADN */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.contentBlock}>
           <Eyebrow>El ADN</Eyebrow>
           <h2 className={styles.h2}>Cómo se construye aquí.</h2>
@@ -188,7 +171,7 @@ export default function HomePage() {
       </Section>
 
       {/* QUIÉN HAY DETRÁS */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.contentBlock}>
           <Eyebrow>Quién hay detrás</Eyebrow>
           <p className={styles.statementSmall}>
@@ -203,7 +186,7 @@ export default function HomePage() {
       </Section>
 
       {/* CIERRE */}
-      <Section>
+      <Section variant="surface">
         <div className={styles.closingWrap}>
           <p className={styles.closing}>
             Aquí hay gente que construye cosas reales, con criterio, sin ruido.
@@ -212,7 +195,7 @@ export default function HomePage() {
       </Section>
 
       {/* CTA */}
-      <Section variant="surface">
+      <Section>
         <div className={styles.cta}>
           <Eyebrow>Compartir es ayudar. Be open source, my friend.</Eyebrow>
           <CTAButton variant="primary" ariaLabel="Solicitar acceso al community de WhatsApp">
