@@ -81,14 +81,27 @@
   margin-top: var(--space-2);
 }
 
+.subBlock {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.subLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
 .rules {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  margin-top: var(--space-3);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border);
 }
 .rules li {
   font-family: var(--font-mono);
@@ -98,4 +111,45 @@
 .rules li::before {
   content: '▸ ';
   color: var(--color-accent);
+}
+
+.youCan {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.youCan li {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--color-text);
+}
+
+.routes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.routes li {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.closingQuote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  color: var(--color-text);
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-4);
+  margin-top: var(--space-4);
+  font-weight: 500;
+  line-height: 1.5;
 }

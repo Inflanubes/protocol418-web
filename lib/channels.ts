@@ -11,6 +11,9 @@ export type ChannelData = {
   badge: string;
   description: string;
   rules?: string[];
+  youCan?: string[];
+  routes?: string[];
+  closingQuote?: string;
 };
 
 export const CHANNELS: Record<ChannelKey, ChannelData> = {
@@ -24,6 +27,7 @@ export const CHANNELS: Record<ChannelKey, ChannelData> = {
     badge: '/brand/system-badge.png',
     description:
       'Aquí está el protocolo. Qué es esto, cómo funciona y qué significa cada cosa. Léelo antes de escribir. Si entiendes el sistema → estás en el work-flow.',
+    closingQuote: 'Si entiendes el sistema, estás en el work-flow.',
   },
   brew: {
     key: 'brew',
@@ -41,6 +45,11 @@ export const CHANNELS: Record<ChannelKey, ChannelData> = {
       'Si no lo has probado → es opinión',
       'Si lo complicas → probablemente es un 418',
     ],
+    routes: [
+      'Si es algo que quieres comentar → Core',
+      'Si no sabes las normas → System',
+    ],
+    closingQuote: 'Aquí no buscamos respuestas rápidas. Buscamos soluciones que funcionen.',
   },
   core: {
     key: 'core',
@@ -52,6 +61,9 @@ export const CHANNELS: Record<ChannelKey, ChannelData> = {
     badge: '/brand/core-badge.png',
     description:
       'Aquí estamos nosotros. Habla, pregunta, conecta. Sin filtros. Sin humo. Si estás dentro → formas parte del core de FourEighteen.',
+    youCan: ['Preguntar', 'Hablar', 'Compartir ideas', 'Conectar con otros'],
+    routes: ['Si lo que vas a escribir es algo que estás construyendo → muévelo a Brew'],
+    closingQuote: 'El Core no es para consumir. Es para formar parte. Si estás aquí, estás dentro.',
   },
 };
 

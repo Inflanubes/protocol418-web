@@ -33,12 +33,42 @@ export function ChannelCard({ channel, expanded = false }: Props) {
       {expanded && (
         <>
           <p className={styles.description}>{data.description}</p>
+
           {data.rules && (
-            <ul className={styles.rules}>
-              {data.rules.map((rule) => (
-                <li key={rule}>{rule}</li>
-              ))}
-            </ul>
+            <div className={styles.subBlock}>
+              <span className={styles.subLabel}>Reglas</span>
+              <ul className={styles.rules}>
+                {data.rules.map((rule) => (
+                  <li key={rule}>{rule}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {data.youCan && (
+            <div className={styles.subBlock}>
+              <span className={styles.subLabel}>Aquí puedes</span>
+              <ul className={styles.youCan}>
+                {data.youCan.map((action) => (
+                  <li key={action}>{action}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {data.routes && (
+            <div className={styles.subBlock}>
+              <span className={styles.subLabel}>Routes</span>
+              <ul className={styles.routes}>
+                {data.routes.map((route) => (
+                  <li key={route}>{route}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {data.closingQuote && (
+            <p className={styles.closingQuote}>{data.closingQuote}</p>
           )}
         </>
       )}
