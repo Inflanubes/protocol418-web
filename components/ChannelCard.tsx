@@ -10,30 +10,36 @@ type Props = {
 
 export function ChannelCard({ channel, expanded = false }: Props) {
   const data = CHANNELS[channel];
+  const hasFooter =
+    expanded && Boolean(data.rules || data.youCan || data.routes || data.closingQuote);
+
   return (
     <article className={`${styles.card} ${expanded ? styles.expanded : ''}`}>
-      <div className={styles.header}>
+      <div className={styles.top}>
         <div className={styles.badgeWrap}>
-          <Image src={data.badge} alt="" width={64} height={64} className={styles.badge} />
+          <Image src={data.badge} alt="" width={160} height={160} className={styles.badge} />
         </div>
-        <div className={styles.titleBlock}>
-          <h3 className={styles.name}>
-            <span className={styles.symbol} aria-hidden>
-              {data.symbol}
-            </span>{' '}
-            {data.name}
-          </h3>
-          <span className={styles.tag}>{data.tag}</span>
+
+        <div className={styles.text}>
+          <div className={styles.titleBlock}>
+            <h3 className={styles.name}>
+              <span className={styles.symbol} aria-hidden>
+                {data.symbol}
+              </span>{' '}
+              {data.name}
+            </h3>
+            <span className={styles.tag}>{data.tag}</span>
+          </div>
+
+          <p className={styles.verb}>{data.verb}</p>
+          <p className={styles.essence}>{data.essence}</p>
+
+          {expanded && <p className={styles.description}>{data.description}</p>}
         </div>
       </div>
 
-      <p className={styles.verb}>{data.verb}</p>
-      <p className={styles.essence}>{data.essence}</p>
-
-      {expanded && (
-        <>
-          <p className={styles.description}>{data.description}</p>
-
+      {hasFooter && (
+        <div className={styles.footer}>
           {data.rules && (
             <div className={styles.subBlock}>
               <span className={styles.subLabel}>Reglas</span>
@@ -67,10 +73,8 @@ export function ChannelCard({ channel, expanded = false }: Props) {
             </div>
           )}
 
-          {data.closingQuote && (
-            <p className={styles.closingQuote}>{data.closingQuote}</p>
-          )}
-        </>
+          {data.closingQuote && <p className={styles.closingQuote}>{data.closingQuote}</p>}
+        </div>
       )}
     </article>
   );

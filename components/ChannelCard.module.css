@@ -5,21 +5,23 @@
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-6);
   height: 100%;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
+/* TOP: badge LEFT — text RIGHT */
+.top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-6);
+  align-items: start;
 }
 
 .badgeWrap {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius);
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-bg);
   display: flex;
@@ -27,9 +29,16 @@
   justify-content: center;
 }
 .badge {
-  width: 56px;
-  height: 56px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
 }
 
 .titleBlock {
@@ -81,10 +90,18 @@
   margin-top: var(--space-2);
 }
 
-.subBlock {
-  margin-top: var(--space-3);
-  padding-top: var(--space-3);
+/* FOOTER: full-width sub-blocks below the top row */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 20px);
+  padding-top: var(--space-5, 20px);
   border-top: 1px solid var(--color-border);
+}
+
+.subBlock {
+  display: flex;
+  flex-direction: column;
 }
 
 .subLabel {
@@ -149,7 +166,31 @@
   color: var(--color-text);
   border-left: 3px solid var(--color-accent);
   padding-left: var(--space-4);
-  margin-top: var(--space-4);
   font-weight: 500;
   line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    justify-items: center;
+    text-align: center;
+  }
+  .text {
+    align-items: center;
+  }
+  .titleBlock {
+    align-items: center;
+  }
+  .description {
+    text-align: left;
+  }
+  .badgeWrap {
+    width: 120px;
+    height: 120px;
+  }
+  .closingQuote {
+    text-align: left;
+  }
 }
