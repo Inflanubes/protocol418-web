@@ -6,7 +6,7 @@ import {
   Flame,
   Bug,
   Bomb,
-  Anchor,
+  Compass,
   Trash2,
   Zap,
   EyeOff,
@@ -60,7 +60,7 @@ export const GLOSSARY: GlossaryTerm[] = [
   },
   {
     term: 'Fran',
-    Icon: Anchor,
+    Icon: Compass,
     definition: 'Sólido. Bien pensado. Sin fisuras.',
     examples: ['Esto está Fran', 'Hay que franificar esto más'],
   },
