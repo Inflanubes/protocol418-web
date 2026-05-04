@@ -5,11 +5,12 @@ import styles from './GlossaryEntry.module.css';
 type Props = { entry: GlossaryTerm };
 
 export function GlossaryEntry({ entry }: Props) {
+  const { Icon } = entry;
   return (
     <article className={styles.entry}>
       <div className={styles.header}>
-        <span className={styles.emoji} aria-hidden>
-          {entry.emoji}
+        <span className={styles.icon} aria-hidden>
+          <Icon size={26} strokeWidth={1.75} />
         </span>
         <h3 className={styles.term}>{entry.term}</h3>
       </div>

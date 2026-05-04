@@ -15,7 +15,15 @@
   gap: var(--space-3);
 }
 
-.emoji { font-size: 24px; }
+.icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
 
 .term {
   font-family: var(--font-mono);
