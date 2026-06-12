@@ -5,12 +5,14 @@ import type { LucideIcon } from 'lucide-react';
 import { Section } from '@/components/Section';
 import { Eyebrow } from '@/components/Eyebrow';
 import { CTAButton } from '@/components/CTAButton';
+import { ClassCard } from '@/components/ClassCard';
+import { CLASSES_BY_DATE } from '@/lib/classes';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Brew — Lo que estamos cocinando — Protocol 418',
+  title: 'Brew — Las clases — Protocol 418',
   description:
-    'El feed de Protocol 418. Brew Logs, Hotfix, Protocol y 418 Moments. Lo que se está construyendo, en tiempo real.',
+    'Las clases de Protocol 418. Cada té es una clase: el vídeo y todos sus recursos en un solo sitio.',
 };
 
 type PostType = {
@@ -51,15 +53,33 @@ export default function BrewPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <Eyebrow>El feed</Eyebrow>
+          <Eyebrow>Las clases</Eyebrow>
           <h1 className={styles.title}>Brew.</h1>
           <p className={styles.lead}>
-            Aquí os contaremos lo que estamos <em>cocinando</em>.
+            Cada clase es un <em>té</em>. El vídeo y todos sus recursos, en un solo sitio.
           </p>
         </div>
       </Section>
 
       <Section variant="surface">
+        {CLASSES_BY_DATE.length > 0 ? (
+          <ul className={styles.grid}>
+            {CLASSES_BY_DATE.map((entry) => (
+              <li key={entry.slug}>
+                <ClassCard entry={entry} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className={styles.empty}>
+            <p className={styles.emptyText}>
+              Estamos <em>cocinando</em> la primera clase.
+            </p>
+          </div>
+        )}
+      </Section>
+
+      <Section>
         <div className={styles.contentBlock}>
           <Eyebrow>Categorías</Eyebrow>
           <h2 className={styles.h2}>Tipos de post.</h2>
@@ -80,14 +100,6 @@ export default function BrewPage() {
               </li>
             ))}
           </ul>
-        </div>
-      </Section>
-
-      <Section>
-        <div className={styles.empty}>
-          <p className={styles.emptyText}>
-            Estamos <em>cocinando</em> nuevas ideas.
-          </p>
         </div>
       </Section>
 
