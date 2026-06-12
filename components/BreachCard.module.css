@@ -1,0 +1,80 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  scroll-margin-top: 96px; /* el ancla #slug no queda tapada por el nav fijo */
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+}
+
+/* alternancia: en flip, la imagen pasa a la derecha */
+.flip .media {
+  order: 2;
+}
+
+.breachling {
+  width: 100%;
+  height: auto;
+  max-width: 360px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--tracking-uppercase);
+  color: var(--color-accent);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  line-height: 1.05;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.hook {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text);
+}
+
+.remate {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  color: var(--color-accent);
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+  }
+  /* en móvil siempre imagen arriba, da igual flip */
+  .media,
+  .flip .media {
+    order: 0;
+  }
+  .body {
+    align-items: center;
+  }
+  .label {
+    font-size: var(--fs-h1);
+  }
+}
