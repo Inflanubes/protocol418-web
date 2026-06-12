@@ -91,6 +91,16 @@ export const CLASSES: ClassEntry[] = [
         href: 'https://chai.protocol418.com',
         type: 'link',
       },
+      {
+        label: 'Skill: vídeo → web',
+        href: '/skills/video-to-website.zip', // skill curada (AIS School) servida desde el dominio
+        type: 'skill',
+      },
+      {
+        label: 'Skill: Seedance loop',
+        href: '/skills/seedance-loop.zip', // skill curada (AIS School) servida desde el dominio
+        type: 'skill',
+      },
     ],
   },
 ];
