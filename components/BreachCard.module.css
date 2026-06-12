@@ -1,4 +1,32 @@
+/* Escena: da perspectiva 3D y aloja el ancla #slug */
+.scene {
+  perspective: 1600px;
+  scroll-margin-top: 96px; /* el ancla no queda tapada por el nav fijo */
+}
+
+/* La card es el botón que gira. Reset de botón + apilado de caras en grid. */
 .card {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  appearance: none;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Las dos caras ocupan la MISMA celda → la altura se ajusta a la más alta */
+.face {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -7,7 +35,32 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  scroll-margin-top: 96px; /* el ancla #slug no queda tapada por el nav fijo */
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Giro: por hover (solo en dispositivos con ratón) o por estado (tap/teclado) */
+@media (hover: hover) and (pointer: fine) {
+  .scene:hover .card {
+    transform: rotateY(180deg);
+  }
+}
+
+.card.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-xl);
+}
+
+/* Alternancia de lado de la imagen (frontal y trasera juntas) */
+.mirror .media {
+  order: 2;
 }
 
 .media {
@@ -15,15 +68,18 @@
   justify-content: center;
 }
 
-/* alternancia: en flip, la imagen pasa a la derecha */
-.flip .media {
-  order: 2;
-}
-
 .breachling {
   width: 100%;
   height: auto;
   max-width: 360px;
+}
+
+.aviso {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 360px;
+  border-radius: var(--radius);
 }
 
 .body {
@@ -59,16 +115,22 @@
   color: var(--color-accent);
 }
 
+.desarrollo {
+  font-size: var(--fs-h2);
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
 @media (max-width: 720px) {
-  .card {
+  .face {
     grid-template-columns: 1fr;
     gap: var(--space-6);
     padding: var(--space-8) var(--space-6);
     text-align: center;
   }
-  /* en móvil siempre imagen arriba, da igual flip */
+  /* en móvil la imagen siempre arriba, da igual mirror */
   .media,
-  .flip .media {
+  .mirror .media {
     order: 0;
   }
   .body {
@@ -76,5 +138,15 @@
   }
   .label {
     font-size: var(--fs-h1);
+  }
+  .aviso {
+    max-height: 300px;
+  }
+}
+
+/* Respeta usuarios que reducen movimiento: sin animación de giro */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
   }
 }

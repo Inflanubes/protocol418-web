@@ -31,7 +31,7 @@ export default function BreachPage() {
         <ul className={styles.stack}>
           {BREACHES.map((breach, i) => (
             <li key={breach.slug}>
-              <BreachCard breach={breach} flip={i % 2 === 1} />
+              <BreachCard breach={breach} mirror={i % 2 === 1} />
             </li>
           ))}
         </ul>
