@@ -1,0 +1,29 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 760px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  letter-spacing: var(--tracking-tight);
+}
+
+.lead {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  list-style: none;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
