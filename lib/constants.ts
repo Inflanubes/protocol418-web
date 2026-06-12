@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { href: '/', label: 'Manifiesto' },
   { href: '/protocol', label: 'Protocol' },
   { href: '/brew', label: 'Brew' },
+  { href: '/breach', label: 'Breach' },
   { href: '/comunidad', label: 'Comunidad' },
 ] as const;
 
