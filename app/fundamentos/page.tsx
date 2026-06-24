@@ -30,20 +30,18 @@ export default function FundamentosPage() {
         </div>
       </Section>
 
-      <Section variant="surface">
-        {groups.map((group, gi) => (
-          <div key={group.movement}>
-            <MovementHeader index={gi + 1} title={group.movement} />
-            <ul className={styles.cards}>
-              {group.items.map((entry) => (
-                <li key={entry.slug}>
-                  <FundamentoCard entry={entry} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </Section>
+      {groups.map((group, gi) => (
+        <Section key={group.movement} variant={gi % 2 === 0 ? 'surface' : 'default'}>
+          <MovementHeader index={gi + 1} title={group.movement} />
+          <ul className={styles.cards}>
+            {group.items.map((entry) => (
+              <li key={entry.slug}>
+                <FundamentoCard entry={entry} />
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ))}
 
       <Section>
         <div className={styles.cta}>
