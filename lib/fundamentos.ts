@@ -201,7 +201,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/05-build-vs-buy.png',
         alt: 'Árbol de decisión Build vs Buy: cada funcionalidad se construye a medida o se compra (producto o SaaS).',
         width: 1376,
         height: 768,
@@ -244,7 +244,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/06-espectro-movil.png',
         alt: 'Espectro de presencia móvil: web móvil → responsive → PWA → app nativa, con su coste creciente.',
         width: 1376,
         height: 768,
@@ -288,7 +288,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/07-categorias-no-code.png',
         alt: 'Mapa de categorías No Code: web, base de datos, automatización, emailing, formularios, CRM, analytics.',
         width: 1376,
         height: 768,
@@ -331,7 +331,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/08-trinomio-producto.png',
         alt: 'Trinomio de producto: Producto (deseable) + Diseño (usable) + Ingeniería (realizable) se solapan.',
         width: 1376,
         height: 768,
