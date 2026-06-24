@@ -1,0 +1,6 @@
+/* app/fundamentos/page.module.css */
+.intro { display: flex; flex-direction: column; gap: var(--space-4); max-width: 760px; }
+.title { font-family: var(--font-display); font-size: var(--fs-display); letter-spacing: var(--tracking-tight); }
+.lead { font-size: var(--fs-body-lg); color: var(--color-text-muted); }
+.cards { display: flex; flex-direction: column; gap: var(--space-4); list-style: none; padding: 0; margin: var(--space-4) 0 0; }
+.cta { display: flex; justify-content: center; }
