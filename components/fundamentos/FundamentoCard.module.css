@@ -1,0 +1,36 @@
+/* components/fundamentos/FundamentoCard.module.css */
+.card {
+  border: 1px solid var(--color-border, #232323);
+  border-radius: 14px;
+  background: var(--color-surface, #141414);
+  overflow: hidden;
+}
+.card.open { border-color: var(--color-accent); }
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-4);
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-4) var(--space-5);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+}
+.level { font-family: var(--font-mono); font-size: var(--fs-body-lg); color: var(--color-accent); }
+.headerText { display: flex; flex-direction: column; gap: 2px; }
+.title { font-family: var(--font-display); font-size: var(--fs-h3, 1.25rem); }
+.summary { font-size: var(--fs-body-sm); color: var(--color-text-muted); }
+.hook { font-family: var(--font-mono); font-size: var(--fs-body-sm); color: var(--color-accent); margin-top: var(--space-1); }
+.chevron { transition: transform 0.2s ease; color: var(--color-text-muted); }
+.card.open .chevron { transform: rotate(180deg); }
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: 0 var(--space-5) var(--space-5);
+}
