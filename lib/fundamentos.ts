@@ -186,6 +186,179 @@ export const FUNDAMENTOS: Fundamento[] = [
     ],
     sources: ['16'],
   },
+  {
+    level: '05',
+    slug: 'de-que-se-hace-una-app',
+    movement: 'Cómo se construye',
+    title: 'De qué se hace una app',
+    hook: 'Construir una app no es, necesariamente, programar.',
+    summary: 'Build vs buy, piezas de LEGO y por qué open source no significa gratis.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Una app no se programa entera desde cero: se diseña como un montaje de piezas. Divides lo que hace en bloques —pagos, login, buscador, emailing— y para cada bloque eliges la mejor pieza. La decisión importante no es qué código escribes, sino qué arquitectura montas.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Árbol de decisión Build vs Buy: cada funcionalidad se construye a medida o se compra (producto o SaaS).',
+        width: 1376,
+        height: 768,
+        caption: 'La regla: lo que te diferencia, constrúyelo; lo estándar, cómpralo.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Para cada bloque tienes dos caminos: construirlo a medida (control y diferenciación) o partir de algo ya hecho —un producto que instalas o un SaaS que ya está corriendo en el servidor de otro—. Ninguno es mejor; es coherente o no con lo que te hace distinto. La regla de oro: lo que te diferencia, constrúyelo; lo estándar (email, pagos, CRM), cómpralo. No reinventes la rueda.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Build vs Buy', def: 'Construir una pieza a medida o partir de una ya hecha.' },
+          { term: 'SaaS', def: 'Software que no instalas: ya corre en el servidor del proveedor (Gmail, Shopify).' },
+          { term: 'Open Source', def: 'Código que puedes ver y modificar. No es lo mismo que gratis.' },
+          { term: 'TCO', def: 'Coste total de propiedad: lo que cuesta de verdad mantener algo, no solo su precio.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'Open source no significa gratis, ni gratis significa open source: una habla del código (lo puedes ver y tocar), la otra del precio. Y montar una app “seria” suele ser ensamblar bien piezas de mercado y SaaS, no escribir cada línea.',
+      },
+    ],
+    sources: ['13'],
+  },
+  {
+    level: '06',
+    slug: 'web-o-app-el-espectro',
+    movement: 'Cómo se construye',
+    title: 'Web o app: el espectro y sus ladrillos',
+    hook: '“¿Web o app?” es la pregunta equivocada.',
+    summary: 'El abanico de web a app nativa, sus ladrillos (HTML/CSS) y por qué tener app no garantiza nada.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Desde 2015 se busca más desde el móvil que desde el ordenador, así que se diseña primero para la pantalla pequeña y luego se escala, no al revés. Y entre “una web” y “una app” no hay dos opciones: hay un abanico —web móvil, responsive, PWA, app nativa— y cada escalón cuesta más dinero y tiempo a cambio de más integración con el dispositivo.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Espectro de presencia móvil: web móvil → responsive → PWA → app nativa, con su coste creciente.',
+        width: 1376,
+        height: 768,
+        caption: 'De web móvil a app nativa: más capacidad, más coste.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Por debajo, los ladrillos son siempre los mismos: el HTML pone la estructura y el contenido, el CSS pone el aspecto, y la URL te lleva ahí. Una app nativa se construye con el kit de cada sistema (iOS, Android) y depende de las tiendas para distribuirse y actualizarse; una PWA es una web que se siente como app sin pasar por la tienda.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'HTML', def: 'La estructura y el contenido de una página.' },
+          { term: 'CSS', def: 'El estilo: colores, tipografías, disposición.' },
+          { term: 'PWA', def: 'Una web que se instala y funciona como app, sin pasar por la tienda.' },
+          { term: 'Nativa', def: 'App hecha con el kit de cada sistema; máxima integración, más coste.' },
+          { term: 'ASO', def: 'El “SEO de las apps”: que te encuentren y descarguen en la tienda.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'La pregunta no es “¿web o app?”, sino en qué fase está tu cliente y cada cuánto vuelve. Y tener app no garantiza nada: la gente descarga muchísimas y usa un puñado —cinco apps acaparan el 80% del tiempo—.',
+      },
+    ],
+    sources: ['19'],
+  },
+  {
+    level: '07',
+    slug: 'construir-sin-programar-no-code',
+    movement: 'Cómo se construye',
+    title: 'Construir sin (apenas) programar: No Code',
+    hook: 'No Code no significa fácil.',
+    summary: 'Qué es (y qué no) el No Code, dónde es ×100 y dónde choca con su techo.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'No Code es construir software sin escribir código: en vez de líneas, encajas cajas que ya traen resueltos los servidores, la seguridad y el mantenimiento. No es lo mismo que Low Code, que sí pide algo de código pero acelera el desarrollo. En ambos casos sigues construyendo: hay que pensar flujos, datos y lógica.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Mapa de categorías No Code: web, base de datos, automatización, emailing, formularios, CRM, analytics.',
+        width: 1376,
+        height: 768,
+        caption: 'Casi nada se monta con una sola herramienta: se ensambla un stack.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Casi ningún producto se monta con una sola herramienta: ensamblas un stack —web, base de datos, automatización, emailing, formularios— conectando piezas. La ventaja es arrancar barato y escalar. El límite es el techo del SaaS: solo puedes hacer lo que la herramienta permite; salirte de ahí puede ser difícil o imposible.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'No Code', def: 'Construir software sin escribir código, encajando piezas visuales.' },
+          { term: 'Low Code', def: 'Como el No Code pero admite algo de código para ir más lejos.' },
+          { term: 'Automatización', def: 'Conectar herramientas para que se pasen datos solas (Zapier, Make, n8n).' },
+          { term: 'Stack', def: 'El conjunto de herramientas que, juntas, forman tu producto.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'No Code no significa fácil: significa multiplicar tu productividad por 10 o por 100 si dominas la herramienta —y eso lleva tiempo—. Y quien sabe algo de código exprime el No Code mejor, no peor: ve uniones que un no-técnico ni detecta.',
+      },
+    ],
+    sources: ['12'],
+  },
+  {
+    level: '08',
+    slug: 'como-nace-un-producto-digital',
+    movement: 'Cómo se construye',
+    title: 'Cómo nace un producto digital',
+    hook: 'No existe la arquitectura ideal.',
+    summary: 'Qué es un producto digital, quién lo construye y por qué el proceso nunca es una línea recta.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Un producto digital vive en la intersección de tres cosas: el cliente (que lo usa), el negocio (que lo sostiene) y la tecnología (que lo hace posible). Si falta una pata, no es producto. Y no lo hace un programador en una cueva: es un deporte de equipo —producto, diseño, ingeniería, QA, research, datos—.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Trinomio de producto: Producto (deseable) + Diseño (usable) + Ingeniería (realizable) se solapan.',
+        width: 1376,
+        height: 768,
+        caption: 'Deseable, usable, realizable: las buenas decisiones salen de los tres juntos.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Las buenas decisiones salen del trinomio: producto (¿es deseable para el negocio?), diseño (¿es usable?) e ingeniería (¿es realizable?). El proceso es un ciclo, no una línea: investigar, definir, construir, medir, repetir. “Cambios y más cambios” es lo normal. Se define con historias de usuario y criterios claros, pero al final la comunicación constante alinea más que cualquier documento.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Trinomio', def: 'Producto + Diseño + Ingeniería decidiendo juntos.' },
+          { term: 'Historia de usuario', def: 'Una necesidad escrita como “como X, quiero Y, para Z”.' },
+          { term: 'Backlog', def: 'La lista priorizada de lo que falta por hacer.' },
+          { term: 'Ágil', def: 'Trabajar en ciclos cortos con rutinas (daily, demo, retro) para ajustar rápido.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'No existe la arquitectura ideal: solo soluciones que sirven a la vez al usuario y al negocio. Perseguir la perfecta es perseguir un fantasma. Y casi siempre, comunicación > documentación: priorizar bien el backlog importa más que tener papeles perfectos.',
+      },
+    ],
+    sources: ['15'],
+  },
 ];
 
 export function getByLevel(level: string): Fundamento | undefined {
