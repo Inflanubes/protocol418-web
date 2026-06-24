@@ -135,10 +135,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/03-modelo-tracking.png',
         alt: 'Modelo publicitario: anunciante → píxel → ad server de un tercero → banner en una web cualquiera.',
-        width: 1600,
-        height: 900,
+        width: 1376,
+        height: 768,
         caption: 'La cookie de tercero: el mismo píxel repetido en miles de webs.',
       },
       {
@@ -164,10 +164,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/04-provider-consumer.png',
         alt: 'Triángulo provider ↔ consumer ↔ usuario final en una llamada a una API.',
-        width: 1600,
-        height: 900,
+        width: 1376,
+        height: 768,
         caption: 'Provider expone, consumer consume, el usuario final disfruta.',
       },
       {
