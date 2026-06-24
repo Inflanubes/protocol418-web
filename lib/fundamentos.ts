@@ -359,6 +359,135 @@ export const FUNDAMENTOS: Fundamento[] = [
     ],
     sources: ['15'],
   },
+  {
+    level: '09',
+    slug: 'que-es-la-ia-de-verdad',
+    movement: 'IA, sensores y voz',
+    title: 'Qué es la IA de verdad',
+    hook: 'La IA no da certezas: da probabilidades.',
+    summary: 'IA, machine learning y deep learning no son lo mismo — y por qué todo sale como un número.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Llamamos IA a que un ordenador haga algo que en una persona llamaríamos inteligente. Pero IA, machine learning y deep learning no son sinónimos: son círculos concéntricos. La IA es el círculo grande; dentro está el machine learning (programas que mejoran cuanto más los entrenas con datos); y dentro de ese, el deep learning. Casi todo lo que hoy llaman “IA” es, en realidad, machine learning resolviendo UNA tarea concreta.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Círculos concéntricos: Inteligencia Artificial contiene Machine Learning, que contiene Deep Learning.',
+        width: 1376,
+        height: 768,
+        caption: 'IA ⊃ Machine Learning ⊃ Deep Learning: no son sinónimos.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Una IA no entiende: detecta patrones del pasado y los proyecta. Y no devuelve verdades, devuelve probabilidades: detrás de “esto es una cara sonriente” hay un número de confianza tipo 0,99, no un sí rotundo. Además, un modelo no se termina: si dejas de reentrenarlo con datos nuevos, se degrada.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'IA', def: 'Que un ordenador haga algo que en un humano llamaríamos inteligente.' },
+          { term: 'Machine Learning', def: 'Programas que mejoran cuanto más datos procesan.' },
+          { term: 'Deep Learning', def: 'Una forma de machine learning para problemas más complejos.' },
+          { term: 'Modelo', def: 'El resultado de entrenar con datos; predice, no entiende.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'La IA no da certezas, da probabilidades: todo lo que “reconoce” es en el fondo un número de confianza. Y casi todo lo que se vende como “IA” es machine learning haciendo una sola cosa —no una mente—.',
+      },
+    ],
+    sources: ['22'],
+  },
+  {
+    level: '10',
+    slug: 'de-donde-salen-los-datos-iot',
+    movement: 'IA, sensores y voz',
+    title: 'De dónde salen los datos: IoT',
+    hook: 'El valor no está en el sensor, sino en cruzar datos de muchos.',
+    summary: 'Qué es el IoT, de qué piezas se compone y por qué no todo va al cloud.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'IoT (internet de las cosas) son objetos físicos que, al conectarse a internet, dejan una huella de datos y permiten automatizar cosas. Un sistema IoT tiene siempre las mismas piezas: el objeto, sensores que miden, conectividad que transmite, un sitio donde se procesa (normalmente el cloud) y una API que abre esos datos a otros. Cada cacharro necesita además energía y algo de memoria para decidir por sí mismo.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Flujo IoT de extremo a extremo: sensor → conectividad → procesado (cloud o edge) → API hacia terceros.',
+        width: 1376,
+        height: 768,
+        caption: 'Sensor → conectividad → procesado (cloud o edge) → API hacia otros.',
+      },
+      {
+        type: 'texto',
+        body:
+          'El valor no está en un sensor suelto, sino en cruzar los datos de muchos dispositivos y compararlos con el histórico: tu pulsera te avisa de algo gracias a los datos de miles de otras. Y mandarlo TODO al cloud es ineficiente: lo inteligente es procesar cerca del aparato (edge computing) y enviar solo lo que importa. Más dispositivos también significan más superficie de ataque: el mayor freno del IoT no es técnico, es la privacidad.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'IoT', def: 'Objetos físicos conectados a internet que generan datos.' },
+          { term: 'Sensor', def: 'El componente que mide algo del mundo real (temperatura, movimiento…).' },
+          { term: 'Edge computing', def: 'Procesar cerca del dispositivo en vez de mandarlo todo al cloud.' },
+          { term: 'Big Data', def: 'Volúmenes de datos tan grandes que piden otras herramientas.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'El valor del IoT no está en el sensor, sino en agregar los datos de muchos: un dispositivo solo no vale casi nada. Y por eso existe el edge computing —mandarlo todo a la nube sería lento y caro—.',
+      },
+    ],
+    sources: ['2'],
+  },
+  {
+    level: '11',
+    slug: 'hablar-con-maquinas-asistentes-de-voz',
+    movement: 'IA, sensores y voz',
+    title: 'Hablar con máquinas: asistentes de voz',
+    hook: 'El asistente no “sabe” la respuesta: la saca de algún sitio.',
+    summary: 'Qué pasa entre que hablas y te responde, y por qué un asistente es un intermediario, no un oráculo.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Un asistente —de voz o de texto— es software con IA que ejecuta lo que le pides. Hablarle en vez de clicar es un cambio de interfaz (de la pantalla gráfica a la voz) tan grande como lo fueron la web o las apps. Por dentro, una conversación pasa por una cadena: pasar tu voz a texto, entender qué quieres, decidir qué hacer y de dónde sacar el dato, generar la respuesta y volverla a convertir en voz.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Cadena de un sistema conversacional: ASR → NLU → gestión del diálogo → NLG → TTS.',
+        width: 1376,
+        height: 768,
+        caption: 'Voz → texto → intención → decisión → respuesta → voz.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Hay dos familias: los de reglas (baratos, predecibles, limitados) y los de IA conversacional (manejan preguntas abiertas pero necesitan muchos datos). Y una conversación “controlada” —un menú, una tarea concreta— es muchísimo más fácil que una abierta sobre cualquier tema.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'VUI', def: 'Interfaz de voz: hablas en vez de tocar una pantalla.' },
+          { term: 'ASR', def: 'Reconocimiento de voz: convierte lo que dices en texto.' },
+          { term: 'NLU', def: 'Comprensión del lenguaje: entiende qué quieres decir.' },
+          { term: 'Wake word', def: 'La palabra que activa al asistente (“Ok, Google”).' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'El asistente no “sabe” la respuesta: la saca de fuentes —funciones propias, skills de terceros o lo que los buscadores tienen indexado—. Es un intermediario, no un oráculo. Y quien controla ese intermediario controla todas tus interacciones digitales.',
+      },
+    ],
+    sources: ['21'],
+  },
 ];
 
 export function getByLevel(level: string): Fundamento | undefined {
