@@ -55,10 +55,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/01-como-viaja-una-web.png',
         alt: 'Flujo: navegador pide el dominio, el DNS lo traduce a IP, el servidor responde con el HTML.',
-        width: 1600,
-        height: 900,
+        width: 1376,
+        height: 768,
         caption: 'Una petición, cuatro pasos: cliente → DNS → servidor → HTML.',
       },
       {
@@ -97,10 +97,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/02-iaas-paas-saas.png',
         alt: 'Pirámide IaaS / PaaS / SaaS con la analogía de la pizza casera, congelada y en restaurante.',
-        width: 1600,
-        height: 900,
+        width: 1376,
+        height: 768,
         caption: 'IaaS, PaaS, SaaS: cuánto pones tú y cuánto te lo dan hecho.',
       },
       {
