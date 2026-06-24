@@ -1,6 +1,7 @@
 // app/brew/page.tsx
 import type { Metadata } from 'next';
-import { Coffee, Flame, Cog, Bomb } from 'lucide-react';
+import Link from 'next/link';
+import { Coffee, Flame, Cog, Bomb, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Section } from '@/components/Section';
 import { Eyebrow } from '@/components/Eyebrow';
@@ -100,6 +101,21 @@ export default function BrewPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </Section>
+
+      <Section>
+        <div className={styles.contentBlock}>
+          <Eyebrow>¿Empiezas de cero?</Eyebrow>
+          <h2 className={styles.h2}>Pasa por Fundamentos.</h2>
+          <p className={styles.lead}>
+            Antes de una clase entera, lo básico que seguro no te han contado: cómo funciona de
+            verdad lo que usas cada día.
+          </p>
+          <Link href="/fundamentos" className={styles.fundamentosLink}>
+            Ir a Fundamentos
+            <ArrowRight size={16} strokeWidth={1.75} aria-hidden />
+          </Link>
         </div>
       </Section>
 
