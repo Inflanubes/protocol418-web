@@ -503,7 +503,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/12-triada-cia.png',
         alt: 'Tríada CIA: triángulo con Confidencialidad, Integridad y Disponibilidad.',
         width: 1376,
         height: 768,
@@ -546,10 +546,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/13-efectos-de-red.png',
         alt: 'Una red pequeña con pocas conexiones frente a una red grande y densa: el valor crece con los nodos.',
-        width: 1376,
-        height: 768,
+        width: 1672,
+        height: 941,
         caption: 'Más usuarios, más valor para cada uno: el efecto de red.',
       },
       {
@@ -589,7 +589,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/14-modelos-monetizacion.png',
         alt: 'Cuadrícula de los cuatro modelos de monetización: Free, Freemium, Paid, Paymium.',
         width: 1376,
         height: 768,
@@ -632,7 +632,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/15-capex-opex.png',
         alt: 'Dos curvas de coste: CAPEX como un gran desembolso inicial frente a OPEX como pago gradual por uso.',
         width: 1376,
         height: 768,
