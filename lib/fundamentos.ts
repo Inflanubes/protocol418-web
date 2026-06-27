@@ -374,7 +374,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/09-ia-ml-dl.png',
         alt: 'Círculos concéntricos: Inteligencia Artificial contiene Machine Learning, que contiene Deep Learning.',
         width: 1376,
         height: 768,
@@ -417,7 +417,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/10-iot-end-to-end.png',
         alt: 'Flujo IoT de extremo a extremo: sensor → conectividad → procesado (cloud o edge) → API hacia terceros.',
         width: 1376,
         height: 768,
@@ -460,7 +460,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/11-pipeline-voz.png',
         alt: 'Cadena de un sistema conversacional: ASR → NLU → gestión del diálogo → NLG → TTS.',
         width: 1376,
         height: 768,
