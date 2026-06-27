@@ -675,10 +675,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/16-correlacion-causalidad.png',
         alt: 'Dos líneas que suben juntas con un símbolo de “distinto”: correlación no implica causalidad.',
-        width: 1376,
-        height: 768,
+        width: 1672,
+        height: 941,
         caption: 'Que vayan juntas no significa que una cause la otra.',
       },
       {
@@ -718,10 +718,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/17-embudo-metricas.png',
         alt: 'Embudo de métricas: adquisición arriba, retención destacada en el centro, revenue abajo.',
-        width: 1376,
-        height: 768,
+        width: 1672,
+        height: 941,
         caption: 'El usuario es un embudo: la retención es donde está el valor.',
       },
       {
@@ -761,10 +761,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/18-reidentificacion.png',
         alt: 'Una silueta anónima que, cruzando edad, sexo y código postal, se convierte en una persona identificada.',
-        width: 1376,
-        height: 768,
+        width: 1672,
+        height: 941,
         caption: 'Edad + sexo + código postal suelen bastar para ponerte nombre.',
       },
       {
@@ -804,10 +804,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/19-gafam.png',
         alt: 'Unos pocos gigantes enormes sobre figuras diminutas que les envían sus datos hacia arriba.',
-        width: 1376,
-        height: 768,
+        width: 1672,
+        height: 941,
         caption: 'Unos pocos gigantes concentran los datos —y el poder—.',
       },
       {
