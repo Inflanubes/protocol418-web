@@ -488,6 +488,178 @@ export const FUNDAMENTOS: Fundamento[] = [
     ],
     sources: ['21'],
   },
+  {
+    level: '12',
+    slug: 'ciberseguridad-basica',
+    movement: 'Protegerlo y rentabilizarlo',
+    title: 'Ciberseguridad básica',
+    hook: 'La longitud de la contraseña importa más que los símbolos raros.',
+    summary: 'Las bases de la seguridad: la tríada CIA, el eslabón humano y por qué la longitud manda.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Toda la ciberseguridad se reduce a proteger tres cosas —la tríada CIA—: que la información sea Confidencial (solo la ve quien debe), Íntegra (nadie la altera sin permiso) y esté Disponible (puedes acceder cuando la necesitas). Y conviene separar tres palabras que se confunden: una vulnerabilidad es la debilidad (un fallo, una mala configuración, un descuido), la amenaza es lo que podría aprovecharla, y el ataque es cuando ocurre.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Tríada CIA: triángulo con Confidencialidad, Integridad y Disponibilidad.',
+        width: 1376,
+        height: 768,
+        caption: 'Confidencialidad, Integridad, Disponibilidad: las tres patas de todo.',
+      },
+      {
+        type: 'texto',
+        body:
+          'El eslabón más débil casi nunca es la máquina: es la persona. El phishing ataca a la gente, no al sistema, así que la concienciación es una defensa tan real como un firewall. Por eso la estrategia no es solo levantar muros (prevención): es detectar pronto y saber responder. Se asume que te van a atacar; no es “si”, es “cuándo”.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Tríada CIA', def: 'Confidencialidad, Integridad y Disponibilidad de la información.' },
+          { term: 'Vulnerabilidad', def: 'Una debilidad que alguien podría aprovechar.' },
+          { term: 'Phishing', def: 'Engañar a una persona para que entregue datos o acceso.' },
+          { term: 'Brecha', def: 'Cuando alguien accede a datos que no debería.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'La longitud de una contraseña importa muchísimo más que meterle símbolos raros: una larga aunque sencilla aguanta años; una corta con “P@ssw0rd!” cae en horas. Y probablemente tus credenciales ya están filtradas de alguna fuga anterior (míralo en haveibeenpwned.com): los ataques no las adivinan, las reutilizan.',
+      },
+    ],
+    sources: ['9'],
+  },
+  {
+    level: '13',
+    slug: 'por-que-ganan-los-gigantes-efectos-de-red',
+    movement: 'Protegerlo y rentabilizarlo',
+    title: 'Por qué ganan los gigantes: efectos de red',
+    hook: 'Viralidad y efectos de red no son lo mismo.',
+    summary: 'Por qué unas pocas plataformas se lo llevan todo: efectos de red, masa crítica y defensa.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Los gigantes no ganan solo por buen producto: ganan por efectos de red. Un producto vale más cuanto más gente lo usa —un teléfono solo no sirve de nada—. Eso no abarata producir; multiplica el valor para cada usuario nuevo. En un marketplace hay dos lados (oferta y demanda) que se alimentan: más conductores atraen más pasajeros, y al revés.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Una red pequeña con pocas conexiones frente a una red grande y densa: el valor crece con los nodos.',
+        width: 1376,
+        height: 768,
+        caption: 'Más usuarios, más valor para cada uno: el efecto de red.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Pero el efecto solo se activa a partir de cierta masa crítica: antes de ese punto, el producto tiene que ser útil por sí solo (el problema del huevo y la gallina). Y una vez encendido, no es solo una ventaja: es una defensa, un foso que hace crecer el negocio de forma exponencial y lo protege de los rivales.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Efecto de red', def: 'El valor crece con cada usuario nuevo.' },
+          { term: 'Masa crítica', def: 'El punto a partir del cual el efecto de red despega.' },
+          { term: 'Plataforma', def: 'Una base sobre la que otros construyen su propio negocio.' },
+          { term: 'Red de dos lados', def: 'Un mercado con oferta y demanda que se alimentan (Uber, Airbnb).' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'Viralidad y efectos de red no son lo mismo: la viralidad trae usuarios (crecimiento); los efectos de red los retienen (defensa). Y más usuarios no siempre es mejor: las redes se saturan y pueden volverse un efecto negativo.',
+      },
+    ],
+    sources: ['1'],
+  },
+  {
+    level: '14',
+    slug: 'como-gana-dinero-una-app',
+    movement: 'Protegerlo y rentabilizarlo',
+    title: 'Cómo gana dinero una app',
+    hook: 'El 1% de los desarrolladores se lleva el 91% de los ingresos.',
+    summary: 'Los modelos para ganar dinero con una app, el reparto 70/30 y por qué “gratis” es el más difícil.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Una app gana dinero de cuatro maneras básicas: gratis con publicidad (Free), gratis con compras dentro (Freemium), de pago al descargar (Paid) o de pago + compras (Paymium). En el freemium, la decisión clave es el “pay-wall”: dónde pones el muro entre lo gratis y lo de pago. Muy generoso y nadie paga; muy tacaño y nadie se queda.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Cuadrícula de los cuatro modelos de monetización: Free, Freemium, Paid, Paymium.',
+        width: 1376,
+        height: 768,
+        caption: 'Free, Freemium, Paid, Paymium: captar y cobrar de formas distintas.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Y hay un peaje que pocos ven: las tiendas se quedan históricamente el 30% de cada pago —tú ingresas el 70%—. Además, no toda app tiene que ganar dinero por sí misma: a veces es solo otro canal para vender tu producto de siempre.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Freemium', def: 'Gratis de base, con funciones o extras de pago.' },
+          { term: 'Pay-wall', def: 'El punto donde lo gratis se vuelve de pago.' },
+          { term: 'Reparto 70/30', def: 'De cada pago en la tienda, tú te llevas el 70%; la tienda, el 30%.' },
+          { term: 'ARPU', def: 'Ingreso medio por usuario.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'El mercado de apps es de ganadores absolutos: más del 70% no cubre ni su coste de desarrollo, y el 1% de los desarrolladores genera el 91% de los ingresos. Y ojo: “gratis” suele ser el modelo más difícil de rentabilizar —los ingresos por anuncios son tan bajos que necesitas muchísimo tráfico—.',
+      },
+    ],
+    sources: ['17', '7'],
+  },
+  {
+    level: '15',
+    slug: 'estrategia-tech-sin-humo',
+    movement: 'Protegerlo y rentabilizarlo',
+    title: 'Estrategia tech sin humo',
+    hook: 'Migrar al cloud no garantiza ahorrar.',
+    summary: 'Tecnología como motor (no gasto): CAPEX vs OPEX, monolito vs piezas y dónde va el presupuesto.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Durante años la tecnología se trató como un centro de costes —algo que solo gasta—. Hoy es la palanca que hace crecer el negocio, y eso cambia hasta cómo se paga. El cloud convierte la gran inversión inicial de comprar máquinas (CAPEX) en un gasto mensual variable (OPEX): no es solo un cambio técnico, es financiero.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Dos curvas de coste: CAPEX como un gran desembolso inicial frente a OPEX como pago gradual por uso.',
+        width: 1376,
+        height: 768,
+        caption: 'CAPEX: gran desembolso de golpe. OPEX: pagas por uso, mes a mes.',
+      },
+      {
+        type: 'texto',
+        body:
+          'También cambia cómo se construye: de un monolito (un bloque único que, si se rompe, se cae entero) a piezas independientes que hablan por APIs y se cambian sin tocar el resto. Y el presupuesto no es solo “operar”: se reparte entre mantener, crecer, cumplir normas e innovar. Si solo presupuestas operación, la tecnología envejece sin que lo veas.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'CAPEX', def: 'Inversión grande de golpe (comprar servidores).' },
+          { term: 'OPEX', def: 'Gasto operativo recurrente (pagar el cloud por uso).' },
+          { term: 'Monolito', def: 'Un bloque único de software; si falla algo, cae todo.' },
+          { term: 'Componible', def: 'Piezas independientes conectadas por APIs, cambiables por separado.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'Migrar al cloud no garantiza ahorrar: mal planificado, acabas pagando dos veces (tu sistema viejo + un cloud sin optimizar). El ahorro no es automático, es un trabajo continuo —y hay potencia de sobra con 90% de descuento que casi nadie usa porque no sabe que existe—.',
+      },
+    ],
+    sources: ['14', '11'],
+  },
 ];
 
 export function getByLevel(level: string): Fundamento | undefined {
