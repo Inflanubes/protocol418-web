@@ -660,6 +660,178 @@ export const FUNDAMENTOS: Fundamento[] = [
     ],
     sources: ['14', '11'],
   },
+  {
+    level: '16',
+    slug: 'leer-datos-sin-que-te-enganen',
+    movement: 'Datos (y quién los tiene)',
+    title: 'Leer datos sin que te engañen',
+    hook: 'Casi todo lo que llaman “insight de datos” es correlación disfrazada.',
+    summary: 'Correlación no es causa, y lo que la gente dice no es lo que hace.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Antes de fiarte de un número, dos trampas básicas. La primera: correlación no es causalidad. Que dos cosas suban a la vez no significa que una cause la otra —puede haber un tercer factor, o pura casualidad—. La única forma honesta de saber si un cambio causa algo es un experimento con grupo de control (un A/B test): cambias una cosa para unos y no para otros, y comparas.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Dos líneas que suben juntas con un símbolo de “distinto”: correlación no implica causalidad.',
+        width: 1376,
+        height: 768,
+        caption: 'Que vayan juntas no significa que una cause la otra.',
+      },
+      {
+        type: 'texto',
+        body:
+          'La segunda trampa: lo que la gente dice no es lo que hace. Las encuestas capturan lo que creemos de nosotros mismos; la conducta real se observa, no se pregunta. Por eso preguntar directamente suele ser de las peores fuentes de datos. Y antes de predecir nada, conviene segmentar: no todos tus usuarios son iguales.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Correlación', def: 'Dos cosas se mueven juntas. No implica que una cause la otra.' },
+          { term: 'Causalidad', def: 'Una cosa provoca la otra. Solo se prueba con experimentos.' },
+          { term: 'A/B test', def: 'Probar un cambio en un grupo y compararlo con otro de control.' },
+          { term: 'Sesgo', def: 'Una inclinación en los datos o el método que tuerce el resultado.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'Casi todo lo que se vende como “insight de datos” es correlación disfrazada: sin un grupo de control, no sabes si tu cambio causó algo o fue casualidad. Y preguntarle a la gente qué hará es de las peores fuentes que hay —te dice lo que quiere creer de sí misma—.',
+      },
+    ],
+    sources: ['30.01', '26.01'],
+  },
+  {
+    level: '17',
+    slug: 'metricas-que-no-mienten',
+    movement: 'Datos (y quién los tiene)',
+    title: 'Métricas que no mienten',
+    hook: 'Las vanity metrics suben siempre y no significan nada.',
+    summary: 'El embudo, la retención y por qué el 80% del trabajo es limpiar datos.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'La vida de un usuario es un embudo, no un número: te descubre, se activa, vuelve, te recomienda y, al final, paga. Captar es fácil; el negocio vive o muere en la retención —en si vuelven—. Por eso una métrica suelta no dice nada: primero entiendes cómo gana dinero el negocio y luego eliges qué medir.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Embudo de métricas: adquisición arriba, retención destacada en el centro, revenue abajo.',
+        width: 1376,
+        height: 768,
+        caption: 'El usuario es un embudo: la retención es donde está el valor.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Y un secreto poco glamuroso: en un proyecto de datos, el 80% del trabajo es recoger, limpiar y ordenar los datos —no entrenar modelos elegantes—. Tener “muchos datos” no sirve de nada si están sucios o descoordinados. Ahí, y en no tener una estrategia clara, es donde fracasa la mayoría.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Embudo', def: 'El recorrido del usuario: descubrir → activarse → volver → pagar.' },
+          { term: 'Retención', def: 'Que la gente vuelva. Donde de verdad está el valor.' },
+          { term: 'Vanity metric', def: 'Un número que impresiona pero no significa nada (seguidores, descargas).' },
+          { term: 'Cohorte', def: 'Un grupo de usuarios que empezó a la vez, para medir su evolución.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'Las vanity metrics —seguidores, descargas totales, registros— suben siempre y no significan casi nada; lo que importa es la retención por cohortes. Una métrica sin un modelo de negocio detrás es solo decoración.',
+      },
+    ],
+    sources: ['02.02', '25.1'],
+  },
+  {
+    level: '18',
+    slug: 'tus-datos-son-poder',
+    movement: 'Datos (y quién los tiene)',
+    title: 'Tus datos son poder: privacidad y ética',
+    hook: 'Los datos “anonimizados” casi nunca lo están.',
+    summary: 'Qué es un dato personal, tus derechos, y por qué el anonimato es un mito.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Un dato personal es cualquier información que permite identificarte, directa o indirectamente: tu nombre, sí, pero también tu ubicación o un identificador online. La ley (RGPD) parte de unos principios: recoger solo lo necesario, para una finalidad clara, con transparencia. Y para tratar tus datos hace falta una base legal —no basta con “los tengo”—.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Una silueta anónima que, cruzando edad, sexo y código postal, se convierte en una persona identificada.',
+        width: 1376,
+        height: 768,
+        caption: 'Edad + sexo + código postal suelen bastar para ponerte nombre.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Tienes derechos sobre ellos: acceder, rectificar, que los borren (“derecho al olvido”), llevártelos. Pero hay un mito peligroso: “datos anonimizados”. Quitarte el nombre no es anonimizar si se te puede volver a identificar. Y los algoritmos heredan los sesgos de los datos con que se entrenan: la “neutralidad de la máquina” es falsa.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Dato personal', def: 'Cualquier información que permite identificarte.' },
+          { term: 'RGPD', def: 'La ley europea que regula cómo se tratan tus datos.' },
+          { term: 'Anonimizar', def: 'Eliminar de verdad la posibilidad de reidentificar a alguien.' },
+          { term: 'Sesgo algorítmico', def: 'Cuando un modelo hereda y repite prejuicios de sus datos.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'Los datos “anonimizados” casi nunca lo están: cruzando solo edad, sexo y código postal se vuelve a poner nombre y apellidos a la mayoría. La privacidad no va de ocultar: va de quién decide sobre ti.',
+      },
+    ],
+    sources: ['09.02', '26.01'],
+  },
+  {
+    level: '19',
+    slug: 'quien-tiene-los-datos-gafam',
+    movement: 'Datos (y quién los tiene)',
+    title: '¿Quién tiene los datos? GAFAM',
+    hook: 'Quien gana dinero con la IA no es quien hace los chatbots: es quien vende las palas.',
+    summary: 'Cómo unos pocos gigantes concentran los datos —y el poder—.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'GAFAM son los cinco gigantes —Google, Amazon, Facebook/Meta, Apple, Microsoft—. Cada uno nació de una sola cosa (un buscador, una tienda, una red social, un fabricante, un sistema operativo) y creció hasta ser un ecosistema entero: publicidad, cloud, hardware, medios. La clave de su poder: controlar la tecnología base sobre la que construyen los demás.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Unos pocos gigantes enormes sobre figuras diminutas que les envían sus datos hacia arriba.',
+        width: 1376,
+        height: 768,
+        caption: 'Unos pocos gigantes concentran los datos —y el poder—.',
+      },
+      {
+        type: 'texto',
+        body:
+          'Su modelo central, en varios casos, es publicidad alimentada por tus datos: si no pagas por el producto, el producto eres tú. Y los ecosistemas se diseñan abiertos o cerrados precisamente para retenerte. El boom de la IA no rompe esto: lo concentra más.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'GAFAM', def: 'Google, Amazon, Facebook/Meta, Apple y Microsoft.' },
+          { term: 'Ecosistema', def: 'Un conjunto de productos enganchados que te retienen dentro.' },
+          { term: 'Eres el producto', def: 'Si el servicio es gratis, lo que se vende son tus datos.' },
+          { term: 'Lock-in', def: 'La dificultad de salir de un ecosistema una vez dentro.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'El boom de la IA generativa no es una guerra de startups libres: las tecnologías clave están compradas o financiadas por Google y Microsoft. Y quien gana dinero de verdad no es quien hace los chatbots, sino quien vende las palas: los fabricantes de chips.',
+      },
+    ],
+    sources: ['30.05'],
+  },
 ];
 
 export function getByLevel(level: string): Fundamento | undefined {
