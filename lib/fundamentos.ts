@@ -142,9 +142,22 @@ export const FUNDAMENTOS: Fundamento[] = [
         caption: 'La cookie de tercero: el mismo píxel repetido en miles de webs.',
       },
       {
+        type: 'texto',
+        body:
+          'Pero ese modelo está en retirada. Safari y Firefox bloquean las cookies de tercero por defecto desde hace años, y Chrome —tras mucho ir y venir— acabó cerrando en 2025 su plan de alternativas (Privacy Sandbox). ¿Significa que dejan de seguirte? No: el rastreo se muda a terreno propio —los datos que tú mismo das (first-party), el seguimiento desde el servidor y el fingerprinting: te reconocen por la huella única de tu dispositivo, sin guardar nada en él—.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'Cookie de tercero', def: 'La que pone un dominio distinto al de la web que visitas. La del rastreo publicitario.' },
+          { term: 'First-party data', def: 'Los datos que recoge la propia web que usas. El nuevo oro del marketing.' },
+          { term: 'Fingerprinting', def: 'Reconocerte por la huella de tu navegador y dispositivo, sin cookie.' },
+        ],
+      },
+      {
         type: 'gotcha',
         body:
-          'Una cookie no identifica a una persona, sino a un navegador concreto en un dispositivo concreto: cambia de navegador o de móvil y eres “otro”. La cookie de tercero es el mismo píxel repetido en miles de sitios; por eso un anunciante que nunca visitaste sabe por dónde navegas.',
+          'Una cookie no identifica a una persona, sino a un navegador concreto en un dispositivo concreto: cambia de navegador o de móvil y eres “otro”. Y que la cookie de tercero esté muriendo no es para celebrar: lo que viene —fingerprinting, datos first-party, rastreo desde el servidor— te identifica mejor y se ve menos.',
       },
     ],
     sources: ['6'],
@@ -171,11 +184,18 @@ export const FUNDAMENTOS: Fundamento[] = [
         caption: 'Provider expone, consumer consume, el usuario final disfruta.',
       },
       {
+        type: 'texto',
+        body:
+          'Hoy esto es, además, la fontanería de la IA. Hay tres maneras de darle órdenes a un programa sin tocar su pantalla: por código (una API, de programa a programa), por texto en una terminal (una CLI, escribiendo comandos a mano —así se maneja Claude Code—) y, lo nuevo, dejando que una IA descubra y use herramientas sola. Para esto último apareció MCP: un enchufe común que hace que herramientas muy distintas se presenten ante un modelo de la misma forma, para que descubra qué hacen, qué datos piden, las ejecute y entienda lo que devuelven. Distingue tres cosas: herramientas (acciones: enviar un email, crear una cita), recursos (datos que leer: un archivo, una base de datos, un repo) y prompts (plantillas reutilizables: “resume esta reunión”, “analiza este repo”).',
+      },
+      {
         type: 'terminos',
         items: [
           { term: 'Endpoint', def: 'La URL concreta a la que se le pide algo a la API.' },
           { term: 'REST', def: 'El estilo de API más común hoy: ligero, sobre HTTP.' },
           { term: 'Scraping', def: 'Cuando no hay API, un bot lee el HTML como si fuera humano.' },
+          { term: 'CLI', def: 'Interfaz de línea de comandos: manejas un programa escribiéndole órdenes de texto, sin botones (así funciona Claude Code).' },
+          { term: 'MCP', def: 'El enchufe común de la IA: hace que herramientas distintas se presenten igual ante un modelo, para que sepa qué hacen y pueda usarlas.' },
         ],
       },
       {
@@ -300,18 +320,24 @@ export const FUNDAMENTOS: Fundamento[] = [
           'Casi ningún producto se monta con una sola herramienta: ensamblas un stack —web, base de datos, automatización, emailing, formularios— conectando piezas. La ventaja es arrancar barato y escalar. El límite es el techo del SaaS: solo puedes hacer lo que la herramienta permite; salirte de ahí puede ser difícil o imposible.',
       },
       {
+        type: 'texto',
+        body:
+          'Y desde 2023 hay un tercer camino que se cruza con esto: construir con IA. Le describes en lenguaje normal lo que quieres y una IA escribe el código por ti (Claude Code, Cursor, Lovable, v0…). Lo llaman vibe coding. Multiplica la velocidad, pero arrastra la misma trampa del No Code en versión nueva: si no entiendes lo que monta, no sabes cuándo te engaña ni cómo arreglarlo cuando se rompe.',
+      },
+      {
         type: 'terminos',
         items: [
           { term: 'No Code', def: 'Construir software sin escribir código, encajando piezas visuales.' },
           { term: 'Low Code', def: 'Como el No Code pero admite algo de código para ir más lejos.' },
           { term: 'Automatización', def: 'Conectar herramientas para que se pasen datos solas (Zapier, Make, n8n).' },
           { term: 'Stack', def: 'El conjunto de herramientas que, juntas, forman tu producto.' },
+          { term: 'Vibe coding', def: 'Construir describiéndole a una IA lo que quieres; ella escribe el código. Rápido, y peligroso si no lo entiendes.' },
         ],
       },
       {
         type: 'gotcha',
         body:
-          'No Code no significa fácil: significa multiplicar tu productividad por 10 o por 100 si dominas la herramienta —y eso lleva tiempo—. Y quien sabe algo de código exprime el No Code mejor, no peor: ve uniones que un no-técnico ni detecta.',
+          'No Code no significa fácil: significa multiplicar tu productividad por 10 o por 100 si dominas la herramienta. Lo mismo vale para construir con IA: te acelera si sabes lo que haces, y te entierra en un problema que no entiendes si no. La herramienta cambió; el oficio de pensar el sistema, no.',
       },
     ],
     sources: ['12'],
@@ -370,7 +396,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'texto',
         body:
-          'Llamamos IA a que un ordenador haga algo que en una persona llamaríamos inteligente. Pero IA, machine learning y deep learning no son sinónimos: son círculos concéntricos. La IA es el círculo grande; dentro está el machine learning (programas que mejoran cuanto más los entrenas con datos); y dentro de ese, el deep learning. Casi todo lo que hoy llaman “IA” es, en realidad, machine learning resolviendo UNA tarea concreta.',
+          'Llamamos IA a que un ordenador haga algo que en una persona llamaríamos inteligente. Pero IA, machine learning y deep learning no son sinónimos: son círculos concéntricos. La IA es el círculo grande; dentro está el machine learning (programas que mejoran cuanto más los entrenas con datos); y dentro de ese, el deep learning. Durante años, casi todo lo que llamaban “IA” era machine learning resolviendo UNA tarea concreta: detectar fraude, recomendar una serie, leer una matrícula. Eso sigue existiendo —pero ya no es lo único—.',
       },
       {
         type: 'esquema',
@@ -386,18 +412,26 @@ export const FUNDAMENTOS: Fundamento[] = [
           'Una IA no entiende: detecta patrones del pasado y los proyecta. Y no devuelve verdades, devuelve probabilidades: detrás de “esto es una cara sonriente” hay un número de confianza tipo 0,99, no un sí rotundo. Además, un modelo no se termina: si dejas de reentrenarlo con datos nuevos, se degrada.',
       },
       {
+        type: 'texto',
+        body:
+          'Desde 2022 estalló otra familia: la IA generativa. En vez de clasificar (¿esto es un gato?), genera —texto, imágenes, código, voz—. Por dentro son LLMs (grandes modelos de lenguaje): se han tragado cantidades brutales de texto y, en el fondo, hacen una sola cosa asombrosamente bien: predecir la siguiente palabra. De ahí sus dos caras a la vez: parecen entender de todo, y se inventan cosas con total aplomo (las “alucinaciones”).',
+      },
+      {
         type: 'terminos',
         items: [
           { term: 'IA', def: 'Que un ordenador haga algo que en un humano llamaríamos inteligente.' },
           { term: 'Machine Learning', def: 'Programas que mejoran cuanto más datos procesan.' },
           { term: 'Deep Learning', def: 'Una forma de machine learning para problemas más complejos.' },
           { term: 'Modelo', def: 'El resultado de entrenar con datos; predice, no entiende.' },
+          { term: 'IA generativa', def: 'IA que crea contenido nuevo (texto, imagen, código), no que clasifica lo que ya existe.' },
+          { term: 'LLM', def: 'Gran modelo de lenguaje. Predice la siguiente palabra a una escala que parece comprensión.' },
+          { term: 'Alucinación', def: 'Cuando un modelo se inventa algo falso con total seguridad.' },
         ],
       },
       {
         type: 'gotcha',
         body:
-          'La IA no da certezas, da probabilidades: todo lo que “reconoce” es en el fondo un número de confianza. Y casi todo lo que se vende como “IA” es machine learning haciendo una sola cosa —no una mente—.',
+          'La IA sigue sin dar certezas: hasta el chatbot más listo está, por debajo, calculando la palabra más probable —por eso a veces se inventa cosas sin pestañear—. Y que escriba fluido no significa que entienda: imita patrones a una escala que parece comprensión. No lo es.',
       },
     ],
     sources: ['22'],
@@ -469,7 +503,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'texto',
         body:
-          'Hay dos familias: los de reglas (baratos, predecibles, limitados) y los de IA conversacional (manejan preguntas abiertas pero necesitan muchos datos). Y una conversación “controlada” —un menú, una tarea concreta— es muchísimo más fácil que una abierta sobre cualquier tema.',
+          'Durante años hubo dos familias: los de reglas (baratos, predecibles, limitados) y los de IA conversacional. Hoy esa frontera casi ha desaparecido: los asistentes se reconstruyen sobre LLMs —Google sustituye Assistant por Gemini, Amazon lanza Alexa+, ChatGPT habla—. Manejan preguntas abiertas como nunca… y heredan el mismo fallo del LLM: se inventan cosas. Aun así, una conversación “controlada” —un menú, una tarea concreta— sigue siendo muchísimo más fiable que una abierta sobre cualquier tema.',
       },
       {
         type: 'terminos',
@@ -483,7 +517,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'gotcha',
         body:
-          'El asistente no “sabe” la respuesta: la saca de fuentes —funciones propias, skills de terceros o lo que los buscadores tienen indexado—. Es un intermediario, no un oráculo. Y quien controla ese intermediario controla todas tus interacciones digitales.',
+          'El asistente no “sabe” la respuesta: la saca de fuentes —y ahora, de un LLM que predice la respuesta más probable, no la más cierta—. Sigue siendo un intermediario, no un oráculo. Y quien controla ese intermediario controla todas tus interacciones digitales.',
       },
     ],
     sources: ['21'],
@@ -512,7 +546,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'texto',
         body:
-          'El eslabón más débil casi nunca es la máquina: es la persona. El phishing ataca a la gente, no al sistema, así que la concienciación es una defensa tan real como un firewall. Por eso la estrategia no es solo levantar muros (prevención): es detectar pronto y saber responder. Se asume que te van a atacar; no es “si”, es “cuándo”.',
+          'El eslabón más débil casi nunca es la máquina: es la persona. El phishing ataca a la gente, no al sistema, así que la concienciación es una defensa tan real como un firewall. Por eso la estrategia no es solo levantar muros (prevención): es detectar pronto y saber responder. Se asume que te van a atacar; no es “si”, es “cuándo”. Y la defensa más rentable es barata: un segundo factor (2FA) en todo lo importante y, cada vez más, passkeys —que cambian la contraseña por tu huella o tu cara y, al no ser un secreto que se teclea, no se pueden phishear—.',
       },
       {
         type: 'terminos',
@@ -521,6 +555,8 @@ export const FUNDAMENTOS: Fundamento[] = [
           { term: 'Vulnerabilidad', def: 'Una debilidad que alguien podría aprovechar.' },
           { term: 'Phishing', def: 'Engañar a una persona para que entregue datos o acceso.' },
           { term: 'Brecha', def: 'Cuando alguien accede a datos que no debería.' },
+          { term: '2FA', def: 'Un segundo paso además de la contraseña: un código, tu móvil, tu huella.' },
+          { term: 'Passkey', def: 'Acceso sin contraseña, atado a tu dispositivo y tu biometría. No se puede phishear.' },
         ],
       },
       {
@@ -598,14 +634,14 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'texto',
         body:
-          'Y hay un peaje que pocos ven: las tiendas se quedan históricamente el 30% de cada pago —tú ingresas el 70%—. Además, no toda app tiene que ganar dinero por sí misma: a veces es solo otro canal para vender tu producto de siempre.',
+          'Y hay un peaje que pocos ven: durante años las tiendas se quedaron el 30% de cada pago —tú ingresabas el 70%—. Eso se está rompiendo por ley: tras los pleitos de Epic contra Apple y Google y la normativa europea (DMA), desde 2025-26 puedes mandar al usuario a pagar fuera de la app, usar otras pasarelas y, en Europa, hasta tiendas alternativas. El 30% dejó de ser una ley física. Además, no toda app tiene que ganar dinero por sí misma: a veces es solo otro canal para vender tu producto de siempre.',
       },
       {
         type: 'terminos',
         items: [
           { term: 'Freemium', def: 'Gratis de base, con funciones o extras de pago.' },
           { term: 'Pay-wall', def: 'El punto donde lo gratis se vuelve de pago.' },
-          { term: 'Reparto 70/30', def: 'De cada pago en la tienda, tú te llevas el 70%; la tienda, el 30%.' },
+          { term: 'Reparto 70/30', def: 'El corte histórico de las tiendas: 70% para ti, 30% para ellas. Hoy agrietado por Epic vs Apple/Google y la DMA europea.' },
           { term: 'ARPU', def: 'Ingreso medio por usuario.' },
         ],
       },
@@ -757,7 +793,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'texto',
         body:
-          'Un dato personal es cualquier información que permite identificarte, directa o indirectamente: tu nombre, sí, pero también tu ubicación o un identificador online. La ley (RGPD) parte de unos principios: recoger solo lo necesario, para una finalidad clara, con transparencia. Y para tratar tus datos hace falta una base legal —no basta con “los tengo”—.',
+          'Un dato personal es cualquier información que permite identificarte, directa o indirectamente: tu nombre, sí, pero también tu ubicación o un identificador online. La ley (RGPD) parte de unos principios: recoger solo lo necesario, para una finalidad clara, con transparencia. Y para tratar tus datos hace falta una base legal —no basta con “los tengo”—. Al RGPD se le ha sumado el Reglamento Europeo de IA (AI Act): clasifica los usos de la IA por riesgo y prohíbe los más peligrosos —puntuarte socialmente, vigilarte por la cara en tiempo real—.',
       },
       {
         type: 'esquema',
@@ -779,6 +815,7 @@ export const FUNDAMENTOS: Fundamento[] = [
           { term: 'RGPD', def: 'La ley europea que regula cómo se tratan tus datos.' },
           { term: 'Anonimizar', def: 'Eliminar de verdad la posibilidad de reidentificar a alguien.' },
           { term: 'Sesgo algorítmico', def: 'Cuando un modelo hereda y repite prejuicios de sus datos.' },
+          { term: 'AI Act', def: 'El reglamento europeo que regula la IA por niveles de riesgo y prohíbe los usos más peligrosos.' },
         ],
       },
       {
@@ -827,7 +864,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       {
         type: 'gotcha',
         body:
-          'El boom de la IA generativa no es una guerra de startups libres: las tecnologías clave están compradas o financiadas por Google y Microsoft. Y quien gana dinero de verdad no es quien hace los chatbots, sino quien vende las palas: los fabricantes de chips.',
+          'El boom de la IA generativa no es una guerra de startups libres: las grandes de IA están compradas o financiadas por los gigantes —Microsoft con OpenAI, Amazon y Google con Anthropic—. Y quien gana dinero de verdad no es quien hace los chatbots, sino quien vende las palas: los fabricantes de chips (Nvidia).',
       },
     ],
     sources: ['30.05'],
