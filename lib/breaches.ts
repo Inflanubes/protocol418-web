@@ -175,4 +175,62 @@ export const BREACHES: Breach[] = [
       ],
     },
   },
+  {
+    number: '006',
+    slug: 'listen',
+    label: "YOUR PHONE ISN'T LISTENING",
+    hook: '¿Te ha pasado que hablas de algo y, al rato, te aparece el anuncio?',
+    remate: 'Tu móvil no te escucha. Te predice.',
+    breachling: '/breach/breach-006-listen.png',
+    width: 618,
+    height: 756,
+    aviso: '/breach/avisos/breach-006-listen.png',
+    avisoWidth: 1024,
+    avisoHeight: 1536,
+    desarrollo:
+      'No necesita oírte. Con lo que compras, buscas y tocas, ya sabe lo que vas a querer.',
+    reflexion:
+      'Tranquiliza pensar que te escuchan por el micrófono: sería un fallo, algo que se puede apagar. Lo inquietante es que no hace falta. Dejas tantas pistas —lo que compras, lo que buscas, a qué hora— que adivinarte sale más barato que espiarte. No te vigilan: te calculan.',
+    caso: {
+      texto:
+        'En 2012, los grandes almacenes Target dedujeron que una adolescente estaba embarazada —y le enviaron cupones de bebé— antes de que su propio padre lo supiera, solo por el patrón de sus compras. (Según el New York Times.)',
+      fuentes: [
+        {
+          label: 'El caso Target (Vice)',
+          href: 'https://www.vice.com/en/article/target-knows-you-re-pregnant/',
+        },
+      ],
+    },
+  },
+  {
+    number: '007',
+    slug: 'license',
+    label: "YOU DON'T OWN WHAT YOU BUY",
+    hook: 'Le das a “Comprar”, pagas el precio completo… y crees que es tuyo.',
+    remate: 'Compraste una licencia, no la cosa.',
+    breachling: '/breach/breach-007-license.png',
+    width: 886,
+    height: 948,
+    aviso: '/breach/avisos/breach-007-license.png',
+    avisoWidth: 1024,
+    avisoHeight: 1536,
+    desarrollo:
+      'Pagas el precio de comprar y tienes los derechos de alquilar: te lo pueden quitar cuando se les acabe un contrato.',
+    reflexion:
+      'Crecimos pensando que comprar era poseer: pagabas, era tuyo y nadie te lo quitaba. En lo digital, el botón sigue diciendo “Comprar”, pero la letra pequeña dice “alquilar… hasta que dejemos de dejártelo”. No es que te roben: es que nunca fue tuyo. Y conviene saberlo antes de pulsar “Comprar”.',
+    caso: {
+      texto:
+        'El 1 de septiembre de 2026, PlayStation borrará 551 películas ya compradas (Terminator 2, Rambo, Paddington…) en Reino Unido y Europa, sin reembolso, por un contrato de licencia caducado. Pasa tanto que California aprobó una ley (AB 2426) que prohíbe poner “comprar” si en realidad es un alquiler revocable.',
+      fuentes: [
+        {
+          label: 'PlayStation borra 551 pelis (AV Club)',
+          href: 'https://www.avclub.com/playstation-delete-purchased-studio-canal-movies-from-customers-accounts',
+        },
+        {
+          label: 'Ley de California AB2426 (Time Extension)',
+          href: 'https://www.timeextension.com/news/2024/09/new-storefront-law-tells-us-what-we-all-should-know-we-dont-own-digital-games',
+        },
+      ],
+    },
+  },
 ];
