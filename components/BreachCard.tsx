@@ -65,6 +65,48 @@ export function BreachCard({ breach, mirror = false }: Props) {
           </div>
         </div>
       </button>
+
+      {(breach.caso || breach.recursos) && (
+        <div className={styles.evidence}>
+          {breach.caso && (
+            <div className={styles.evidenceBlock}>
+              <span className={styles.evidenceLabel}>Caso real</span>
+              <p className={styles.casoTexto}>{breach.caso.texto}</p>
+              <div className={styles.links}>
+                {breach.caso.fuentes.map((f) => (
+                  <a
+                    key={f.href}
+                    href={f.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    {f.label} ↗
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+          {breach.recursos && (
+            <div className={styles.evidenceBlock}>
+              <span className={styles.evidenceLabel}>Recursos</span>
+              <div className={styles.links}>
+                {breach.recursos.map((r) => (
+                  <a
+                    key={r.href}
+                    href={r.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    {r.label} ↗
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

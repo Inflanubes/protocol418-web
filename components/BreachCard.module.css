@@ -144,6 +144,54 @@
   }
 }
 
+/* Bloque de evidencia bajo la tarjeta: caso real + recursos (enlaces fuera del botón) */
+.evidence {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.evidenceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.evidenceLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--tracking-uppercase);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.casoTexto {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+}
+
+.link {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
 /* Respeta usuarios que reducen movimiento: sin animación de giro */
 @media (prefers-reduced-motion: reduce) {
   .card {
