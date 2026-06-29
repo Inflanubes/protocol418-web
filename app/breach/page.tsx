@@ -10,7 +10,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Breach — Protocol 418',
   description:
-    'Protocol Breach: verdades incómodas sobre la tecnología que todos repiten sin entender. Cada breach rompe un mito.',
+    'Protocol Breach: cada breach es una «brecha» —un mito tecnológico que todos hemos aceptado—. Para entender cómo funciona algo, primero hay que saber qué es de verdad.',
 };
 
 export default function BreachPage() {
@@ -21,8 +21,10 @@ export default function BreachPage() {
           <Eyebrow>Protocol Breach</Eyebrow>
           <h1 className={styles.title}>Breach.</h1>
           <p className={styles.lead}>
-            Verdades incómodas sobre la tecnología que todos repiten sin entender.
-            Cada breach rompe un mito.
+            Verdades incómodas sobre la tecnología que todos repiten sin entender. Cada
+            breach es una «brecha»: un mito que todos hemos aceptado y que nos impide ver las
+            cosas como son. Y para entender cómo funciona algo, primero hay que saber qué es de
+            verdad.
           </p>
         </div>
       </Section>
