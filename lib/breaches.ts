@@ -76,7 +76,7 @@ export const BREACHES: Breach[] = [
     desarrollo:
       'Viaja por cables más gruesos que una manguera. Miles de kilómetros bajo el océano.',
     reflexion:
-      'Creemos que internet es lo más moderno que existe, pero se sostiene sobre algo viejísimo: cables instalados en el fondo del mar, herederos del telégrafo del siglo XIX. Sé que suena raro que esto no sea un conocimiento básico, pero si no lo sabes, no se habla y no lo ves: por eso parece magia. Y cuando algo parece magia, casi siempre es que no estás viendo el cable.',
+      'Creemos que internet es lo más moderno que existe, pero se sostiene sobre algo viejísimo: cables instalados en el fondo del mar, herederos del telégrafo del siglo XIX. Sé que suena raro que esto no sea un conocimiento básico, pero es lo normal: lo que no se cuenta, no se sabe; y lo que no se entiende, parece magia. Y la magia, casi siempre, es solo un cable que no estás viendo.',
     caso: {
       texto:
         'En septiembre de 2025, un barco arrastró su ancla por el Mar Rojo, cortó varios cables submarinos y ralentizó internet en India y Pakistán.',
@@ -133,7 +133,7 @@ export const BREACHES: Breach[] = [
     avisoHeight: 1537,
     desarrollo: 'No eres el cliente. Eres el inventario.',
     reflexion:
-      'Nada gratis es gratis; solo cambia la forma de pagar. Si no sale de tu cartera, sale de tu atención, tus datos o tu tiempo. No tiene por qué ser malo —a veces el trato compensa—, pero merece la pena saber qué entregas a cambio. El problema no es pagar: es no enterarte de que pagas.',
+      'Nada gratis es gratis; solo cambia la forma de pagar. Si no sale de tu cartera, lo pagas con tu atención, tus datos o tu tiempo. Cuando algo que cuesta millones te lo regalan, la pregunta no es «qué suerte», sino «¿qué sacan de mí?». No tiene por qué ser un mal trato —a veces compensa—, pero el problema nunca es pagar: es no enterarte de que pagas.',
     caso: {
       texto:
         'Cuando marcas “los semáforos” en un CAPTCHA, etiquetas gratis imágenes de Google Street View que entrenan la visión por ordenador de su coche autónomo, Waymo. En su pico: 200 millones de CAPTCHAs al día.',
