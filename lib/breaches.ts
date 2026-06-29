@@ -133,7 +133,7 @@ export const BREACHES: Breach[] = [
     avisoHeight: 1537,
     desarrollo: 'No eres el cliente. Eres el inventario.',
     reflexion:
-      'Nada gratis es gratis; solo cambia la forma de pagar. Si no sale de tu cartera, lo pagas con tu atención, tus datos o tu tiempo. Cuando algo que cuesta millones te lo regalan, la pregunta no es «qué suerte», sino «¿qué sacan de mí?». No tiene por qué ser un mal trato —a veces compensa—, pero el problema nunca es pagar: es no enterarte de que pagas.',
+      'Nada gratis es gratis; solo cambia la forma de pagar. Si no sale de tu cartera, lo pagas con tu atención, tus datos o tu tiempo. Cuando algo que cuesta millones te lo regalan, no pienses «qué suerte»; pregúntate «¿qué sacan de mí?». No tiene por qué ser un mal trato —a veces compensa—, pero el problema nunca es pagar: es no enterarte de que pagas.',
     caso: {
       texto:
         'Cuando marcas “los semáforos” en un CAPTCHA, etiquetas gratis imágenes de Google Street View que entrenan la visión por ordenador de su coche autónomo, Waymo. En su pico: 200 millones de CAPTCHAs al día.',
@@ -217,7 +217,7 @@ export const BREACHES: Breach[] = [
     desarrollo:
       'Pagas el precio de comprar y tienes los derechos de alquilar: te lo pueden quitar cuando se les acabe un contrato.',
     reflexion:
-      'Crecimos pensando que comprar era poseer: pagabas, era tuyo y nadie te lo quitaba. En lo digital, el botón sigue diciendo “Comprar”, pero la letra pequeña dice “alquilar… hasta que dejemos de dejártelo”. No es que te roben: es que nunca fue tuyo. Y conviene saberlo antes de pulsar “Comprar”.',
+      'Antes, comprar era poseer de verdad: un cartucho de un juego, un CD, un DVD —era tuyo para siempre y nadie te lo quitaba—. Hoy casi todo es una licencia: el botón sigue diciendo «Comprar», pero solo te lo prestan… hasta que dejen de prestártelo. Y ya no es solo lo digital: en el mundo físico empieza a pasar con los coches, que cobran suscripción por funciones que el coche ya trae de fábrica. No es que te roben: es que han cambiado lo que significa «comprar».',
     caso: {
       texto:
         'El 1 de septiembre de 2026, PlayStation borrará 551 películas ya compradas (Terminator 2, Rambo, Paddington…) en Reino Unido y Europa, sin reembolso, por un contrato de licencia caducado. Pasa tanto que California aprobó una ley (AB 2426) que prohíbe poner “comprar” si en realidad es un alquiler revocable.',
