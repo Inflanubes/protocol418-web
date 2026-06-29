@@ -62,6 +62,7 @@ export function BreachCard({ breach, mirror = false }: Props) {
           <div className={styles.body}>
             <span className={styles.number}>BREACH #{breach.number}</span>
             <p className={styles.desarrollo}>{breach.desarrollo}</p>
+            {breach.reflexion && <p className={styles.reflexion}>{breach.reflexion}</p>}
           </div>
         </div>
       </button>
