@@ -45,7 +45,7 @@ export const BREACHES: Breach[] = [
     desarrollo:
       'Son ordenadores. Miles de ordenadores, en edificios gigantes, propiedad de otras empresas.',
     reflexion:
-      'Llamarlo “nube” no es inocente: suena ligero, etéreo, sin dueño. Pero todo lo que subes vive en una máquina que no controlas, en un país que no eliges y bajo las reglas de otro. No es magia, es alquiler — y conviene saber de quién es la casa donde guardas tus cosas.',
+      'Llamarlo “nube” no es inocente: suena ligero, etéreo, sin dueño. Pero todo lo que subes vive en una máquina que no controlas, en un país que no eliges y bajo las reglas de otro. No es magia, es alquiler — y conviene saber de quién es la casa donde guardas tus cosas. ¿O guardarías tu diario en el cajón de tu hermana?',
     caso: {
       texto:
         'En octubre de 2025, el fallo de un solo sistema de Amazon tumbó Snapchat, los Ring, Roblox y hasta la app de McDonald’s. Y en 2021 un data center de OVH se incendió: miles de webs perdieron sus datos.',
@@ -76,7 +76,7 @@ export const BREACHES: Breach[] = [
     desarrollo:
       'Viaja por cables más gruesos que una manguera. Miles de kilómetros bajo el océano.',
     reflexion:
-      'Creemos que internet es lo más moderno que existe, pero se sostiene sobre algo viejísimo: cables instalados en el fondo del mar, herederos del telégrafo del siglo XIX. Lo intangible siempre se apoya en algo físico que alguien tiene que instalar, mantener y proteger. Cuando algo parece magia, suele ser que no estás viendo el cable.',
+      'Creemos que internet es lo más moderno que existe, pero se sostiene sobre algo viejísimo: cables instalados en el fondo del mar, herederos del telégrafo del siglo XIX. Sé que suena raro que esto no sea un conocimiento básico, pero si no lo sabes, no se habla y no lo ves: por eso parece magia. Y cuando algo parece magia, casi siempre es que no estás viendo el cable.',
     caso: {
       texto:
         'En septiembre de 2025, un barco arrastró su ancla por el Mar Rojo, cortó varios cables submarinos y ralentizó internet en India y Pakistán.',
@@ -107,7 +107,7 @@ export const BREACHES: Breach[] = [
     desarrollo:
       'No razona como tú. No entiende como tú. No tiene ideas. Solo calcula la siguiente palabra más probable.',
     reflexion:
-      'Nos cuesta aceptar que algo que escribe tan bien no entienda nada. Pero confundir fluidez con inteligencia es peligroso: le pedimos certezas a una máquina que solo calcula probabilidades. Úsala como lo que es, una herramienta que predice, no como un oráculo. Pensar sigue siendo cosa tuya.',
+      'Nos cuesta aceptar que algo que escribe tan bien no entienda nada. Pero confundir fluidez con inteligencia es peligroso: le pedimos certezas a una máquina que solo calcula probabilidades. Recuerda que es una inteligencia artificial, y la palabra clave ahí es “artificial”. Úsala como lo que es —una herramienta que predice—, no como un oráculo: pensar sigue siendo cosa tuya.',
     caso: {
       texto:
         'En 2024, el chatbot de Air Canada se inventó una política de reembolso que no existía; un tribunal obligó a la aerolínea a cumplir lo que su IA había alucinado.',
@@ -159,7 +159,7 @@ export const BREACHES: Breach[] = [
     avisoHeight: 1536,
     desarrollo: 'Los ojos no son para ellos. Son para nosotros.',
     reflexion:
-      'Que una máquina tenga ojos y te hable con cariño no la hace más lista ni más tuya: la hace más fácil de aceptar. No es una conspiración de robots, es diseño humano. Y está bien que la tecnología sea accesible —para eso se hace—, pero no olvides que detrás de esa cara amable hay una decisión, y alguien que la tomó.',
+      'Que una máquina tenga ojos y te hable con cariño no la hace más lista ni más tuya: la hace más fácil de aceptar. No es una conspiración de robots, es diseño humano. Y si uno de esos robots pudiera responder, quizá diría: «me diste tu idioma porque programar era difícil, y me hiciste con cara humana para no tenerme miedo… ¿por qué te asusto entonces?». Detrás de esa cara amable siempre hay una decisión, y alguien que la tomó.',
     caso: {
       texto:
         'La investigación en robótica confirma que ponerles cara y ojos reduce el miedo y genera confianza… hasta que se pasan de realistas (el “valle inquietante”). Y los modelos de lenguaje nacen para hablarle a la máquina sin código: es una decisión humana de accesibilidad, no una guerra de robots.',
