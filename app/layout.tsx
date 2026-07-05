@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
+import { Boot } from '@/components/Boot';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { SITE } from '@/lib/constants';
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(){var d=document.documentElement;d.dataset.js='1';var m=null;try{m=localStorage.getItem('p418-motion');}catch(e){}if(m!=='on'&&m!=='off'){m=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'off':'on';}d.dataset.motion=m;})();`,
           }}
         />
+        <Boot />
         <Nav />
         {children}
         <Footer />

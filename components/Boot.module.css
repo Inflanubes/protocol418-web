@@ -1,0 +1,51 @@
+/* components/Boot.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  background: var(--color-bg-deep);
+  cursor: pointer;
+}
+
+.term {
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  line-height: 2;
+  min-width: min(420px, 80vw);
+}
+
+.cmd {
+  color: var(--color-text-muted);
+}
+
+.ok {
+  color: var(--color-text);
+}
+
+.ok::first-letter {
+  color: var(--color-accent);
+}
+
+.cursor {
+  color: var(--color-accent);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.skip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
