@@ -64,6 +64,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        <script
+          // Sets motion + js flags before paint. User override (localStorage)
+          // wins over prefers-reduced-motion — see spec §5 (Chrome false-positive bug).
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var d=document.documentElement;d.dataset.js='1';var m=null;try{m=localStorage.getItem('p418-motion');}catch(e){}if(m!=='on'&&m!=='off'){m=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'off':'on';}d.dataset.motion=m;})();`,
+          }}
+        />
         <Nav />
         {children}
         <Footer />

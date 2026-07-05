@@ -36,3 +36,15 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* 418/OS — motion kill-switch. data-motion is set pre-paint in layout.tsx */
+html[data-motion='off'] *,
+html[data-motion='off'] *::before,
+html[data-motion='off'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+html[data-motion='off'] {
+  scroll-behavior: auto;
+}

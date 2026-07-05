@@ -14,7 +14,7 @@
   --font-mono:    var(--font-jetbrains-mono), ui-monospace, monospace;
 
   /* Type scale */
-  --fs-display:  64px;
+  --fs-display:  clamp(48px, 7vw + 16px, 96px);
   --fs-h1:       36px;
   --fs-h2:       24px;
   --fs-body-lg:  17px;
@@ -47,4 +47,10 @@
   --radius:     8px;
   --radius-lg:  12px;
   --radius-xl:  16px;
+
+  /* 418/OS — v2.0 */
+  --color-bg-deep:  #050505;              /* boot / deepest chrome */
+  --glow-accent:    rgba(234, 90, 31, 0.14); /* max alpha for ambient glow */
+  --alert-bg:       var(--color-accent);
+  --alert-text:     #0B0B0B;
 }
