@@ -4,10 +4,23 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Logo } from './Logo';
-import { CTAButton } from './CTAButton';
 import { NAV_LINKS } from '@/lib/constants';
 import styles from './Nav.module.css';
+
+function Clock() {
+  const [time, setTime] = useState<string | null>(null);
+  useEffect(() => {
+    const tick = () => setTime(new Date().toLocaleTimeString('es-ES', { hour12: false }));
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span className={styles.clock} suppressHydrationWarning>
+      {time ?? '--:--:--'}
+    </span>
+  );
+}
 
 export function Nav() {
   const pathname = usePathname();
@@ -24,8 +37,8 @@ export function Nav() {
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brand} aria-label="Protocol 418 — home">
-          <Logo size="sm" />
+        <Link href="/" className={styles.brand} aria-label="Protocol 418 — inicio">
+          &lt;4<span className={styles.pipe}>|</span>8&gt;
         </Link>
 
         <button
@@ -34,27 +47,32 @@ export function Nav() {
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
-          <span /><span /><span />
+          <span className={styles.togglePrompt}>$ menu</span>
         </button>
 
         <nav className={`${styles.links} ${open ? styles.linksOpen : ''}`}>
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
+            const path = link.href === '/' ? '~' : link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`${styles.link} ${active ? styles.active : ''}`}
                 onClick={() => setOpen(false)}
+                aria-label={link.label}
               >
-                {link.label}
+                {path}
               </Link>
             );
           })}
-          <CTAButton variant="outline" className={styles.cta}>
-            Entrar →
-          </CTAButton>
         </nav>
+
+        <div className={styles.status} aria-hidden>
+          <span className={styles.statusDot}>●</span>
+          <span className={styles.statusCode}>418</span>
+          <Clock />
+        </div>
       </div>
     </header>
   );
