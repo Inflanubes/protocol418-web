@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Coffee, Flame, Cog, Bomb, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Section } from '@/components/Section';
-import { Eyebrow } from '@/components/Eyebrow';
 import { ModuleHeader } from '@/components/ModuleHeader';
 import { CTAButton } from '@/components/CTAButton';
 import { ClassCard } from '@/components/ClassCard';
@@ -83,7 +82,7 @@ export default function BrewPage() {
 
       <Section>
         <div className={styles.contentBlock}>
-          <Eyebrow>Categorías</Eyebrow>
+          <ModuleHeader index={2}>Categorías</ModuleHeader>
           <h2 className={styles.h2}>Tipos de post.</h2>
           <p className={styles.lead}>
             Cuando empecemos a publicar, cada post pertenece a una de estas 4 categorías. Los
@@ -107,7 +106,7 @@ export default function BrewPage() {
 
       <Section>
         <div className={styles.contentBlock}>
-          <Eyebrow>¿Empiezas de cero?</Eyebrow>
+          <ModuleHeader index={3}>¿Empiezas de cero?</ModuleHeader>
           <h2 className={styles.h2}>Pasa por Fundamentos.</h2>
           <p className={styles.lead}>
             Antes de una clase entera, lo básico que seguro no te han contado: cómo funciona de

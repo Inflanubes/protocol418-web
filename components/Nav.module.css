@@ -121,4 +121,8 @@
   .linksOpen {
     display: flex;
   }
+
+  .link {
+    padding: var(--space-2) 0;
+  }
 }

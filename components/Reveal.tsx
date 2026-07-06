@@ -10,6 +10,10 @@ export function Reveal({ children, className }: { children: React.ReactNode; cla
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (!('IntersectionObserver' in window)) {
+      el.classList.add(styles.visible!);
+      return;
+    }
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {

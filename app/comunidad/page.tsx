@@ -1,7 +1,6 @@
 // app/comunidad/page.tsx
 import type { Metadata } from 'next';
 import { Section } from '@/components/Section';
-import { Eyebrow } from '@/components/Eyebrow';
 import { ModuleHeader } from '@/components/ModuleHeader';
 import { ChannelCard } from '@/components/ChannelCard';
 import { PromptBlock } from '@/components/PromptBlock';
@@ -58,7 +57,7 @@ export default function ComunidadPage() {
 
       <Section>
         <div className={styles.howIn}>
-          <Eyebrow>Cómo entrar</Eyebrow>
+          <ModuleHeader index={2}>Cómo entrar</ModuleHeader>
           <h2 className={styles.h2}>Solicitas. Apruebo. Entras.</h2>
           <p className={styles.lead}>
             La comunidad es por aprobación. Cuando solicitas el acceso desde el botón, lo reviso
