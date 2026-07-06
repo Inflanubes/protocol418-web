@@ -1,7 +1,6 @@
 // app/not-found.tsx
 import Link from 'next/link';
 import { Section } from '@/components/Section';
-import { Eyebrow } from '@/components/Eyebrow';
 import { CTAButton } from '@/components/CTAButton';
 import styles from './not-found.module.css';
 
@@ -10,15 +9,17 @@ export default function NotFound() {
     <main>
       <Section>
         <div className={styles.wrap}>
-          <Eyebrow>418 detected</Eyebrow>
+          <p className={styles.errorLine}>$ GET /esta-ruta → ERROR 404</p>
           <h1 className={styles.code}>404</h1>
-          <p className={styles.message}>Esta ruta no existe. Volver al protocolo.</p>
+          <p className={styles.message}>
+            Ruta no encontrada. ¿Seguro que no buscabas un <span className={styles.accent}>418</span>?
+          </p>
           <div className={styles.actions}>
             <CTAButton variant="outline" href="/">
-              Volver al manifiesto
+              $ cd ~
             </CTAButton>
             <Link href="/protocol" className={styles.link}>
-              O lee el protocol →
+              o lee el protocol →
             </Link>
           </div>
         </div>

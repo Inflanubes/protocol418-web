@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Section } from '@/components/Section';
 import { Eyebrow } from '@/components/Eyebrow';
+import { ModuleHeader } from '@/components/ModuleHeader';
 import { ChannelCard } from '@/components/ChannelCard';
 import { PromptBlock } from '@/components/PromptBlock';
 import { CTAButton } from '@/components/CTAButton';
@@ -27,7 +28,7 @@ export default function ComunidadPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <Eyebrow>La comunidad</Eyebrow>
+          <ModuleHeader index={1}>La comunidad</ModuleHeader>
           <h1 className={styles.title}>
             Tres canales.
             <br />
@@ -64,7 +65,7 @@ export default function ComunidadPage() {
             manualmente. Si te conozco, entras.
           </p>
           <CTAButton variant="primary" ariaLabel="Solicitar acceso a la comunidad de WhatsApp">
-            Entrar a la comunidad →
+            $ join comunidad
           </CTAButton>
         </div>
       </Section>
