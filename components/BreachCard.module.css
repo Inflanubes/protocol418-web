@@ -4,6 +4,15 @@
   scroll-margin-top: 96px; /* el ancla no queda tapada por el nav fijo */
 }
 
+/* Envoltorio del pointer-tilt. Sin perspective() propio: hereda la
+   perspective: 1600px de .scene (transform-style: preserve-3d deja que
+   esa perspectiva llegue al .card nieto), así el tilt y el flip comparten
+   una única profundidad en vez de componer dos perspectivas distintas. */
+.tiltWrap {
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+}
+
 /* La card es el botón que gira. Reset de botón + apilado de caras en grid. */
 .card {
   display: grid;
@@ -217,4 +226,10 @@
   .card {
     transition: none;
   }
+}
+
+/* DETECTED glitch: el rótulo de la cara frontal parpadea al entrar en vista
+   (Reveal añade .in-view al wrapper cuando el IntersectionObserver dispara). */
+:global(html[data-motion='on']) :global(.in-view) .front .number {
+  animation: glitch-stamp 0.28s steps(2, jump-none) both;
 }

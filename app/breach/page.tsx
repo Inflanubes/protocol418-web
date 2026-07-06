@@ -4,6 +4,7 @@ import { Section } from '@/components/Section';
 import { ModuleHeader } from '@/components/ModuleHeader';
 import { CTAButton } from '@/components/CTAButton';
 import { BreachCard } from '@/components/BreachCard';
+import { Reveal } from '@/components/Reveal';
 import { BREACHES } from '@/lib/breaches';
 import styles from './page.module.css';
 
@@ -34,7 +35,9 @@ export default function BreachPage() {
         <ul className={styles.stack}>
           {BREACHES.map((breach, i) => (
             <li key={breach.slug}>
-              <BreachCard breach={breach} mirror={i % 2 === 1} />
+              <Reveal>
+                <BreachCard breach={breach} mirror={i % 2 === 1} />
+              </Reveal>
             </li>
           ))}
         </ul>

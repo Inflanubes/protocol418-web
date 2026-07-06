@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import type { Breach } from '@/lib/breaches';
+import { useTilt } from '@/hooks/useTilt';
 import styles from './BreachCard.module.css';
 
 type Props = {
@@ -13,10 +14,17 @@ type Props = {
 
 export function BreachCard({ breach, mirror = false }: Props) {
   const [flipped, setFlipped] = useState(false);
+  const tilt = useTilt();
 
   return (
     <div id={breach.slug} className={styles.scene}>
-      <button
+      <div
+        ref={tilt.ref}
+        onPointerMove={tilt.onPointerMove}
+        onPointerLeave={tilt.onPointerLeave}
+        className={styles.tiltWrap}
+      >
+        <button
         type="button"
         className={[styles.card, mirror ? styles.mirror : '', flipped ? styles.isFlipped : '']
           .filter(Boolean)
@@ -65,7 +73,8 @@ export function BreachCard({ breach, mirror = false }: Props) {
             {breach.reflexion && <p className={styles.reflexion}>{breach.reflexion}</p>}
           </div>
         </div>
-      </button>
+        </button>
+      </div>
 
       {(breach.caso || breach.recursos) && (
         <div className={styles.evidence}>
