@@ -42,6 +42,7 @@ export function FundamentoCard({ entry }: { entry: Fundamento }) {
       >
         <span className={styles.level}>{entry.level}</span>
         <span className={styles.headerText}>
+          <span className={styles.fileName}>{entry.level}-{entry.slug}</span>
           <span className={styles.title}>{entry.title}</span>
           <span className={styles.summary}>{entry.summary}</span>
           {!open ? (

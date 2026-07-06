@@ -22,6 +22,7 @@
 }
 .level { font-family: var(--font-mono); font-size: var(--fs-body-lg); color: var(--color-accent); }
 .headerText { display: flex; flex-direction: column; gap: 2px; }
+.fileName { font-family: var(--font-mono); font-size: var(--fs-eyebrow); color: var(--color-text-muted); }
 .title { font-family: var(--font-display); font-size: var(--fs-h3, 1.25rem); }
 .summary { font-size: var(--fs-body-sm); color: var(--color-text-muted); }
 .hook { font-family: var(--font-mono); font-size: var(--fs-body-sm); color: var(--color-accent); margin-top: var(--space-1); }

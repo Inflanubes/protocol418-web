@@ -1,4 +1,4 @@
 /* components/fundamentos/MovementHeader.module.css */
 .wrap { display: flex; align-items: baseline; gap: var(--space-3); }
-.index { font-family: var(--font-mono); color: var(--color-accent); font-size: var(--fs-body); }
+.index { font-family: var(--font-mono); font-size: var(--fs-eyebrow); letter-spacing: var(--tracking-eyebrow); color: var(--color-accent); }
 .title { font-family: var(--font-display); font-size: var(--fs-h2, 1.75rem); letter-spacing: var(--tracking-tight); }
