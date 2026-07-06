@@ -71,6 +71,8 @@ export function RetoRow({ id, titulo, puntos, instrucciones, comando, clave, com
               }}
               placeholder="418-XXXXXX"
               aria-label={`Código del reto ${titulo}`}
+              aria-invalid={estado === 'error'}
+              aria-describedby={estado === 'error' && mensaje ? `reto-error-${id}` : undefined}
               autoComplete="off"
               spellCheck={false}
             />
@@ -78,7 +80,11 @@ export function RetoRow({ id, titulo, puntos, instrucciones, comando, clave, com
               {estado === 'checking' ? 'validando…' : 'validar'}
             </button>
           </form>
-          {estado === 'error' && mensaje ? <p className={styles.retoError}>{mensaje}</p> : null}
+          {estado === 'error' && mensaje ? (
+            <p id={`reto-error-${id}`} role="alert" className={styles.retoError}>
+              {mensaje}
+            </p>
+          ) : null}
         </>
       ) : (
         <p className={styles.retoOk}>[OK] módulo alimentado.</p>
