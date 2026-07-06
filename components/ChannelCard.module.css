@@ -185,6 +185,11 @@
   }
   .titleBlock {
     align-items: center;
+    flex-wrap: wrap;
+  }
+  .running {
+    margin-left: 0;
+    flex-basis: 100%;
   }
   .description {
     text-align: left;
