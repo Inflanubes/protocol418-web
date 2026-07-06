@@ -5,7 +5,17 @@
 // desde componentes de cliente.
 import { createHmac } from 'node:crypto';
 
-const SECRET = process.env.LAB_SECRET ?? 'dev-secret-418';
+// El secreto solo puede faltar en desarrollo. En producción, sin LAB_SECRET
+// no se firma nada: mejor un 500 visible que códigos falsificables (el
+// fallback es público — este repo lo es).
+function getSecret(): string {
+  const secret = process.env.LAB_SECRET;
+  if (secret) return secret;
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('LAB_SECRET no está configurado en producción.');
+  }
+  return 'dev-secret-418';
+}
 
 export const CLAVE_REGEX = /^[a-z0-9][a-z0-9-]{2,23}$/;
 
@@ -17,7 +27,7 @@ export function normalizeClave(raw: string | null | undefined): string | null {
 
 // Código personalizado: el de otro alumno no vale. HMAC(clave:reto) → 418-XXXXXX.
 export function unlockCode(clave: string, retoId: string): string {
-  const hex = createHmac('sha256', SECRET).update(`${clave}:${retoId}`).digest('hex');
+  const hex = createHmac('sha256', getSecret()).update(`${clave}:${retoId}`).digest('hex');
   return `418-${hex.slice(0, 6).toUpperCase()}`;
 }
 

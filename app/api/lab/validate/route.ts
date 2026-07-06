@@ -50,8 +50,9 @@ async function logToRanking(row: { clave: string; reto: string; puntos: number }
       body: JSON.stringify({ ...row, fecha: new Date().toISOString() }),
       signal: AbortSignal.timeout(3000),
     });
-  } catch {
+  } catch (err) {
     // El desbloqueo del alumno no depende del ranking.
+    console.error('[lab] fallo del webhook del ranking:', err);
   }
 }
 
