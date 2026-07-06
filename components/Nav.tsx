@@ -37,7 +37,7 @@ export function Nav() {
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brand} aria-label="Protocol 418 — inicio">
+        <Link href="/" className={styles.brand} aria-label="<4|8> Protocol 418 — inicio">
           &lt;4<span className={styles.pipe}>|</span>8&gt;
         </Link>
 
