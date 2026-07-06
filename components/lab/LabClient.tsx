@@ -2,8 +2,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { COLECCIONABLES, TIER_LABELS, nivelesByTier } from '@/lib/lab';
 import { ClaveGate } from './ClaveGate';
 import { loadProgress, saveProgress, type LabProgress } from './labStorage';
+import { StatusBoard } from './StatusBoard';
+import { ModuleCard } from './ModuleCard';
+import { RetoRow } from './RetoRow';
 import styles from './lab.module.css';
 
 export function LabClient() {
@@ -28,12 +32,51 @@ export function LabClient() {
     return <ClaveGate onRegister={register} />;
   }
 
+  function markComplete(retoId: string, puntos: number) {
+    setProgress((prev) => {
+      if (!prev) return prev;
+      const next = { ...prev, completados: { ...prev.completados, [retoId]: puntos } };
+      saveProgress(next);
+      return next;
+    });
+  }
+
   return (
-    <div>
-      <p className={styles.claveLine}>
-        clave registrada: <span className={styles.claveValue}>{progress.clave}</span>
-      </p>
-      {/* Task 6: StatusBoard + módulos + colección */}
+    <div className={styles.lab}>
+      <StatusBoard clave={progress.clave} completados={progress.completados} />
+      {nivelesByTier().map(({ tier, niveles }) => (
+        <section key={tier} className={styles.tier}>
+          <h2 className={styles.tierTitle}>{TIER_LABELS[tier]}</h2>
+          {niveles.map((nivel) => (
+            <ModuleCard
+              key={nivel.numero}
+              nivel={nivel}
+              clave={progress.clave}
+              completados={progress.completados}
+              onComplete={markComplete}
+            />
+          ))}
+        </section>
+      ))}
+      <section className={styles.tier}>
+        <h2 className={styles.tierTitle}>COLECCIÓN — errores con historia</h2>
+        <p className={styles.coleccionIntro}>
+          Romper cosas también enseña. Provoca estos errores (con tu clave en la petición) y
+          colecciona sus códigos.
+        </p>
+        {COLECCIONABLES.map((c) => (
+          <RetoRow
+            key={c.id}
+            id={c.id}
+            titulo={`${c.codigo} — ${c.titulo}`}
+            puntos={c.puntos}
+            instrucciones={[c.pista]}
+            clave={progress.clave}
+            completado={progress.completados[c.id] !== undefined}
+            onComplete={markComplete}
+          />
+        ))}
+      </section>
     </div>
   );
 }

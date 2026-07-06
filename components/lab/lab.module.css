@@ -76,3 +76,231 @@
 .claveValue {
   color: var(--color-accent);
 }
+
+/* ——— tablero ——— */
+
+.lab {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.board {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space-4) var(--space-6);
+}
+
+.boardLine {
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  color: var(--color-text);
+}
+
+.boardKey {
+  color: var(--color-text-muted);
+}
+
+.badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--tracking-uppercase);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+.tier {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.tierTitle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: var(--tracking-uppercase);
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.modulo {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space-4) var(--space-6);
+}
+
+.moduloOk {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 24px var(--glow-accent);
+}
+
+.moduloSummary {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  list-style: none;
+}
+
+.moduloSummary::-webkit-details-marker {
+  display: none;
+}
+
+.moduloTag {
+  color: var(--color-text-muted);
+}
+
+.moduloTitulo {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+}
+
+.moduloEstado {
+  margin-left: auto;
+  color: var(--color-text-muted);
+}
+
+.moduloEstadoOk {
+  color: var(--color-accent);
+}
+
+.moduloResumen {
+  margin-top: var(--space-3);
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  max-width: 680px;
+}
+
+.moduloEnCamino {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.reto {
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.retoDone {
+  opacity: 0.75;
+}
+
+.retoHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.retoTitulo {
+  font-weight: 600;
+  font-size: var(--fs-body);
+}
+
+.retoPuntos {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.retoPasos {
+  margin: var(--space-3) 0 0 var(--space-6);
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+}
+
+.retoComando {
+  display: block;
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.retoForm {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.retoInput {
+  flex: 0 1 200px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  text-transform: uppercase;
+}
+
+.retoInput:focus {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 0;
+}
+
+.retoButton {
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+}
+
+.retoButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.retoError {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-accent);
+}
+
+.retoOk {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-accent);
+}
+
+.coleccionIntro {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  max-width: 680px;
+}
