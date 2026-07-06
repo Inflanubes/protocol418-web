@@ -34,20 +34,26 @@ const DNA: DnaItem[] = [
 export default function HomePage() {
   return (
     <main>
-      {/* HERO */}
-      <Section className={styles.heroSection}>
-        <div className={styles.hero}>
-          <Outlined418 className={styles.hero418} />
-          <p className={styles.heroComment}>{'// HTTP 418 — I’m a teapot'}</p>
-          <h1 className={styles.heroHook}>
-            Esto no es teoría.
-            <br />
-            Esto es protocolo<span className={styles.heroCursor}>_</span>
-          </h1>
-          <p className={styles.heroSlogan}>Be open source, my friend.</p>
-          <Tagline className={styles.heroTagline} variant="muted" />
+      {/* SCENE 1 — ARRANQUE (pinned under motion-on + @supports; plain flow otherwise) */}
+      <div className="scene scenePin200">
+        <div className="sceneSticky">
+          <Section className={styles.heroSection}>
+            <div className={styles.hero}>
+              <Outlined418 className={styles.hero418} />
+              <p className={`${styles.heroComment} ${styles.heroLine1}`}>{'// HTTP 418 — I’m a teapot'}</p>
+              <h1 className={styles.heroHook}>
+                <span className={styles.heroLine2}>Esto no es teoría.</span>
+                <br />
+                <span className={styles.heroLine3}>
+                  Esto es protocolo<span className={styles.heroCursor}>_</span>
+                </span>
+              </h1>
+              <p className={`${styles.heroSlogan} ${styles.heroLine4}`}>Be open source, my friend.</p>
+              <Tagline className={`${styles.heroTagline} ${styles.heroLine5}`} variant="muted" />
+            </div>
+          </Section>
         </div>
-      </Section>
+      </div>
 
       {/* QUÉ ES ESTO — NO ES / ES */}
       <Section variant="surface">

@@ -289,3 +289,46 @@
   gap: var(--space-4);
   text-align: center;
 }
+
+/* Scene 1 — staged hero lines, scrubbed by the root scroll timeline.
+   (Top-of-page scene: the pin wrapper is already in view on load, so a
+   view-timeline `entry` range would never scrub — use scroll(root) instead.) */
+
+/* .heroLine1 (the "// HTTP 418" comment) is intentionally excluded from the
+   scrub animation — it renders static/visible immediately. This empty rule
+   only registers the class with CSS Modules so `styles.heroLine1` resolves
+   to a real token instead of undefined. */
+.heroLine1 {
+}
+
+@supports (animation-timeline: scroll()) {
+  :global(html[data-motion='on']) .heroLine2,
+  :global(html[data-motion='on']) .heroLine3,
+  :global(html[data-motion='on']) .heroLine4,
+  :global(html[data-motion='on']) .heroLine5 {
+    display: inline-block;
+    animation: heroRise linear both;
+    animation-timeline: scroll(root);
+  }
+  /* the pin wrapper is 200vh; these ranges map to the first ~100vh of page scroll */
+  :global(html[data-motion='on']) .heroLine2 { animation-range: 6vh 26vh; }
+  :global(html[data-motion='on']) .heroLine3 { animation-range: 14vh 40vh; }
+  :global(html[data-motion='on']) .heroLine4 { animation-range: 24vh 55vh; }
+  :global(html[data-motion='on']) .heroLine5 { animation-range: 32vh 68vh; }
+
+  :global(html[data-motion='on']) .hero418 {
+    animation: scrubDriftLocal linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0vh 120vh;
+  }
+}
+
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scrubDriftLocal {
+  from { transform: scale(0.98); opacity: 0.6; }
+  to { transform: translateY(-8%) scale(1.06); opacity: 1; }
+}
