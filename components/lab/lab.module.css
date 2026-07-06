@@ -28,13 +28,25 @@
 }
 
 .gateForm {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-3);
-  flex-wrap: wrap;
+}
+
+.gateOptionalTitle {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: var(--tracking-uppercase);
+  color: var(--color-accent);
+}
+
+.gateNote {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
 }
 
 .gateInput {
-  flex: 1 1 220px;
   font-family: var(--font-mono);
   font-size: var(--fs-code);
   color: var(--color-text);
@@ -50,6 +62,7 @@
 }
 
 .gateButton {
+  justify-self: start;
   font-family: var(--font-mono);
   font-size: var(--fs-code);
   color: var(--color-bg);

@@ -47,7 +47,7 @@ async function logToRanking(row: { clave: string; reto: string; puntos: number }
     await fetch(webhook, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...row, fecha: new Date().toISOString() }),
+      body: JSON.stringify({ tipo: 'reto', ...row, fecha: new Date().toISOString() }),
       signal: AbortSignal.timeout(3000),
     });
   } catch (err) {
