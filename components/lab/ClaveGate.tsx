@@ -39,6 +39,8 @@ export function ClaveGate({ onRegister }: Props) {
           }}
           placeholder="tetera-042"
           aria-label="Tu clave de alumno"
+          aria-invalid={error !== null}
+          aria-describedby={error ? 'clave-error' : undefined}
           autoComplete="off"
           spellCheck={false}
         />
@@ -46,7 +48,11 @@ export function ClaveGate({ onRegister }: Props) {
           iniciar sistema →
         </button>
       </form>
-      {error ? <p className={styles.gateError}>{error}</p> : null}
+      {error ? (
+        <p id="clave-error" role="alert" className={styles.gateError}>
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }

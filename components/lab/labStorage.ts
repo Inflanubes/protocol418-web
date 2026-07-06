@@ -18,7 +18,14 @@ export function loadProgress(): LabProgress | null {
     const raw = window.localStorage.getItem(KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as LabProgress;
-    if (typeof parsed.clave !== 'string' || typeof parsed.completados !== 'object') return null;
+    if (
+      typeof parsed.clave !== 'string' ||
+      typeof parsed.completados !== 'object' ||
+      parsed.completados === null ||
+      Array.isArray(parsed.completados)
+    ) {
+      return null;
+    }
     return parsed;
   } catch {
     return null;
