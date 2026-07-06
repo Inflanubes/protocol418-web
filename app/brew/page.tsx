@@ -5,6 +5,7 @@ import { Coffee, Flame, Cog, Bomb, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Section } from '@/components/Section';
 import { Eyebrow } from '@/components/Eyebrow';
+import { ModuleHeader } from '@/components/ModuleHeader';
 import { CTAButton } from '@/components/CTAButton';
 import { ClassCard } from '@/components/ClassCard';
 import { CLASSES_BY_DATE } from '@/lib/classes';
@@ -54,7 +55,7 @@ export default function BrewPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <Eyebrow>Las clases</Eyebrow>
+          <ModuleHeader index={1} label="PS">clases en emisión</ModuleHeader>
           <h1 className={styles.title}>Brew.</h1>
           <p className={styles.lead}>
             Cada clase es un <em>té</em>. El vídeo y todos sus recursos, en un solo sitio.

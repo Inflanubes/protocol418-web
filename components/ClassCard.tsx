@@ -10,6 +10,13 @@ type Props = {
 export function ClassCard({ entry }: Props) {
   return (
     <Link href={`/brew/${entry.slug}`} className={styles.card}>
+      <div className={styles.chrome} aria-hidden>
+        <span className={styles.chromeDots}>●●●</span>
+        <span className={styles.chromeTitle}>{entry.tea}.sh</span>
+        <span className={entry.youtubeId ? styles.statusOn : styles.statusOff}>
+          {entry.youtubeId ? '● emitida' : '○ en camino'}
+        </span>
+      </div>
       <div className={styles.head}>
         <span className={styles.tea}>{entry.tea}</span>
         <span className={styles.date}>{formatClassDate(entry.date)}</span>
