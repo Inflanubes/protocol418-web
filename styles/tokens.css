@@ -6,7 +6,7 @@
   --color-border:      #1F1F1F;
   --color-accent:      #EA5A1F;
   --color-text:        #F0EBE2;
-  --color-text-muted:  #7A7A7A;
+  --color-text-muted:  #8A8A8A; /* web-only: derivado de #7A7A7A (marca) para AA 4.5:1 sobre surface */
 
   /* Type families — alimentadas por next/font en app/layout.tsx */
   --font-display: var(--font-space-grotesk), system-ui, sans-serif;
