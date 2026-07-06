@@ -16,24 +16,24 @@ export function Reveal({ children, className, stagger = false }: Props) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (stagger) {
-      Array.from(el.children).forEach((child, i) => {
+    el.querySelectorAll('.stagger').forEach((s) => {
+      Array.from(s.children).forEach((child, i) => {
         (child as HTMLElement).style.setProperty('--stagger-i', String(i));
       });
-    }
-    const markTypewriters = () => {
-      el.querySelectorAll('.tw').forEach((tw) => tw.classList.add('in-view'));
+    });
+    const markInView = () => {
+      el.querySelectorAll('.tw, .stagger').forEach((n) => n.classList.add('in-view'));
     };
     if (!('IntersectionObserver' in window)) {
       el.classList.add(styles.visible!, 'in-view');
-      markTypewriters();
+      markInView();
       return;
     }
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
           el.classList.add(styles.visible!, 'in-view');
-          markTypewriters();
+          markInView();
           io.disconnect();
         }
       },

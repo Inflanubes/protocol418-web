@@ -58,7 +58,7 @@ export default function HomePage() {
       {/* QUÉ ES ESTO — NO ES / ES */}
       <Section variant="surface">
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={1}>Qué es esto</ModuleHeader>
             <h2 className={styles.h2}>No es lo que crees.</h2>
             <div className={styles.notIsGrid}>
@@ -85,7 +85,7 @@ export default function HomePage() {
       {/* ¿QUÉ ES PROTOCOL 418? — el ruido + vibe vs spec */}
       <Section>
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={2}>¿Qué es Protocol 418?</ModuleHeader>
             <h2 className={styles.h2}>Más ruido que nunca.</h2>
             <p className={styles.body}>
@@ -114,7 +114,7 @@ export default function HomePage() {
       {/* EL ORIGEN — TEAPOT STORY */}
       <Section variant="surface">
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={3}>El origen</ModuleHeader>
             <p className={styles.eyebrowAside}>&lt; &gt; Hyper Text Coffee Pot Control Protocol</p>
             <h2 className={styles.h2}>Una broma de 1998 que hoy es real.</h2>
@@ -181,7 +181,7 @@ export default function HomePage() {
       {/* PARA ESTO NACE */}
       <Section variant="surface">
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={5}>Para esto nace</ModuleHeader>
             <h2 className={styles.h2}>Protocol 418 nace para esto.</h2>
             <ul className={styles.list}>
@@ -197,7 +197,7 @@ export default function HomePage() {
       {/* POSTURA */}
       <Section>
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={6}>La postura</ModuleHeader>
             <p className={styles.statement}>No necesitas más IA. Necesitas mejor estructura.</p>
             <p className={styles.statement}>Menos herramientas, más sistema.</p>
@@ -212,7 +212,7 @@ export default function HomePage() {
       {/* EL ADN */}
       <Section variant="surface">
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={7}>El ADN</ModuleHeader>
             <h2 className={styles.h2}>Cómo se construye aquí.</h2>
             <ul className={styles.dnaList}>
@@ -234,7 +234,7 @@ export default function HomePage() {
       {/* QUIÉN HAY DETRÁS */}
       <Section>
         <Reveal>
-          <div className={styles.contentBlock}>
+          <div className={`${styles.contentBlock} stagger`}>
             <ModuleHeader index={8}>Quién hay detrás</ModuleHeader>
             <p className={styles.statementSmall}>
               No formador clásico. No influencer de IA. Operador.
@@ -251,7 +251,7 @@ export default function HomePage() {
       {/* CIERRE */}
       <Section variant="surface">
         <Reveal>
-          <div className={styles.closingWrap}>
+          <div className={`${styles.closingWrap} stagger`}>
             <p className={styles.closing}>
               Aquí hay gente que construye cosas reales, con criterio, sin ruido.
             </p>
@@ -262,7 +262,7 @@ export default function HomePage() {
       {/* CTA */}
       <Section>
         <Reveal>
-          <div className={styles.cta}>
+          <div className={`${styles.cta} stagger`}>
             <ModuleHeader index={9}>Compartir es ayudar. Be open source, my friend.</ModuleHeader>
             <CTAButton variant="primary" ariaLabel="Solicitar acceso a la comunidad de WhatsApp">
               Entrar a la comunidad →
