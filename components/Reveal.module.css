@@ -1,5 +1,5 @@
 /* components/Reveal.module.css — hidden state only when JS is present (html[data-js]) */
-:global(html[data-js='1']) .reveal {
+:global(html[data-js='1']) .reveal:not(:global(.stagger)) {
   opacity: 0;
   transform: translateY(16px);
   transition:

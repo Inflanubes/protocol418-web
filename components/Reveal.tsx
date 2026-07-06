@@ -4,20 +4,36 @@
 import { useEffect, useRef } from 'react';
 import styles from './Reveal.module.css';
 
-export function Reveal({ children, className }: { children: React.ReactNode; className?: string }) {
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+  stagger?: boolean;
+};
+
+export function Reveal({ children, className, stagger = false }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (stagger) {
+      Array.from(el.children).forEach((child, i) => {
+        (child as HTMLElement).style.setProperty('--stagger-i', String(i));
+      });
+    }
+    const markTypewriters = () => {
+      el.querySelectorAll('.tw').forEach((tw) => tw.classList.add('in-view'));
+    };
     if (!('IntersectionObserver' in window)) {
-      el.classList.add(styles.visible!);
+      el.classList.add(styles.visible!, 'in-view');
+      markTypewriters();
       return;
     }
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          el.classList.add(styles.visible!);
+          el.classList.add(styles.visible!, 'in-view');
+          markTypewriters();
           io.disconnect();
         }
       },
@@ -25,7 +41,14 @@ export function Reveal({ children, className }: { children: React.ReactNode; cla
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [stagger]);
 
-  return <div ref={ref} className={`${styles.reveal} ${className ?? ''}`}>{children}</div>;
+  return (
+    <div
+      ref={ref}
+      className={`${styles.reveal} ${stagger ? 'stagger' : ''} ${className ?? ''}`}
+    >
+      {children}
+    </div>
+  );
 }
