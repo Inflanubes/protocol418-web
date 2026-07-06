@@ -24,8 +24,10 @@
 
 /* motion-on: the track scrubs via translateX, so the outer strip must clip
    instead of scroll (motion-off keeps native overflow-x: auto above) */
-:global(html[data-motion='on']) .strip {
-  overflow: hidden;
+@supports (animation-timeline: view()) {
+  :global(html[data-motion='on']) .strip {
+    overflow: hidden;
+  }
 }
 
 .prompt {
