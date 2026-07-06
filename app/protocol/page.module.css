@@ -56,6 +56,15 @@
   letter-spacing: var(--tracking-tight);
 }
 
+.ruleTag {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-accent);
+  margin-bottom: var(--space-1);
+}
+
 /* Convenciones — reglas operativas con border-left naranja */
 .conventions {
   list-style: none;

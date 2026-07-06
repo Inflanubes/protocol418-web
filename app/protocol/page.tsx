@@ -50,7 +50,8 @@ export default function ProtocolPage() {
             <ul className={styles.principles}>
               {PRINCIPLES.map((p, i) => (
                 <li key={p}>
-                  <ModuleHeader index={i + 1} label="RULE">{p}</ModuleHeader>
+                  <span className={styles.ruleTag}>[RULE {String(i + 1).padStart(2, '0')}]</span>
+                  {p}
                 </li>
               ))}
             </ul>
