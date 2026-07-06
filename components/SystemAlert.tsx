@@ -8,11 +8,12 @@ type Props = {
   title: React.ReactNode;
   href: string;
   linkText: string;
+  className?: string;
 };
 
-export function SystemAlert({ label, title, href, linkText }: Props) {
+export function SystemAlert({ label, title, href, linkText, className }: Props) {
   return (
-    <section className={styles.alert}>
+    <section className={`${styles.alert} ${className ?? ''}`}>
       <Container>
         <span className={styles.label}>⚠ {label}</span>
         <h2 className={styles.title}>{title}</h2>

@@ -166,6 +166,16 @@
   font-style: italic;
 }
 
+/* ESO ES UN 418 — pinned grow scene */
+.esoScene {
+  position: relative;
+  overflow: hidden;
+}
+
+.eso418 {
+  z-index: -1;
+}
+
 /* BIG STATEMENT — "Eso es un 418." */
 .bigStatement {
   font-family: var(--font-display);

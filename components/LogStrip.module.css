@@ -14,6 +14,20 @@
   color: var(--color-text-muted);
 }
 
+.track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: 1;
+  min-width: 0;
+}
+
+/* motion-on: the track scrubs via translateX, so the outer strip must clip
+   instead of scroll (motion-off keeps native overflow-x: auto above) */
+:global(html[data-motion='on']) .strip {
+  overflow: hidden;
+}
+
 .prompt {
   flex-shrink: 0;
 }

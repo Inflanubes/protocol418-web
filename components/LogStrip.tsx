@@ -7,12 +7,14 @@ type Item = { label: string; href: string };
 export function LogStrip({ items }: { items: Item[] }) {
   return (
     <nav className={styles.strip} aria-label="Log del sistema">
-      <span className={styles.prompt}>$ log —</span>
-      {items.map((item) => (
-        <Link key={item.href} href={item.href} className={styles.item}>
-          {item.label}
-        </Link>
-      ))}
+      <span className={`${styles.track} scrubLog`}>
+        <span className={styles.prompt}>$ log —</span>
+        {items.map((item) => (
+          <Link key={item.href} href={item.href} className={styles.item}>
+            {item.label}
+          </Link>
+        ))}
+      </span>
       <span className={styles.dot} aria-hidden>
         ●
       </span>

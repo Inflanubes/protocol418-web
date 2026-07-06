@@ -133,34 +133,41 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      {/* ESO ES UN 418 */}
-      <Section>
-        <Reveal>
-          <div className={styles.contentBlock}>
-            <ModuleHeader index={4}>Eso es un 418</ModuleHeader>
-            <h2 className={styles.h2}>Ahora mismo.</h2>
-            <ul className={styles.list}>
-              <li>Te venden herramientas que no necesitas.</li>
-              <li>Te prometen soluciones que no encajan con tu problema.</li>
-              <li>Te dicen que todo es IA cuando muchas veces no lo es.</li>
-            </ul>
-            <p className={styles.bigStatement}>Eso es un 418.</p>
-          </div>
-        </Reveal>
-      </Section>
+      {/* ESO ES UN 418 (pinned grow scene) */}
+      <div className="scene scenePin150">
+        <div className="sceneSticky">
+          <Section className={styles.esoScene}>
+            <Outlined418 className={`${styles.eso418} scrubGrow418`} />
+            <Reveal>
+              <div className={styles.contentBlock}>
+                <ModuleHeader index={4}>Eso es un 418</ModuleHeader>
+                <h2 className={styles.h2}>Ahora mismo.</h2>
+                <ul className={styles.list}>
+                  <li>Te venden herramientas que no necesitas.</li>
+                  <li>Te prometen soluciones que no encajan con tu problema.</li>
+                  <li>Te dicen que todo es IA cuando muchas veces no lo es.</li>
+                </ul>
+                <p className={styles.bigStatement}>Eso es un 418.</p>
+              </div>
+            </Reveal>
+          </Section>
+        </div>
+      </div>
 
-      <SystemAlert
-        label="SYSTEM ALERT — PROTOCOL BREACH"
-        title={
-          <>
-            LA NUBE
-            <br />
-            NO EXISTE.
-          </>
-        }
-        href="/breach"
-        linkText="ver las 7 brechas"
-      />
+      <Reveal className="glitch-in">
+        <SystemAlert
+          label="SYSTEM ALERT — PROTOCOL BREACH"
+          title={
+            <>
+              LA NUBE
+              <br />
+              NO EXISTE.
+            </>
+          }
+          href="/breach"
+          linkText="ver las 7 brechas"
+        />
+      </Reveal>
 
       <LogStrip
         items={[
