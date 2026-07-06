@@ -1,7 +1,7 @@
 // app/breach/page.tsx
 import type { Metadata } from 'next';
 import { Section } from '@/components/Section';
-import { Eyebrow } from '@/components/Eyebrow';
+import { ModuleHeader } from '@/components/ModuleHeader';
 import { CTAButton } from '@/components/CTAButton';
 import { BreachCard } from '@/components/BreachCard';
 import { BREACHES } from '@/lib/breaches';
@@ -18,7 +18,8 @@ export default function BreachPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <Eyebrow>Protocol Breach</Eyebrow>
+          <ModuleHeader index={1}>Protocol Breach</ModuleHeader>
+          <p className={styles.scanLine}>$ scan --sistema … 7 brechas detectadas</p>
           <h1 className={styles.title}>Breach.</h1>
           <p className={styles.lead}>
             Verdades incómodas sobre la tecnología que todos repiten sin entender. Cada

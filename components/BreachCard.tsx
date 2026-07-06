@@ -40,7 +40,7 @@ export function BreachCard({ breach, mirror = false }: Props) {
             />
           </div>
           <div className={styles.body}>
-            <span className={styles.number}>BREACH #{breach.number}</span>
+            <span className={styles.number}>⚠ BREACH {breach.number} — DETECTED</span>
             <h2 className={styles.label}>{breach.label}</h2>
             <p className={styles.hook}>{breach.hook}</p>
             <p className={styles.remate}>{breach.remate}</p>
@@ -69,6 +69,9 @@ export function BreachCard({ breach, mirror = false }: Props) {
 
       {(breach.caso || breach.recursos) && (
         <div className={styles.evidence}>
+          <span className={styles.evidenceFile} aria-hidden>
+            incident_report.txt
+          </span>
           {breach.caso && (
             <div className={styles.evidenceBlock}>
               <span className={styles.evidenceLabel}>Caso real</span>
