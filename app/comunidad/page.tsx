@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Section } from '@/components/Section';
 import { ModuleHeader } from '@/components/ModuleHeader';
+import { Reveal } from '@/components/Reveal';
 import { ChannelCard } from '@/components/ChannelCard';
 import { PromptBlock } from '@/components/PromptBlock';
 import { CTAButton } from '@/components/CTAButton';
@@ -37,12 +38,20 @@ export default function ComunidadPage() {
       </Section>
 
       <Section variant="surface">
-        <ChannelCard channel="system" expanded />
+        <Reveal>
+          <div className="stagger">
+            <ChannelCard channel="system" expanded />
+          </div>
+        </Reveal>
       </Section>
 
       <Section>
         <div className={styles.brewWrap}>
-          <ChannelCard channel="brew" expanded />
+          <Reveal>
+            <div className="stagger">
+              <ChannelCard channel="brew" expanded />
+            </div>
+          </Reveal>
           <div className={styles.prompts}>
             <h3 className={styles.promptsTitle}>Prompts del canal</h3>
             <PromptBlock label="Brew">{BREW_TEMPLATE}</PromptBlock>
@@ -52,7 +61,11 @@ export default function ComunidadPage() {
       </Section>
 
       <Section variant="surface">
-        <ChannelCard channel="core" expanded />
+        <Reveal>
+          <div className="stagger">
+            <ChannelCard channel="core" expanded />
+          </div>
+        </Reveal>
       </Section>
 
       <Section>

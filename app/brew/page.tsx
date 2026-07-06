@@ -5,6 +5,7 @@ import { Coffee, Flame, Cog, Bomb, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Section } from '@/components/Section';
 import { ModuleHeader } from '@/components/ModuleHeader';
+import { Reveal } from '@/components/Reveal';
 import { CTAButton } from '@/components/CTAButton';
 import { ClassCard } from '@/components/ClassCard';
 import { CLASSES_BY_DATE } from '@/lib/classes';
@@ -64,13 +65,15 @@ export default function BrewPage() {
 
       <Section variant="surface">
         {CLASSES_BY_DATE.length > 0 ? (
-          <ul className={styles.grid}>
-            {CLASSES_BY_DATE.map((entry) => (
-              <li key={entry.slug}>
-                <ClassCard entry={entry} />
-              </li>
-            ))}
-          </ul>
+          <Reveal>
+            <ul className={`${styles.grid} stagger`}>
+              {CLASSES_BY_DATE.map((entry) => (
+                <li key={entry.slug}>
+                  <ClassCard entry={entry} />
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         ) : (
           <div className={styles.empty}>
             <p className={styles.emptyText}>

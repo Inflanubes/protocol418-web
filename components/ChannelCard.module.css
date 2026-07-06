@@ -173,6 +173,18 @@
   line-height: 1.5;
 }
 
+:global(html[data-motion='on']) :global(.stagger.in-view) .running {
+  animation: daemon-on 0.3s steps(2, jump-none) calc(var(--stagger-i, 0) * 90ms + 450ms) both;
+}
+@keyframes daemon-on {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 720px) {
   .top {
     grid-template-columns: 1fr;

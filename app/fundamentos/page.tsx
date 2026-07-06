@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Section } from '@/components/Section';
 import { Eyebrow } from '@/components/Eyebrow';
+import { Reveal } from '@/components/Reveal';
 import { CTAButton } from '@/components/CTAButton';
 import { MovementHeader } from '@/components/fundamentos/MovementHeader';
 import { FundamentoCard } from '@/components/fundamentos/FundamentoCard';
@@ -32,14 +33,18 @@ export default function FundamentosPage() {
 
       {groups.map((group, gi) => (
         <Section key={group.movement} variant={gi % 2 === 0 ? 'surface' : 'default'}>
-          <MovementHeader index={gi + 1} title={group.movement} />
-          <ul className={styles.cards}>
-            {group.items.map((entry) => (
-              <li key={entry.slug}>
-                <FundamentoCard entry={entry} />
-              </li>
-            ))}
-          </ul>
+          <Reveal>
+            <MovementHeader index={gi + 1} title={group.movement} />
+          </Reveal>
+          <Reveal>
+            <ul className={`${styles.cards} stagger`}>
+              {group.items.map((entry) => (
+                <li key={entry.slug}>
+                  <FundamentoCard entry={entry} />
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </Section>
       ))}
 

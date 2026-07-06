@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   description: 'Principios, convenciones y vocabulario del protocolo de 418.',
 };
 
+const MAN_LINE = '$ man protocol418';
+
 const PRINCIPLES = [
   'Si no funciona, no es protocolo.',
   'No necesitas más IA. Necesitas mejor estructura.',
@@ -34,7 +36,14 @@ export default function ProtocolPage() {
       <Section>
         <Reveal>
           <div className={styles.intro}>
-            <p className={styles.manLine}>$ man protocol418</p>
+            <p
+              className={`${styles.manLine} tw`}
+              style={
+                { '--tw-steps': MAN_LINE.length, '--tw-ch': `${MAN_LINE.length}ch` } as React.CSSProperties
+              }
+            >
+              {MAN_LINE}
+            </p>
             <ModuleHeader index={1}>El sistema</ModuleHeader>
             <h1 className={styles.title}>Aquí está el protocolo.</h1>
             <p className={styles.lead}>
@@ -47,7 +56,7 @@ export default function ProtocolPage() {
       <Section variant="surface">
         <Reveal>
           <div className={styles.contentBlock}>
-            <ul className={styles.principles}>
+            <ul className={`${styles.principles} stagger`}>
               {PRINCIPLES.map((p, i) => (
                 <li key={p}>
                   <span className={styles.ruleTag}>[RULE {String(i + 1).padStart(2, '0')}]</span>
@@ -82,7 +91,7 @@ export default function ProtocolPage() {
               Jerga propia que se usa con naturalidad en la comunidad. No se sobreexplica en línea —
               si el contexto la hace clara, basta.
             </p>
-            <div className={styles.grid}>
+            <div className={`${styles.grid} stagger`}>
               {GLOSSARY.map((term) => (
                 <GlossaryEntry key={term.term} entry={term} />
               ))}

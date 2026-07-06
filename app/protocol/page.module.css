@@ -121,3 +121,10 @@
   display: flex;
   justify-content: center;
 }
+
+:global(html[data-motion='on']) .principles:global(.stagger) > li {
+  transform: translateX(-16px);
+}
+:global(html[data-motion='on']) .principles:global(.stagger.in-view) > li {
+  transform: none;
+}
