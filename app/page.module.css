@@ -1,5 +1,7 @@
 /* HERO */
 .hero {
+  position: relative;
+  z-index: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -8,17 +10,13 @@
   padding: var(--space-12) 0;
 }
 
-.heroLogo {
-  font-size: clamp(56px, 12vw, var(--fs-display));
-}
-
 .heroTagline {
   font-size: var(--fs-eyebrow);
 }
 
 .heroHook {
   font-family: var(--font-display);
-  font-size: clamp(28px, 6vw, var(--fs-h1));
+  font-size: var(--fs-display);
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.15;
@@ -33,6 +31,35 @@
   color: var(--color-accent);
   letter-spacing: var(--tracking-tight);
   margin-top: var(--space-4);
+}
+
+/* 418/OS hero */
+.heroSection {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 70% 15%, var(--glow-accent), transparent 55%);
+}
+
+.hero418 {
+  z-index: 0;
+}
+
+.heroComment {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.heroCursor {
+  color: var(--color-accent);
+  animation: heroBlink 1s steps(1) infinite;
+}
+
+@keyframes heroBlink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* CONTENT BLOCK BASE */
