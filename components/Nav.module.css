@@ -2,7 +2,7 @@
 .nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 50;
   background: rgba(20, 20, 20, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -85,6 +85,14 @@
   font-size: var(--fs-caption);
   padding: var(--space-1) var(--space-2);
   cursor: pointer;
+}
+
+.clock {
+  color: var(--color-text-muted);
+}
+
+.togglePrompt {
+  color: var(--color-text);
 }
 
 @media (max-width: 720px) {
