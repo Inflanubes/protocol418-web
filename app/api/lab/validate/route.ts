@@ -1,5 +1,6 @@
 // app/api/lab/validate/route.ts — valida códigos y apunta el tanto en el
 // ranking (webhook de Make → Google Sheets). El ranking nunca bloquea al alumno.
+import { after } from 'next/server';
 import { handleOptions, isValidCode, labError, labJson, normalizeClave } from '@/lib/lab-server';
 import { RETO_PUNTOS } from '@/lib/lab';
 
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
     return labError(400, 'Faltan campos.', 'Hacen falta los tres: clave, reto y codigo.');
   }
 
-  const puntos = RETO_PUNTOS[reto];
+  const puntos = Object.hasOwn(RETO_PUNTOS, reto) ? RETO_PUNTOS[reto] : undefined;
   if (puntos === undefined) {
     return labError(404, 'Ese reto no existe.', 'Revisa el identificador del reto en https://protocol418.com/lab.');
   }
@@ -33,7 +34,8 @@ export async function POST(request: Request) {
     });
   }
 
-  await logToRanking({ clave, reto, puntos });
+  // after(): la respuesta sale ya; el webhook corre después de enviarla.
+  after(() => logToRanking({ clave, reto, puntos }));
   return labJson(200, { valido: true, reto, puntos });
 }
 
