@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { NAV_LINKS } from '@/lib/constants';
+import { ScrollProgress } from './ScrollProgress';
 import styles from './Nav.module.css';
 
 function Clock() {
@@ -74,6 +75,7 @@ export function Nav() {
           <Clock />
         </div>
       </div>
+      <ScrollProgress />
     </header>
   );
 }

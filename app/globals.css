@@ -1,5 +1,6 @@
 /* app/globals.css */
 @import url('../styles/tokens.css');
+@import url('../styles/motion.css');
 
 * {
   box-sizing: border-box;

@@ -1,0 +1,108 @@
+/* styles/motion.css — 418/OS motion layer. Every rule double-gated:
+   html[data-motion='on'] and, for scroll-scrubbed effects, @supports. */
+
+/* ---------- Typewriter (mono tags). Element needs inline
+   --tw-steps: <char count>; --tw-ch: <char count>ch; ---------- */
+html[data-motion='on'] .tw {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: var(--tw-ch);
+  animation: tw-type 0.35s steps(var(--tw-steps)) both;
+  animation-play-state: paused;
+}
+html[data-motion='on'] .tw.in-view {
+  animation-play-state: running;
+}
+@keyframes tw-type {
+  from { width: 0; }
+  to { width: var(--tw-ch); }
+}
+
+/* ---------- Glitch stamp (1-frame flicker on entry) ---------- */
+html[data-motion='on'] .glitch-in.in-view {
+  animation: glitch-stamp 0.28s steps(2, jump-none) both;
+}
+@keyframes glitch-stamp {
+  0% { opacity: 0; transform: translateX(-6px) skewX(-4deg); }
+  50% { opacity: 1; transform: translateX(3px) skewX(2deg); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* ---------- Stagger (children cascade). Each child needs inline
+   style="--stagger-i: N" ---------- */
+html[data-motion='on'] .stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  transition-delay: calc(var(--stagger-i, 0) * 90ms);
+}
+html[data-motion='on'] .stagger.in-view > * {
+  opacity: 1;
+  transform: none;
+}
+/* No-JS / motion-off safety: without .in-view logic running, keep visible */
+html:not([data-js='1']) .stagger > *,
+html[data-motion='off'] .stagger > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* ---------- Scroll-scrubbed scenes (home) ---------- */
+@supports (animation-timeline: view()) {
+  html[data-motion='on'] .scene {
+    view-timeline-name: --scene;
+    view-timeline-axis: block;
+  }
+  /* Scene pinning: wrapper provides scroll room, sticky child holds */
+  html[data-motion='on'] .scenePin200 { min-height: 200vh; }
+  html[data-motion='on'] .scenePin150 { min-height: 150vh; }
+  html[data-motion='on'] .sceneSticky {
+    position: sticky;
+    top: 48px; /* under the status bar */
+    min-height: calc(100svh - 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Scrubbed building blocks — attach animation-timeline: --scene */
+  html[data-motion='on'] .scrubFadeUp {
+    animation: scrub-fade-up linear both;
+    animation-timeline: --scene;
+    animation-range: entry 10% entry 50%;
+  }
+  html[data-motion='on'] .scrubGrow418 {
+    animation: scrub-grow linear both;
+    animation-timeline: --scene;
+    animation-range: entry 0% exit 40%;
+  }
+  html[data-motion='on'] .scrubDrift {
+    animation: scrub-drift linear both;
+    animation-timeline: --scene;
+    animation-range: entry 0% exit 100%;
+  }
+  html[data-motion='on'] .scrubLog {
+    animation: scrub-log linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+}
+@keyframes scrub-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes scrub-grow {
+  from { transform: scale(0.55); opacity: 0.35; }
+  to { transform: scale(1.6); opacity: 1; }
+}
+@keyframes scrub-drift {
+  from { transform: translateY(4%) scale(0.98); }
+  to { transform: translateY(-6%) scale(1.04); }
+}
+@keyframes scrub-log {
+  from { transform: translateX(0); }
+  to { transform: translateX(-12%); }
+}
