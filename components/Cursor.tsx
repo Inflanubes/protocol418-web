@@ -16,10 +16,20 @@ export function Cursor() {
 
   useEffect(() => {
     const fine = window.matchMedia('(pointer: fine)').matches;
+    if (!fine) return;
+
     const motionOn = () => document.documentElement.dataset.motion !== 'off';
-    if (!fine || !motionOn()) return;
-    setActive(true);
-    document.documentElement.classList.add(styles.hideNative!);
+
+    const activate = () => {
+      setActive(true);
+      document.documentElement.classList.add(styles.hideNative!);
+    };
+    const deactivate = () => {
+      setActive(false);
+      document.documentElement.classList.remove(styles.hideNative!);
+    };
+
+    if (motionOn()) activate();
 
     const onMove = (e: PointerEvent) => {
       target.current = { x: e.clientX, y: e.clientY };
@@ -41,12 +51,10 @@ export function Cursor() {
     raf = requestAnimationFrame(tick);
 
     const observer = new MutationObserver(() => {
-      if (!motionOn()) {
-        setActive(false);
-        document.documentElement.classList.remove(styles.hideNative!);
+      if (motionOn()) {
+        activate();
       } else {
-        setActive(true);
-        document.documentElement.classList.add(styles.hideNative!);
+        deactivate();
       }
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-motion'] });
