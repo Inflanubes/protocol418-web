@@ -1,0 +1,17 @@
+/* components/ModuleHeader.module.css */
+.header {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.tag {
+  color: var(--color-accent);
+}
+
+.title {
+  color: var(--color-text-muted);
+}

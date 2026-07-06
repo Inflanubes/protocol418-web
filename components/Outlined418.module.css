@@ -1,0 +1,24 @@
+/* components/Outlined418.module.css */
+.numeral {
+  position: absolute;
+  right: -0.1em;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(160px, 24vw, 320px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px #242424;
+  pointer-events: none;
+  user-select: none;
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% {
+    opacity: 0.55;
+    scale: 1.015;
+  }
+}

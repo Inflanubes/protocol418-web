@@ -1,0 +1,14 @@
+/* components/Reveal.module.css — hidden state only when JS is present (html[data-js]) */
+:global(html[data-js='1']) .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+:global(html[data-js='1']) .reveal.visible,
+.reveal {
+  opacity: 1;
+  transform: none;
+}

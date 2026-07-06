@@ -1,0 +1,39 @@
+/* components/LogStrip.module.css */
+.strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: var(--space-2) var(--space-6);
+  background: var(--color-bg-deep);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  color: var(--color-text-muted);
+}
+
+.prompt {
+  flex-shrink: 0;
+}
+
+.item {
+  color: var(--color-text-muted);
+  transition: color 0.15s;
+}
+
+.item:hover {
+  color: var(--color-accent);
+}
+
+.item + .item::before {
+  content: '· ';
+  color: var(--color-border);
+  margin-right: var(--space-2);
+}
+
+.dot {
+  color: var(--color-accent);
+  margin-left: auto;
+}
