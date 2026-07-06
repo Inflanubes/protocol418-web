@@ -1,0 +1,52 @@
+/* components/Cursor.module.css */
+.hideNative,
+.hideNative * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-shadow: 0 0 8px var(--glow-accent);
+  display: flex;
+  align-items: center;
+  translate: -50% -50%;
+}
+
+.open {
+  font-size: 22px;
+}
+
+.close {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.cursor[data-mode='hover'] .close {
+  opacity: 1;
+  transform: none;
+}
+
+.cursor[data-mode='hover'] .dot {
+  animation: dot-pulse 0.4s ease-out 1;
+}
+
+.cursor[data-mode='text'] .dot {
+  animation: cursor-blink 1s steps(1) infinite;
+}
+
+@keyframes dot-pulse {
+  50% { transform: scale(1.6); }
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}

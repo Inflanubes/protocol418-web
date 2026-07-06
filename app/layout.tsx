@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
 import { Boot } from '@/components/Boot';
+import { Cursor } from '@/components/Cursor';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { SITE } from '@/lib/constants';
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Boot />
+        <Cursor />
         <Nav />
         {children}
         <Footer />
