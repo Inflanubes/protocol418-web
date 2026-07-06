@@ -35,6 +35,11 @@
   word-break: break-word;
 }
 
+.term::before {
+  content: '$ ';
+  color: var(--color-accent);
+}
+
 .definition {
   font-family: var(--font-body);
   font-size: var(--fs-body);
