@@ -10,7 +10,7 @@ export function ScrollProgress() {
   useEffect(() => {
     const onScroll = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight;
-      setPct(max > 0 ? Math.min(100, Math.round((window.scrollY / max) * 100)) : 0);
+      setPct(max > 0 ? Math.max(0, Math.min(100, Math.round((window.scrollY / max) * 100))) : 0);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });

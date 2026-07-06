@@ -19,7 +19,9 @@ export default function BreachPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <ModuleHeader index={1}>Protocol Breach</ModuleHeader>
+          <Reveal>
+            <ModuleHeader index={1}>Protocol Breach</ModuleHeader>
+          </Reveal>
           <p className={styles.scanLine}>$ scan --sistema … 7 brechas detectadas</p>
           <h1 className={styles.title}>Breach.</h1>
           <p className={styles.lead}>

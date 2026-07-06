@@ -55,7 +55,9 @@ export default function BrewPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <ModuleHeader index={1} label="PS">clases en emisión</ModuleHeader>
+          <Reveal>
+            <ModuleHeader index={1} label="PS">clases en emisión</ModuleHeader>
+          </Reveal>
           <h1 className={styles.title}>Brew.</h1>
           <p className={styles.lead}>
             Cada clase es un <em>té</em>. El vídeo y todos sus recursos, en un solo sitio.
@@ -85,7 +87,9 @@ export default function BrewPage() {
 
       <Section>
         <div className={styles.contentBlock}>
-          <ModuleHeader index={2}>Categorías</ModuleHeader>
+          <Reveal>
+            <ModuleHeader index={2}>Categorías</ModuleHeader>
+          </Reveal>
           <h2 className={styles.h2}>Tipos de post.</h2>
           <p className={styles.lead}>
             Cuando empecemos a publicar, cada post pertenece a una de estas 4 categorías. Los
@@ -109,7 +113,9 @@ export default function BrewPage() {
 
       <Section>
         <div className={styles.contentBlock}>
-          <ModuleHeader index={3}>¿Empiezas de cero?</ModuleHeader>
+          <Reveal>
+            <ModuleHeader index={3}>¿Empiezas de cero?</ModuleHeader>
+          </Reveal>
           <h2 className={styles.h2}>Pasa por Fundamentos.</h2>
           <p className={styles.lead}>
             Antes de una clase entera, lo básico que seguro no te han contado: cómo funciona de

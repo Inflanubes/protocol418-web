@@ -28,7 +28,9 @@ export default function ComunidadPage() {
     <main>
       <Section>
         <div className={styles.intro}>
-          <ModuleHeader index={1}>La comunidad</ModuleHeader>
+          <Reveal>
+            <ModuleHeader index={1}>La comunidad</ModuleHeader>
+          </Reveal>
           <h1 className={styles.title}>
             Tres canales.
             <br />
@@ -70,7 +72,9 @@ export default function ComunidadPage() {
 
       <Section>
         <div className={styles.howIn}>
-          <ModuleHeader index={2}>Cómo entrar</ModuleHeader>
+          <Reveal>
+            <ModuleHeader index={2}>Cómo entrar</ModuleHeader>
+          </Reveal>
           <h2 className={styles.h2}>Solicitas. Apruebo. Entras.</h2>
           <p className={styles.lead}>
             La comunidad es por aprobación. Cuando solicitas el acceso desde el botón, lo reviso

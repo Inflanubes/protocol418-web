@@ -7,10 +7,9 @@ import styles from './Reveal.module.css';
 type Props = {
   children: React.ReactNode;
   className?: string;
-  stagger?: boolean;
 };
 
-export function Reveal({ children, className, stagger = false }: Props) {
+export function Reveal({ children, className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -41,13 +40,10 @@ export function Reveal({ children, className, stagger = false }: Props) {
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [stagger]);
+  }, []);
 
   return (
-    <div
-      ref={ref}
-      className={`${styles.reveal} ${stagger ? 'stagger' : ''} ${className ?? ''}`}
-    >
+    <div ref={ref} className={`${styles.reveal} ${className ?? ''}`}>
       {children}
     </div>
   );
