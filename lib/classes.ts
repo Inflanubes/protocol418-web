@@ -43,6 +43,29 @@ export const RESOURCE_ICONS: Record<ClassResourceType, LucideIcon> = {
 
 export const CLASSES: ClassEntry[] = [
   {
+    slug: 'earl-grey',
+    tea: 'Earl Grey',
+    title: 'Habla HTTP: de la petición al agente',
+    date: '2026-07-17', // AJUSTAR cuando Sonia convoque la clase
+    excerpt:
+      'Cómo habla internet de verdad: HTTP, GET, POST y tu primera petición real. La clase que enciende El Lab.',
+    description:
+      'Todo lo que usas —webs, apps, automatizaciones, IA— habla el mismo idioma por debajo: HTTP. En esta clase lo hablas tú: haces tu primer GET y tu primer POST reales contra la API del 418, coleccionas tu primer error con historia y sales con tu clave de alumno registrada en El Lab, el track gamificado donde el camino sigue hasta los agentes.',
+    problema:
+      'Usas la IA y las automatizaciones por encima, pero nadie te ha enseñado lo de debajo: qué es una petición, qué diferencia hay entre GET y POST, o por qué las APIs piden llave.',
+    build:
+      'Tu clave de alumno, tu primer GET y tu primer POST reales contra la API del 418, y el tier Básico de El Lab desbloqueado.',
+    stack: ['HTTP', 'curl', 'El Lab'],
+    youtubeId: '', // vídeo en camino: se graba en la clase
+    resources: [
+      {
+        label: 'El Lab — el track de retos',
+        href: '/lab',
+        type: 'link',
+      },
+    ],
+  },
+  {
     slug: 'matcha',
     tea: 'Matcha',
     title: 'Tu agente de Hermes en Telegram',
