@@ -7,6 +7,7 @@ export const NAV_LINKS = [
   { href: '/brew', label: 'Brew' },
   { href: '/fundamentos', label: 'Fundamentos' },
   { href: '/breach', label: 'Breach' },
+  { href: '/lab', label: 'Lab' },
   { href: '/comunidad', label: 'Comunidad' },
 ] as const;
 
