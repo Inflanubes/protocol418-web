@@ -59,6 +59,11 @@ export const CLASSES: ClassEntry[] = [
     youtubeId: '', // vídeo en camino: se graba en la clase
     resources: [
       {
+        label: 'Ver el deck de la clase',
+        href: 'https://earl-grey.protocol418.com',
+        type: 'link',
+      },
+      {
         label: 'El Lab — el track de retos',
         href: '/lab',
         type: 'link',
