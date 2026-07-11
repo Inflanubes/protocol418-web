@@ -55,7 +55,7 @@ export const CLASSES: ClassEntry[] = [
     problema:
       'Los niños usan internet y la IA todos los días, pero nadie les ha contado qué hay debajo — y las charlas de mayores les aburren.',
     build:
-      'Una clase completa de 90–100 min lista para dar: guión, juegos de IA en vivo con ROOI y el juego de mesa BREACH HUNT! imprimible (17 hojas A4).',
+      'Una clase completa de 90–100 min lista para dar: guión, juegos de IA en vivo con ROOI y el juego de mesa BREACH HUNT! imprimible (20 hojas A4).',
     stack: ['Print & play', 'Claude', 'Inglés A1–A2'],
     youtubeId: '',
     noVideo: true, // clase con niños: no habrá vídeo — el recurso ES la clase imprimible
