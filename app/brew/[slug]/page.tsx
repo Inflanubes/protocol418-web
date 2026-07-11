@@ -51,7 +51,9 @@ export default async function ClassPage({ params }: Params) {
 
       <Section variant="surface">
         <div className={styles.body}>
-          <VideoEmbed youtubeId={entry.youtubeId} title={`${entry.tea} — ${entry.title}`} />
+          {!entry.noVideo && (
+            <VideoEmbed youtubeId={entry.youtubeId} title={`${entry.tea} — ${entry.title}`} />
+          )}
           <ClassSpec entry={entry} />
           <p className={styles.description}>{entry.description}</p>
         </div>

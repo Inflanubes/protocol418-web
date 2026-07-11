@@ -29,6 +29,7 @@ export type ClassEntry = {
   build: string; // qué construyes en la clase (el output)
   stack: string[]; // herramientas/tecnología, una por chip
   youtubeId: string; // id del vídeo de YouTube ('' → placeholder "vídeo en camino")
+  noVideo?: boolean; // true → la clase no tendrá vídeo nunca (se oculta el bloque, sin placeholder)
   resources?: ClassResource[];
 };
 
@@ -42,6 +43,45 @@ export const RESOURCE_ICONS: Record<ClassResourceType, LucideIcon> = {
 };
 
 export const CLASSES: ClassEntry[] = [
+  {
+    slug: 'rooibos',
+    tea: 'Rooibos',
+    title: 'Junior 418 Agents: internet e IA para niños',
+    date: '2026-07-17',
+    excerpt:
+      'La clase para niños de 6 a 11 años: cómo funciona internet de verdad, por qué la IA no piensa, y un juego de mesa imprimible para cazar mentiras. Lista para que la des tú.',
+    description:
+      'Rooibos es el té sin teína: la clase de los niños. Nació como clase de verano para Arkeidia (una escuela de inglés que enseña con juegos de mesa) y aquí está entera para que la des tú — a tus hijos, a tus sobrinos, a un aula. Los niños se convierten en Junior 418 Agents y cazan Breaches: mentiras que la gente cree sobre internet y la IA. Todo en inglés sencillo (A1–A2), 90–100 minutos, sin sentarse quietos más de 8 minutos seguidos. El final es BREACH HUNT!, un juego de mesa imprimible que después se queda en casa. Descarga, imprime y da la clase: guión minuto a minuto, prompts kid-safe para los juegos de IA en vivo y el kit completo.',
+    problema:
+      'Los niños usan internet y la IA todos los días, pero nadie les ha contado qué hay debajo — y las charlas de mayores les aburren.',
+    build:
+      'Una clase completa de 90–100 min lista para dar: guión, juegos de IA en vivo con ROOI y el juego de mesa BREACH HUNT! imprimible (17 hojas A4).',
+    stack: ['Print & play', 'Claude', 'Inglés A1–A2'],
+    youtubeId: '',
+    noVideo: true, // clase con niños: no habrá vídeo — el recurso ES la clase imprimible
+    resources: [
+      {
+        label: 'BREACH HUNT! — kit imprimible (ZIP, 7 PDFs)',
+        href: '/rooibos/breach-hunt-kit.zip',
+        type: 'link',
+      },
+      {
+        label: 'Guión de la clase, minuto a minuto (PDF)',
+        href: '/rooibos/guion-clase-rooibos.pdf',
+        type: 'link',
+      },
+      {
+        label: 'ROOI — prompts de los juegos de IA en vivo (PDF)',
+        href: '/rooibos/rooi-prompts.pdf',
+        type: 'prompt',
+      },
+      {
+        label: 'Ver el deck de la clase',
+        href: 'https://rooibos.protocol418.com',
+        type: 'link',
+      },
+    ],
+  },
   {
     slug: 'earl-grey',
     tea: 'Earl Grey',
