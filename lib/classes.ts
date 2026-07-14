@@ -61,7 +61,7 @@ export const CLASSES: ClassEntry[] = [
     noVideo: true, // clase con niños: no habrá vídeo — el recurso ES la clase imprimible
     resources: [
       {
-        label: 'BREACH HUNT! — kit imprimible (ZIP, 7 PDFs)',
+        label: 'BREACH HUNT! — kit imprimible completo (ZIP)',
         href: '/rooibos/breach-hunt-kit.zip',
         type: 'link',
       },
