@@ -66,13 +66,18 @@ export const CLASSES: ClassEntry[] = [
         type: 'link',
       },
       {
-        label: 'Guión de la clase, minuto a minuto (PDF)',
-        href: '/rooibos/guion-clase-rooibos.pdf',
+        label: 'Guía de directo — la clase minuto a minuto, en color (PDF)',
+        href: '/rooibos/guia-directo.pdf',
         type: 'link',
       },
       {
-        label: 'ROOI — prompts de los juegos de IA en vivo (PDF)',
-        href: '/rooibos/rooi-prompts.pdf',
+        label: 'Preparación — checklist, montar a ROOI y dry run (PDF)',
+        href: '/rooibos/preparacion.pdf',
+        type: 'link',
+      },
+      {
+        label: 'Material de clase — cartas del juego de internet + paletas REAL/BREACH (PDF)',
+        href: '/rooibos/material-clase.pdf',
         type: 'prompt',
       },
       {
