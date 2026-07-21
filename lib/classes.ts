@@ -76,9 +76,9 @@ export const CLASSES: ClassEntry[] = [
         type: 'link',
       },
       {
-        label: 'Material de clase — cartas del juego de internet + paletas REAL/BREACH (PDF)',
+        label: 'Material de clase — cartas del juego de internet, para recortar (PDF)',
         href: '/rooibos/material-clase.pdf',
-        type: 'prompt',
+        type: 'link',
       },
       {
         label: 'Ver el deck de la clase',
