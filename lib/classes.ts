@@ -66,7 +66,7 @@ export const CLASSES: ClassEntry[] = [
         type: 'link',
       },
       {
-        label: 'Guía de directo — la clase minuto a minuto, en color (PDF)',
+        label: 'Guión de la clase — minuto a minuto, en color (PDF)',
         href: '/rooibos/guia-directo.pdf',
         type: 'link',
       },
