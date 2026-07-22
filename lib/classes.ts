@@ -61,7 +61,7 @@ export const CLASSES: ClassEntry[] = [
     noVideo: true, // clase con niños: no habrá vídeo — el recurso ES la clase imprimible
     resources: [
       {
-        label: 'BREACH HUNT! — kit imprimible completo (ZIP)',
+        label: 'BREACH HUNT! — juego de mesa imprimible (ZIP)',
         href: '/rooibos/breach-hunt-kit.zip',
         type: 'link',
       },
@@ -76,8 +76,8 @@ export const CLASSES: ClassEntry[] = [
         type: 'link',
       },
       {
-        label: 'Material de clase — cartas del juego de internet + paletas REAL/BREACH, para recortar (PDF)',
-        href: '/rooibos/material-clase.pdf',
+        label: 'Material de clase — kit imprimible: cartas del juego de internet + paletas REAL/BREACH (ZIP)',
+        href: '/rooibos/material-clase.zip',
         type: 'link',
       },
       {
