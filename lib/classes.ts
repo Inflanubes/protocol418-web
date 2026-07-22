@@ -81,7 +81,7 @@ export const CLASSES: ClassEntry[] = [
         type: 'link',
       },
       {
-        label: 'Ver el deck de la clase',
+        label: 'Ver el deck de la clase (presentación)',
         href: 'https://rooibos.protocol418.com',
         type: 'link',
       },
