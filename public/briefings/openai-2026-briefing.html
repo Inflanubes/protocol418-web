@@ -108,6 +108,11 @@
   .card .role { font-size: 14px; color: var(--muted); margin: 0 0 16px; }
   .spec { font-family: var(--font-mono); font-size: 13px; line-height: 2; font-variant-numeric: tabular-nums; }
   .spec span { color: var(--muted); }
+  .checks { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
+  .checks li { padding: 5px 0 5px 22px; position: relative; }
+  .checks li::before { position: absolute; left: 0; font-family: var(--font-mono); font-weight: 700; }
+  .checks-si li::before { content: "+"; color: var(--accent); }
+  .checks-no li::before { content: "\2212"; color: var(--text); }
 
   /* ============ timeline ============ */
   .timeline { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 0; }
@@ -338,10 +343,40 @@
   </div>
 </section>
 
-<!-- ══════════ 06 · PLATAFORMA ══════════ -->
+<!-- ══════════ 06 · SITES ══════════ -->
+<section class="slide" id="s4d">
+  <div class="slide-inner">
+    <p class="module">[MODULE 06] <b>//</b> SITES</p>
+    <h2>ChatGPT Sites: publicar sin salir del chat</h2>
+    <p class="lead">Describes la app, ChatGPT la construye y la publica con un clic en <span style="font-family:var(--font-mono);font-size:15px">[nombre].openai.chatgpt.site</span>. El paso "súbelo a Vercel" desaparece. Para enseñar un MVP, comodísimo.</p>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Tiene más de lo que parece</span>
+        <ul class="checks checks-si">
+          <li>Base de datos relacional (D1) y almacenamiento de ficheros (R2) — no es solo frontend</li>
+          <li>Código en servidor, variables de entorno y secretos</li>
+          <li>Login con "Sign in with ChatGPT"</li>
+          <li>Dominio propio si ya lo tienes (lo conectas por DNS)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Dónde se acaba</span>
+        <ul class="checks checks-no">
+          <li>Pagos prohibidos: ni datos de tarjeta ni información sanitaria</li>
+          <li>Beta con límites de uso por plan — y solo planes de pago</li>
+          <li>La app vive atada a tu suscripción de ChatGPT</li>
+          <li>Cada deploy va directo a producción: no hay preview</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:20px"><strong style="color:var(--accent)">Y el detalle decisivo aquí:</strong> al lanzamiento no está disponible en el EEE — en España aún no puedes usarlo. Para validar una idea cuando llegue, Sites. Para producción con tu marca y tus datos, el camino sigue siendo el de siempre: esta misma presentación se sirve desde Vercel.</p>
+  </div>
+</section>
+
+<!-- ══════════ 07 · PLATAFORMA ══════════ -->
 <section class="slide" id="s5">
   <div class="slide-inner">
-    <p class="module">[MODULE 06] <b>//</b> PLATAFORMA</p>
+    <p class="module">[MODULE 07] <b>//</b> PLATAFORMA</p>
     <h2>Lo demás que se ha movido</h2>
     <ul class="fact-list">
       <li><b>Fast mode</b> — hasta 2,5× más rápido pagando el doble. Sustituye a Priority Processing. Desde agosto, también con contexto largo (+272K).</li>
@@ -357,7 +392,7 @@
 <!-- ══════════ 05 · DÓNDE NO ══════════ -->
 <section class="slide" id="s6">
   <div class="slide-inner">
-    <p class="module">[MODULE 07] <b>//</b> VIOLATIONS</p>
+    <p class="module">[MODULE 08] <b>//</b> VIOLATIONS</p>
     <h2>Dónde no usarlos</h2>
     <ul class="fact-list">
       <li><b>Presupuestos cerrados de cliente.</b> Work se factura por consumo y no hay tarifas base publicadas. Si no puedes predecir el coste, no lo vendas a precio fijo.</li>
@@ -377,7 +412,7 @@
 <!-- ══════════ 06 · VS CLAUDE ══════════ -->
 <section class="slide" id="s7">
   <div class="slide-inner">
-    <p class="module">[MODULE 08] <b>//</b> COMPARATIVA</p>
+    <p class="module">[MODULE 09] <b>//</b> COMPARATIVA</p>
     <h2>¿Y esto de quién era la idea?</h2>
     <p class="lead">No es plagio, es convergencia: todos construyen agentes. Pero el orden de llegada es el que es.</p>
     <div class="table-wrap">
@@ -432,6 +467,8 @@
       <a href="https://thecentral.ai/p/chatgpt-work-explained">The Central</a> ·
       <a href="https://www.digitalapplied.com/blog/chatgpt-work-openai-agent-launch-2026">Digital Applied</a> ·
       <a href="https://github.com/openai/codex/issues/32806">recorte de contexto en Codex (issue #32806)</a> ·
+      <a href="https://learn.chatgpt.com/docs/sites">docs de ChatGPT Sites</a> ·
+      <a href="https://help.openai.com/en/articles/20001339-creating-and-managing-chatgpt-sites">Sites en el Help Center</a> ·
       reportes de tool calling en foros de OpenAI y crewAI.
       Datos a 12 de agosto de 2026.
     </p>
@@ -441,7 +478,7 @@
 <div class="statusbar">
   <span class="mark">&lt;4<span>|</span>8&gt;</span>
   <span class="hint">↑ ↓ para navegar</span>
-  <span class="counter" id="counter">01 / 10</span>
+  <span class="counter" id="counter">01 / 11</span>
 </div>
 
 <script>
