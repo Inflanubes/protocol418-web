@@ -373,10 +373,55 @@
   </div>
 </section>
 
-<!-- ══════════ 07 · PLATAFORMA ══════════ -->
+<!-- ══════════ 07 · SITES VS ARTIFACTS ══════════ -->
+<section class="slide" id="s4e">
+  <div class="slide-inner">
+    <p class="module">[MODULE 07] <b>//</b> SITES VS ARTIFACTS</p>
+    <h2>Sites vs Artifacts: la misma idea, dos filosofías</h2>
+    <p class="lead">Claude estrenó el patrón en 2024 con Artifacts: la app nace en el chat y se comparte con un enlace. Sites lo industrializa dos años después con hosting clásico.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Aspecto</th><th>Artifacts (Claude)</th><th>Sites (ChatGPT)</th></tr>
+        <tr>
+          <td>Desde</td>
+          <td><b>Junio 2024</b></td>
+          <td>2026, en beta</td>
+        </tr>
+        <tr>
+          <td>URL pública</td>
+          <td>En claude.ai, un clic</td>
+          <td><span class="dim">[nombre].openai.chatgpt.site</span></td>
+        </tr>
+        <tr>
+          <td>Dominio propio</td>
+          <td>No</td>
+          <td><b>Sí</b>, si el dominio ya es tuyo (DNS)</td>
+        </tr>
+        <tr>
+          <td>Trastienda</td>
+          <td>Corre en la página; capacidades opcionales de runtime (estado compartido entre visitantes, datos vivos)</td>
+          <td><b>Backend clásico</b>: base de datos (D1), ficheros (R2), código en servidor, secretos</td>
+        </tr>
+        <tr>
+          <td>Planes</td>
+          <td>También en el gratuito</td>
+          <td>Solo de pago, con límites de beta</td>
+        </tr>
+        <tr>
+          <td>Pagos / datos sensibles</td>
+          <td>No</td>
+          <td>Prohibidos también</td>
+        </tr>
+      </table>
+    </div>
+    <p class="note" style="margin-top:20px">Para una demo que se comparte, empatan — gana el chat donde ya estés trabajando. Para algo con datos persistentes y dominio, Sites llega más lejos. Y ninguno de los dos es todavía un hosting de producción: sin pagos, con límites, y la app atada a la suscripción de su creador.</p>
+  </div>
+</section>
+
+<!-- ══════════ 08 · PLATAFORMA ══════════ -->
 <section class="slide" id="s5">
   <div class="slide-inner">
-    <p class="module">[MODULE 07] <b>//</b> PLATAFORMA</p>
+    <p class="module">[MODULE 08] <b>//</b> PLATAFORMA</p>
     <h2>Lo demás que se ha movido</h2>
     <ul class="fact-list">
       <li><b>Fast mode</b> — hasta 2,5× más rápido pagando el doble. Sustituye a Priority Processing. Desde agosto, también con contexto largo (+272K).</li>
@@ -392,7 +437,7 @@
 <!-- ══════════ 05 · DÓNDE NO ══════════ -->
 <section class="slide" id="s6">
   <div class="slide-inner">
-    <p class="module">[MODULE 08] <b>//</b> VIOLATIONS</p>
+    <p class="module">[MODULE 09] <b>//</b> VIOLATIONS</p>
     <h2>Dónde no usarlos</h2>
     <ul class="fact-list">
       <li><b>Presupuestos cerrados de cliente.</b> Work se factura por consumo y no hay tarifas base publicadas. Si no puedes predecir el coste, no lo vendas a precio fijo.</li>
@@ -412,7 +457,7 @@
 <!-- ══════════ 06 · VS CLAUDE ══════════ -->
 <section class="slide" id="s7">
   <div class="slide-inner">
-    <p class="module">[MODULE 09] <b>//</b> COMPARATIVA</p>
+    <p class="module">[MODULE 10] <b>//</b> COMPARATIVA</p>
     <h2>¿Y esto de quién era la idea?</h2>
     <p class="lead">No es plagio, es convergencia: todos construyen agentes. Pero el orden de llegada es el que es.</p>
     <div class="table-wrap">
@@ -442,6 +487,11 @@
           <td>Agente que entrega artefactos</td>
           <td><span class="who">Primero</span><b>Artifacts</b> (2024) + Claude Code</td>
           <td>ChatGPT Work — julio 2026</td>
+        </tr>
+        <tr>
+          <td>Publicar una app desde el chat</td>
+          <td><span class="who">Primero</span><b>Artifacts publicables</b> — 2024</td>
+          <td>ChatGPT Sites — 2026, con backend y dominio propio</td>
         </tr>
         <tr>
           <td>Agente en el navegador</td>
@@ -478,7 +528,7 @@
 <div class="statusbar">
   <span class="mark">&lt;4<span>|</span>8&gt;</span>
   <span class="hint">↑ ↓ para navegar</span>
-  <span class="counter" id="counter">01 / 11</span>
+  <span class="counter" id="counter">01 / 12</span>
 </div>
 
 <script>
