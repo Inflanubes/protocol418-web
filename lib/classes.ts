@@ -30,8 +30,26 @@ export type ClassEntry = {
   stack: string[]; // herramientas/tecnología, una por chip
   youtubeId: string; // id del vídeo de YouTube ('' → placeholder "vídeo en camino")
   noVideo?: boolean; // true → la clase no tendrá vídeo nunca (se oculta el bloque, sin placeholder)
+  // Estado explícito de la clase (se muestra en la tarjeta y en la ficha):
+  //   'proxima'   → convocada, aún no se ha dado (la fecha es la de la convocatoria)
+  //   'impartida' → ya se dio pero no hay vídeo (p. ej. Rooibos, que nunca lo tendrá)
+  // Sin status: con youtubeId → "emitida"; sin youtubeId → "en camino".
+  status?: 'proxima' | 'impartida';
   resources?: ClassResource[];
 };
+
+export type ClassStatus = {
+  label: string; // texto del chip de la tarjeta ('emitida', 'próxima'…)
+  live: boolean; // true → punto lleno (naranja); false → punto vacío (muted)
+};
+
+// Estado que se muestra en la tarjeta de /brew (chip de la barra de terminal).
+export function getClassStatus(entry: ClassEntry): ClassStatus {
+  if (entry.status === 'proxima') return { label: 'próxima', live: false };
+  if (entry.youtubeId) return { label: 'emitida', live: true };
+  if (entry.status === 'impartida') return { label: 'impartida', live: true };
+  return { label: 'en camino', live: false };
+}
 
 // Icono lucide por tipo de recurso. Se renderiza en ResourceList.
 export const RESOURCE_ICONS: Record<ClassResourceType, LucideIcon> = {
@@ -59,6 +77,7 @@ export const CLASSES: ClassEntry[] = [
     stack: ['Print & play', 'Claude', 'Inglés A1–A2'],
     youtubeId: '',
     noVideo: true, // clase con niños: no habrá vídeo — el recurso ES la clase imprimible
+    status: 'impartida', // se dio en Arkeidia (verano 2026)
     resources: [
       {
         label: 'BREACH HUNT! — juego de mesa imprimible (ZIP)',
@@ -91,7 +110,8 @@ export const CLASSES: ClassEntry[] = [
     slug: 'earl-grey',
     tea: 'Earl Grey',
     title: 'Habla HTTP: de la petición al agente',
-    date: '2026-07-17', // AJUSTAR cuando Sonia convoque la clase
+    date: '2026-09-24', // clase convocada
+    status: 'proxima',
     excerpt:
       'Cómo habla internet de verdad: HTTP, GET, POST y tu primera petición real. La clase que enciende El Lab.',
     description:

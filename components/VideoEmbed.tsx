@@ -5,14 +5,15 @@ import styles from './VideoEmbed.module.css';
 type Props = {
   youtubeId: string;
   title: string;
+  placeholder?: string; // texto cuando no hay vídeo (por defecto: "El vídeo está en camino.")
 };
 
-export function VideoEmbed({ youtubeId, title }: Props) {
+export function VideoEmbed({ youtubeId, title, placeholder }: Props) {
   if (!youtubeId) {
     return (
       <div className={styles.placeholder}>
         <PlayCircle size={40} strokeWidth={1.5} aria-hidden />
-        <p className={styles.placeholderText}>El vídeo está en camino.</p>
+        <p className={styles.placeholderText}>{placeholder ?? 'El vídeo está en camino.'}</p>
       </div>
     );
   }

@@ -45,14 +45,25 @@ export default async function ClassPage({ params }: Params) {
           </Link>
           <Eyebrow>{entry.tea}</Eyebrow>
           <h1 className={styles.title}>{entry.title}</h1>
-          <span className={styles.date}>{formatClassDate(entry.date)}</span>
+          <span className={styles.date}>
+            {entry.status === 'proxima' ? 'Próxima clase · ' : ''}
+            {formatClassDate(entry.date)}
+          </span>
         </div>
       </Section>
 
       <Section variant="surface">
         <div className={styles.body}>
           {!entry.noVideo && (
-            <VideoEmbed youtubeId={entry.youtubeId} title={`${entry.tea} — ${entry.title}`} />
+            <VideoEmbed
+              youtubeId={entry.youtubeId}
+              title={`${entry.tea} — ${entry.title}`}
+              placeholder={
+                entry.status === 'proxima'
+                  ? `La clase se graba en directo el ${formatClassDate(entry.date)}. El vídeo llega después.`
+                  : undefined
+              }
+            />
           )}
           <ClassSpec entry={entry} />
           <p className={styles.description}>{entry.description}</p>

@@ -1,6 +1,6 @@
 // components/ClassCard.tsx
 import Link from 'next/link';
-import { formatClassDate, type ClassEntry } from '@/lib/classes';
+import { formatClassDate, getClassStatus, type ClassEntry } from '@/lib/classes';
 import styles from './ClassCard.module.css';
 
 type Props = {
@@ -8,13 +8,14 @@ type Props = {
 };
 
 export function ClassCard({ entry }: Props) {
+  const status = getClassStatus(entry);
   return (
     <Link href={`/brew/${entry.slug}`} className={styles.card}>
       <div className={styles.chrome} aria-hidden>
         <span className={styles.chromeDots}>●●●</span>
         <span className={styles.chromeTitle}>{entry.tea}.sh</span>
-        <span className={entry.youtubeId ? styles.statusOn : styles.statusOff}>
-          {entry.youtubeId ? '● emitida' : '○ en camino'}
+        <span className={status.live ? styles.statusOn : styles.statusOff}>
+          {status.live ? '●' : '○'} {status.label}
         </span>
       </div>
       <div className={styles.head}>
