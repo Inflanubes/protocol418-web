@@ -172,7 +172,7 @@ export default function HomePage() {
       <LogStrip
         items={[
           { label: 'breach_007 desplegado', href: '/breach' },
-          { label: '19/19 fundamentos online', href: '/fundamentos' },
+          { label: '20/20 fundamentos online', href: '/fundamentos' },
           { label: 'nueva clase en /brew', href: '/brew' },
           { label: 'comunidad activa', href: '/comunidad' },
         ]}

@@ -31,6 +31,16 @@
 .termino { font-family: var(--font-mono); color: var(--color-accent); font-weight: 600; }
 .definicion { color: var(--color-text-muted); margin: 0; }
 
+.enlace { display: flex; flex-direction: column; gap: var(--space-1); }
+.enlaceLink {
+  display: inline-flex; align-items: center; gap: var(--space-2); width: fit-content;
+  font-family: var(--font-mono); font-size: var(--fs-body); color: var(--color-accent);
+  text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 150ms ease;
+}
+.enlaceLink:hover, .enlaceLink:focus-visible { border-bottom-color: var(--color-accent); }
+.enlacePrompt { color: var(--color-text-muted); }
+.enlaceNota { font-size: var(--fs-body-sm); color: var(--color-text-muted); margin: 0; }
+
 @media (max-width: 560px) {
   .terminoRow { grid-template-columns: 1fr; gap: var(--space-1); }
 }

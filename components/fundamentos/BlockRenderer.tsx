@@ -5,6 +5,7 @@ import { EsquemaBlock } from './blocks/EsquemaBlock';
 import { GaleriaBlock } from './blocks/GaleriaBlock';
 import { GotchaBlock } from './blocks/GotchaBlock';
 import { TerminosBlock } from './blocks/TerminosBlock';
+import { EnlaceBlock } from './blocks/EnlaceBlock';
 
 export function BlockRenderer({ block }: { block: Block }) {
   switch (block.type) {
@@ -26,5 +27,7 @@ export function BlockRenderer({ block }: { block: Block }) {
       return <GotchaBlock body={block.body} />;
     case 'terminos':
       return <TerminosBlock items={block.items} />;
+    case 'enlace':
+      return <EnlaceBlock href={block.href} label={block.label} nota={block.nota} />;
   }
 }

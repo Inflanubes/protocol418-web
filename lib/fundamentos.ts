@@ -18,7 +18,8 @@ export type Block =
     }
   | { type: 'galeria'; images: { src: string; alt: string; caption?: string }[] }
   | { type: 'gotcha'; body: string }
-  | { type: 'terminos'; items: { term: string; def: string }[] };
+  | { type: 'terminos'; items: { term: string; def: string }[] }
+  | { type: 'enlace'; href: string; label: string; nota?: string }; // externo si empieza por http
 
 export type Fundamento = {
   level: string; // '01' — orden global, inmutable
@@ -208,6 +209,69 @@ export const FUNDAMENTOS: Fundamento[] = [
   },
   {
     level: '05',
+    slug: 'habla-http',
+    movement: 'Cómo funciona esto de verdad',
+    title: 'Habla HTTP',
+    hook: 'Tu barra del navegador solo sabe hacer una cosa.',
+    summary:
+      'Verbos, códigos de estado, headers y body: el idioma que hablan todas las apps, y cómo hablarlo tú desde la terminal.',
+    blocks: [
+      {
+        type: 'texto',
+        body:
+          'Ya sabes que abrir una web es pedir y recibir. Ahora el detalle. Una petición lleva siempre un método (qué quiero hacer), una dirección (a quién se lo pido) y, a veces, datos. La respuesta lleva siempre un código de estado (cómo ha ido) y, casi siempre, datos: una página, una imagen o un JSON, el formato en el que se hablan las máquinas. Esto es todo HTTP. Lo demás son matices.',
+      },
+      {
+        type: 'esquema',
+        src: '',
+        alt: 'Petición (método, dirección, headers y body) frente a respuesta (código de estado, headers y body), cara a cara.',
+        width: 1376,
+        height: 768,
+        caption: 'Petición: método + dirección + datos. Respuesta: código + datos.',
+      },
+      {
+        type: 'texto',
+        body:
+          'El método es un verbo, y hay cuatro que importan: GET pide, POST envía, PUT y PATCH cambian, DELETE borra. En un GET los datos van en la propia dirección, detrás del interrogante (?tipo=earl-grey): así funcionan un buscador o un filtro. En un POST viajan dentro de la petición, en el body, y una etiqueta llamada header (Content-Type) avisa al servidor del formato que llevan. La barra del navegador solo sabe hacer GET; para el resto necesitas una herramienta que hable HTTP entero. La más básica es curl, un programa de terminal: le escribes el método, la dirección y los datos, y te enseña la respuesta tal cual llega.',
+      },
+      {
+        type: 'texto',
+        body:
+          'La respuesta empieza por un número de tres cifras, y la primera ya te cuenta cómo ha ido. 1xx: sigo trabajando (casi nunca lo ves). 2xx: todo bien (200 OK; 201 Created, cuando tu POST ha creado algo). 3xx: me he mudado, mira en otra dirección (301). 4xx: el error es tuyo (400 petición mal formada, 401 identifícate, 404 aquí no hay nada, 405 con ese verbo no). 5xx: el error es mío, del servidor (500). Y luego está el 418, “soy una tetera”: lo metió un ingeniero de broma en 1998, sigue en el estándar y da nombre a todo esto.',
+      },
+      {
+        type: 'enlace',
+        href: 'https://http.cat/',
+        label: 'http.cat — un gato por cada código de estado',
+        nota: 'La chuleta más seria que vas a encontrar. Cambia el número al final de la dirección y mira.',
+      },
+      {
+        type: 'terminos',
+        items: [
+          { term: 'GET', def: 'Pedir datos. Lo que hace tu navegador cada vez que escribes una dirección.' },
+          { term: 'POST', def: 'Enviar datos para que el servidor haga algo con ellos: un formulario, un pedido, un mensaje.' },
+          { term: 'Header', def: 'Etiqueta de la petición o de la respuesta: formato, idioma, quién eres. Viaja aparte de los datos.' },
+          { term: 'Body', def: 'Los datos que viajan dentro de una petición (en un POST) o de una respuesta (la página, el JSON).' },
+          { term: 'Código de estado', def: 'Las tres cifras con las que el servidor resume cómo ha ido: 200, 404, 418…' },
+          { term: 'curl', def: 'Programa de terminal para hacer peticiones HTTP a mano. Tu primera CLI.' },
+        ],
+      },
+      {
+        type: 'gotcha',
+        body:
+          'La barra del navegador solo sabe hacer GET. Cada formulario que envías, cada botón de “comprar” y cada mensaje que mandas desde una app es un POST que va por debajo sin que lo veas. Y cuando una automatización o una IA “usa” una herramienta, es exactamente eso: una petición HTTP más, con su verbo y su código.',
+      },
+      {
+        type: 'enlace',
+        href: '/lab',
+        label: 'El Lab — practica esto con peticiones reales',
+        nota: 'Tu primer GET, tu primer POST y tu primer 418, con puntos.',
+      },
+    ],
+    sources: [], // no viene de los decks del MIB: nace de la clase Earl Grey
+  },
+  {
+    level: '06',
     slug: 'de-que-se-hace-una-app',
     movement: 'Cómo se construye',
     title: 'De qué se hace una app',
@@ -221,7 +285,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/05-build-vs-buy.png',
+        src: '/fundamentos/06-build-vs-buy.png',
         alt: 'Árbol de decisión Build vs Buy: cada funcionalidad se construye a medida o se compra (producto o SaaS).',
         width: 1376,
         height: 768,
@@ -250,7 +314,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['13'],
   },
   {
-    level: '06',
+    level: '07',
     slug: 'web-o-app-el-espectro',
     movement: 'Cómo se construye',
     title: 'Web o app: el espectro y sus ladrillos',
@@ -264,7 +328,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/06-espectro-movil.png',
+        src: '/fundamentos/07-espectro-movil.png',
         alt: 'Espectro de presencia móvil: web móvil → responsive → PWA → app nativa, con su coste creciente.',
         width: 1376,
         height: 768,
@@ -294,7 +358,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['19'],
   },
   {
-    level: '07',
+    level: '08',
     slug: 'construir-sin-programar-no-code',
     movement: 'Cómo se construye',
     title: 'Construir sin (apenas) programar: No Code',
@@ -308,7 +372,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/07-categorias-no-code.png',
+        src: '/fundamentos/08-categorias-no-code.png',
         alt: 'Mapa de categorías No Code: web, base de datos, automatización, emailing, formularios, CRM, analytics.',
         width: 1376,
         height: 768,
@@ -343,7 +407,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['12'],
   },
   {
-    level: '08',
+    level: '09',
     slug: 'como-nace-un-producto-digital',
     movement: 'Cómo se construye',
     title: 'Cómo nace un producto digital',
@@ -357,7 +421,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/08-trinomio-producto.png',
+        src: '/fundamentos/09-trinomio-producto.png',
         alt: 'Trinomio de producto: Producto (deseable) + Diseño (usable) + Ingeniería (realizable) se solapan.',
         width: 1376,
         height: 768,
@@ -386,7 +450,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['15'],
   },
   {
-    level: '09',
+    level: '10',
     slug: 'que-es-la-ia-de-verdad',
     movement: 'IA, sensores y voz',
     title: 'Qué es la IA de verdad',
@@ -400,7 +464,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/09-ia-ml-dl.png',
+        src: '/fundamentos/10-ia-ml-dl.png',
         alt: 'Círculos concéntricos: Inteligencia Artificial contiene Machine Learning, que contiene Deep Learning.',
         width: 1376,
         height: 768,
@@ -437,7 +501,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['22'],
   },
   {
-    level: '10',
+    level: '11',
     slug: 'de-donde-salen-los-datos-iot',
     movement: 'IA, sensores y voz',
     title: 'De dónde salen los datos: IoT',
@@ -451,7 +515,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/10-iot-end-to-end.png',
+        src: '/fundamentos/11-iot-end-to-end.png',
         alt: 'Flujo IoT de extremo a extremo: sensor → conectividad → procesado (cloud o edge) → API hacia terceros.',
         width: 1376,
         height: 768,
@@ -480,7 +544,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['2'],
   },
   {
-    level: '11',
+    level: '12',
     slug: 'hablar-con-maquinas-asistentes-de-voz',
     movement: 'IA, sensores y voz',
     title: 'Hablar con máquinas: asistentes de voz',
@@ -494,7 +558,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/11-pipeline-voz.png',
+        src: '/fundamentos/12-pipeline-voz.png',
         alt: 'Cadena de un sistema conversacional: ASR → NLU → gestión del diálogo → NLG → TTS.',
         width: 1376,
         height: 768,
@@ -523,7 +587,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['21'],
   },
   {
-    level: '12',
+    level: '13',
     slug: 'ciberseguridad-basica',
     movement: 'Protegerlo y rentabilizarlo',
     title: 'Ciberseguridad básica',
@@ -537,7 +601,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/12-triada-cia.png',
+        src: '/fundamentos/13-triada-cia.png',
         alt: 'Tríada CIA: triángulo con Confidencialidad, Integridad y Disponibilidad.',
         width: 1376,
         height: 768,
@@ -568,7 +632,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['9'],
   },
   {
-    level: '13',
+    level: '14',
     slug: 'por-que-ganan-los-gigantes-efectos-de-red',
     movement: 'Protegerlo y rentabilizarlo',
     title: 'Por qué ganan los gigantes: efectos de red',
@@ -582,7 +646,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/13-efectos-de-red.png',
+        src: '/fundamentos/14-efectos-de-red.png',
         alt: 'Una red pequeña con pocas conexiones frente a una red grande y densa: el valor crece con los nodos.',
         width: 1672,
         height: 941,
@@ -611,7 +675,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['1'],
   },
   {
-    level: '14',
+    level: '15',
     slug: 'como-gana-dinero-una-app',
     movement: 'Protegerlo y rentabilizarlo',
     title: 'Cómo gana dinero una app',
@@ -625,7 +689,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/14-modelos-monetizacion.png',
+        src: '/fundamentos/15-modelos-monetizacion.png',
         alt: 'Cuadrícula de los cuatro modelos de monetización: Free, Freemium, Paid, Paymium.',
         width: 1376,
         height: 768,
@@ -654,7 +718,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['17', '7'],
   },
   {
-    level: '15',
+    level: '16',
     slug: 'estrategia-tech-sin-humo',
     movement: 'Protegerlo y rentabilizarlo',
     title: 'Estrategia tech sin humo',
@@ -668,7 +732,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/15-capex-opex.png',
+        src: '/fundamentos/16-capex-opex.png',
         alt: 'Dos curvas de coste: CAPEX como un gran desembolso inicial frente a OPEX como pago gradual por uso.',
         width: 1376,
         height: 768,
@@ -697,7 +761,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['14', '11'],
   },
   {
-    level: '16',
+    level: '17',
     slug: 'leer-datos-sin-que-te-enganen',
     movement: 'Datos (y quién los tiene)',
     title: 'Leer datos sin que te engañen',
@@ -711,7 +775,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/16-correlacion-causalidad.png',
+        src: '/fundamentos/17-correlacion-causalidad.png',
         alt: 'Dos líneas que suben juntas con un símbolo de “distinto”: correlación no implica causalidad.',
         width: 1672,
         height: 941,
@@ -740,7 +804,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['30.01', '26.01'],
   },
   {
-    level: '17',
+    level: '18',
     slug: 'metricas-que-no-mienten',
     movement: 'Datos (y quién los tiene)',
     title: 'Métricas que no mienten',
@@ -754,7 +818,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/17-embudo-metricas.png',
+        src: '/fundamentos/18-embudo-metricas.png',
         alt: 'Embudo de métricas: adquisición arriba, retención destacada en el centro, revenue abajo.',
         width: 1672,
         height: 941,
@@ -783,7 +847,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['02.02', '25.1'],
   },
   {
-    level: '18',
+    level: '19',
     slug: 'tus-datos-son-poder',
     movement: 'Datos (y quién los tiene)',
     title: 'Tus datos son poder: privacidad y ética',
@@ -797,7 +861,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/18-reidentificacion.png',
+        src: '/fundamentos/19-reidentificacion.png',
         alt: 'Una silueta anónima que, cruzando edad, sexo y código postal, se convierte en una persona identificada.',
         width: 1672,
         height: 941,
@@ -827,7 +891,7 @@ export const FUNDAMENTOS: Fundamento[] = [
     sources: ['09.02', '26.01'],
   },
   {
-    level: '19',
+    level: '20',
     slug: 'quien-tiene-los-datos-gafam',
     movement: 'Datos (y quién los tiene)',
     title: '¿Quién tiene los datos? GAFAM',
@@ -841,7 +905,7 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '/fundamentos/19-gafam.png',
+        src: '/fundamentos/20-gafam.png',
         alt: 'Unos pocos gigantes enormes sobre figuras diminutas que les envían sus datos hacia arriba.',
         width: 1672,
         height: 941,
