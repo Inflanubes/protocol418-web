@@ -223,10 +223,10 @@ export const FUNDAMENTOS: Fundamento[] = [
       },
       {
         type: 'esquema',
-        src: '',
+        src: '/fundamentos/05-peticion-respuesta.png',
         alt: 'Petición (método, dirección, headers y body) frente a respuesta (código de estado, headers y body), cara a cara.',
-        width: 1376,
-        height: 768,
+        width: 1672,
+        height: 941,
         caption: 'Petición: método + dirección + datos. Respuesta: código + datos.',
       },
       {
