@@ -25,7 +25,7 @@ export const BRIEFINGS: Briefing[] = [
     titulo: 'WhatsApp Business: tipos de conexión, límites y reglas',
     resumen:
       'App gratuita o Cloud API de pago, y las cuatro puertas: directa, vía partner, coexistencia y la no oficial que Meta prohíbe. La ventana de 24 h, los límites por cuenta, lo que empieza a cobrarse el 1 de octubre y por qué un proveedor oficial sigue siendo un tercero al que le das las llaves de tu tienda.',
-    temas: ['whatsapp', 'cloud-api', 'coexistencia', 'meta', 'rgpd'],
+    temas: ['whatsapp', 'cloud-api', 'coexistencia', 'make', 'meta', 'rgpd'],
     deck: '/briefings/whatsapp-business-conexiones.html',
   },
   {

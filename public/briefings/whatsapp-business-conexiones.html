@@ -443,7 +443,7 @@
           <li><b>Hay que construirlo todo:</b> bandeja, plantillas, automatizaciones y facturación.</li>
           <li><b>El número queda dedicado a la API</b> y deja de funcionar en la app.</li>
           <li>Una cuenta sin verificar empieza con 250 destinatarios al día.</li>
-          <li><b>No permite coexistencia:</b> solo pueden activarla los partners.</li>
+          <li><b>No permite coexistencia por sí sola:</b> hace falta un partner, o que tu propia app sea Tech Provider.</li>
         </ul>
       </div>
     </div>
@@ -698,7 +698,7 @@
       </div>
       <div class="card">
         <span class="tag">Vía fácil · sin ser partner</span>
-        <p>El cliente la activa a través de un proveedor que ya la ofrece (360dialog, Wati, Twilio, Kapso…) y sigue los pasos de cliente de la vía propia.</p>
+        <p>El cliente la activa a través de un proveedor que ya la ofrece (360dialog, Wati, Twilio, Kapso… y también Make, ver el hack) y sigue los pasos de cliente de la vía propia.</p>
       </div>
       <div class="card">
         <span class="tag">Vía propia · siendo partner</span>
@@ -733,10 +733,57 @@
   </div>
 </section>
 
-<!-- ══════════ 14 · PARTNER ══════════ -->
+<!-- ══════════ 14 · HOTFIX · MAKE ══════════ -->
 <section class="slide" id="s14">
   <div class="slide-inner">
-    <p class="module">[MODULE 14] <b>//</b> HACERSE PARTNER</p>
+    <p class="module">[MODULE 14] <b>//</b> COEXISTENCIA · HOTFIX</p>
+    <h2>El hack: Make como partner, tu bot donde quieras</h2>
+    <p class="lead">No hace falta hacerse Tech Provider. La conexión nueva de WhatsApp Business Cloud en Make tiene un modo de alta <strong>«Coexistence»</strong>: Make hace el Embedded Signup por ti y tu número sigue en la app. <b>n8n no lo tiene</b>: sus credenciales piden token y WABA de una app propia.</p>
+    <div class="pipeline">
+      <div class="step"><h4>Alta en Make</h4><p>Módulo WhatsApp Business Cloud &gt; <b>Create a connection</b> &gt; Signup Mode: <b>Coexistence</b> &gt; «Connect a WhatsApp Business App». Sin cuenta de developer. La verificación en dos pasos de la app, desactivada.</p></div>
+      <div class="step"><h4>Entrada</h4><p>Escenario A: <b>Watch Events</b> (instantáneo) &rarr; HTTP &gt; Make a request &rarr; POST al webhook de tu bot (n8n, un agente, código propio) con remitente, texto y hora.</p></div>
+      <div class="step"><h4>Salida</h4><p>Escenario B: <b>Custom webhook</b> (tu bot hace el POST) &rarr; <b>Send a Message</b>. Si la ventana de 24 h está cerrada, <b>Send a Template Message</b>.</p></div>
+    </div>
+    <p class="note">Verificado contra la documentación de Make a 22-09-2026. Las reglas no cambian: ventana de 24 h, plantillas fuera de ella y tarifa de Meta.</p>
+  </div>
+</section>
+
+<!-- ══════════ 15 · HOTFIX · CRITERIO ══════════ -->
+<section class="slide" id="s15">
+  <div class="slide-inner">
+    <p class="module">[MODULE 15] <b>//</b> COEXISTENCIA · HOTFIX · CRITERIO</p>
+    <h2>El hack: cuándo sí y cuándo no</h2>
+    <div class="cards two">
+      <div class="card">
+        <span class="tag">Cuándo sí</span>
+        <ul class="checks checks-si">
+          <li>Tu bot ya vive en n8n o en código propio y solo te falta la puerta a WhatsApp.</li>
+          <li>Quieres coexistencia sin App Review ni vídeos.</li>
+          <li>El WABA queda en <b>tu</b> Business Portfolio y Make aparece como partner autorizado.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag warn">Cuándo no</span>
+        <ul class="checks checks-no">
+          <li>Si el bot es simple, móntalo entero en Make. El doble salto es <b>Overkill</b>.</li>
+          <li>Volumen alto: cada mensaje de entrada y de salida es una ejecución de Make, con sus operaciones.</li>
+          <li>Make es un tercero más: sus servidores ven tus mensajes. Aplica todo lo de la slide de riesgos.</li>
+        </ul>
+      </div>
+    </div>
+        <p class="note"><strong>Ojo.</strong> Coexistencia no disponible en todos los países. En la comunidad de Make hay altas en modo Coexistence (septiembre de 2026) que acaban en «Resource not found» aunque Meta diga «conectado»; la doc de Make dice reintentar.</p>
+    <div class="alert stamp">
+      <span class="alert-tag">[HOTFIX] Rápido, no siempre limpio</span>
+      Funciona porque Make hace de partner. <b>Si Make cambia la conexión, te la cambia a ti.</b> Para un cliente que vive de ese número, pregúntate si el hotfix es el sistema o el parche.
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ══════════ 16 · PARTNER ══════════ -->
+<section class="slide" id="s16">
+  <div class="slide-inner">
+    <p class="module">[MODULE 16] <b>//</b> HACERSE PARTNER</p>
     <h2>Tech Provider o Solution Partner</h2>
     <p class="lead">Si no necesitas línea de crédito ni facturar a tus clientes el uso de la API, <strong>Meta recomienda hacerse Tech Provider</strong>.</p>
     <div class="table-wrap">
@@ -752,10 +799,10 @@
   </div>
 </section>
 
-<!-- ══════════ 15 · TECH PROVIDER PASOS ══════════ -->
-<section class="slide" id="s15">
+<!-- ══════════ 17 · TECH PROVIDER PASOS ══════════ -->
+<section class="slide" id="s17">
   <div class="slide-inner">
-    <p class="module">[MODULE 15] <b>//</b> HACERSE PARTNER · TECH PROVIDER</p>
+    <p class="module">[MODULE 17] <b>//</b> HACERSE PARTNER · TECH PROVIDER</p>
     <h2>Pasos para ser Tech Provider</h2>
     <div class="pipeline">
       <div class="step"><h4>App de Meta</h4><p>Crea una app con el caso de uso de WhatsApp y vincúlala a un Business Portfolio.</p></div>
@@ -768,10 +815,10 @@
   </div>
 </section>
 
-<!-- ══════════ 16 · RECONOCER OFICIAL ══════════ -->
-<section class="slide" id="s16">
+<!-- ══════════ 18 · RECONOCER OFICIAL ══════════ -->
+<section class="slide" id="s18">
   <div class="slide-inner">
-    <p class="module">[MODULE 16] <b>//</b> PROVEEDORES</p>
+    <p class="module">[MODULE 18] <b>//</b> PROVEEDORES</p>
     <h2>Cómo reconocer un proveedor oficial</h2>
     <p class="lead">Un partner oficial usa <strong>la misma Cloud API</strong> que la conexión directa: cambia quién construye la capa de encima, no la conexión. Pero hay quien vende «API de WhatsApp» y por dentro usa sesiones de WhatsApp Web: la opción 5 con otro envoltorio.</p>
     <div class="table-wrap">
@@ -791,10 +838,10 @@
   </div>
 </section>
 
-<!-- ══════════ 17 · RIESGO DE TERCEROS ══════════ -->
-<section class="slide" id="s17">
+<!-- ══════════ 19 · RIESGO DE TERCEROS ══════════ -->
+<section class="slide" id="s19">
   <div class="slide-inner">
-    <p class="module">[MODULE 17] <b>//</b> PROVEEDORES · RIESGO</p>
+    <p class="module">[MODULE 19] <b>//</b> PROVEEDORES · RIESGO</p>
     <h2>Por qué un tercero es un riesgo, aunque sea oficial</h2>
     <p class="lead">Oficial significa que <strong>Meta no te va a banear por la forma de conectarte</strong>. No significa que no haya riesgos: pones un intermediario entre tu empresa y tus clientes, y dependes de él en cinco frentes.</p>
     <ul class="fact-list tight">
@@ -808,10 +855,10 @@
   </div>
 </section>
 
-<!-- ══════════ 18 · COEXISTENCIA VS SOLO API ══════════ -->
-<section class="slide" id="s18">
+<!-- ══════════ 20 · COEXISTENCIA VS SOLO API ══════════ -->
+<section class="slide" id="s20">
   <div class="slide-inner">
-    <p class="module">[MODULE 18] <b>//</b> PROVEEDORES · RIESGO CON COEXISTENCIA</p>
+    <p class="module">[MODULE 20] <b>//</b> PROVEEDORES · RIESGO CON COEXISTENCIA</p>
     <h2>Con coexistencia la dependencia es menor, pero no desaparece</h2>
     <div class="table-wrap">
       <table class="compact">
@@ -830,10 +877,10 @@
   </div>
 </section>
 
-<!-- ══════════ 19 · QUÉ TE PROTEGE ══════════ -->
-<section class="slide" id="s19">
+<!-- ══════════ 21 · QUÉ TE PROTEGE ══════════ -->
+<section class="slide" id="s21">
   <div class="slide-inner">
-    <p class="module">[MODULE 19] <b>//</b> PROVEEDORES · PROTOCOL</p>
+    <p class="module">[MODULE 21] <b>//</b> PROVEEDORES · PROTOCOL</p>
     <h2>Qué te protege</h2>
     <div class="table-wrap">
       <table class="compact">
@@ -852,10 +899,10 @@
   </div>
 </section>
 
-<!-- ══════════ 20 · RESUMEN ══════════ -->
-<section class="slide" id="s20">
+<!-- ══════════ 22 · RESUMEN ══════════ -->
+<section class="slide" id="s22">
   <div class="slide-inner">
-    <p class="module">[MODULE 20] <b>//</b> RESUMEN</p>
+    <p class="module">[MODULE 22] <b>//</b> RESUMEN</p>
     <h2>Las cinco opciones, en una tabla</h2>
     <div class="table-wrap">
       <table class="compact">
@@ -871,8 +918,8 @@
   </div>
 </section>
 
-<!-- ══════════ 21 · CIERRE ══════════ -->
-<section class="slide close-slide" id="s21">
+<!-- ══════════ 22 · CIERRE ══════════ -->
+<section class="slide close-slide" id="s22">
   <div class="slide-inner">
     <div class="brandmark">&lt;4<span>|</span>8&gt;</div>
     <p class="close-line">Si promete masivos sin plantillas ni verificación, no es oficial. Si es oficial, sigue siendo un tercero.</p>
@@ -903,7 +950,7 @@
   <span class="hint" id="hint">↑ ↓ para navegar</span>
   <span class="right">
     <button type="button" id="motion" aria-label="Activar o desactivar animaciones">motion: <b>on</b></button>
-    <span class="counter" id="counter">01 / 22</span>
+    <span class="counter" id="counter">01 / 24</span>
   </span>
 </div>
 
